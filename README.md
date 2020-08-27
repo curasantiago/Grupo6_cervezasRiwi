@@ -17,7 +17,7 @@ El sitio posee mecanismos que nos aseguran que nuestros clientes son mayores de 
 
 INTEGRANTES DEL EQUIPO
 
-Carlos Maldonado: Porteño, amante de la cerveza y el vino, Martillero, pianista con poco éxito. Con mucha actividad ligada a acciones sociales. Conectado con la tecnología, y con admiración a quienes desarrollan. Hoy es estudiante de programación full stack en Digital House.
+Carlos Maldonado: Porteño, amante de la cerveza y el vino, Martillero, pianista con poco éxito. Con mucha actividad ligada a trabajos sociales. Conectado con la tecnología, y con admiración a quienes desarrollan. Hoy es estudiante de programación full stack en Digital House.
   
 Santiago Cura: Paranaense. La música es mi cable a tierra. Me gusta mucho la creatividad a la hora de resolver problemas. Soy abogado, y me encuentro estudiando programación web full stack en Digital House.
 
