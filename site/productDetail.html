@@ -5,17 +5,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Detalle de Producto</title>
     <link rel="stylesheet" href="public/css/style.css">
+    <script src="https://kit.fontawesome.com/5376d63d7e.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Dejo vacío el header para hacer copy paste después de lo que arme Pachi -->
-    <header>
+    
+    <!-- HEADER -->
+    <header class="header">
+        <div class="header-img-container">
+            <img src="public/img/logo.png" alt="LOGO DE CERVEZAS RIWI" class="header-logo">
+        </div>
+
+        <nav class="nav"> <!---------------BARRA DE NAVEGACIÓN---------------------->
+            <a href="">CERVEZAS</a>
+            <a href="">HISTORIA</a>
+            <a href="">AYUDA</a>
+            <a href="">CONTACTO</a>
+        </nav>
+
+        <div class="header-icons-container">
+            <a href=""><i class="fas fa-user header-icons"></i></a>
+            <a href=""><i class="fas fa-shopping-bag header-icons"></i></a>
+            <a href=""><i class="fas fa-key header-icons"></i></a>
+            <a href=""><i class="fas fa-bars header-icons" id="menu"></i></a>
+        </div>   
 
     </header>
 
+    <!-- FIN HEADER -->
+
     <!-- Submenú de categorías de productos -->
-    <section>
+    <section class="product__category">
         <article>
-           <a href="">Categoría</a>
+           <a href="">CATEGORÍA</a>
         </article>
         
         <article>
@@ -23,96 +45,109 @@
         </article>
 
         <article>
-            <a href="">Subcategoría</a>
+            <a href="">SUBCATEGORÍA</a>
         </article>
 
     </section>
 
-    <!-- Imágenes de producto, clickeables para agrandar -->
-    <section>
-        <article>
-            <a href=""><img src="" alt="Imagen1"></a>
-        </article>
-        <article>
-            <a href=""><img src="" alt="Imagen2"></a>
-        </article>
-        <article>
-            <a href=""><img src="" alt="Imagen3"></a>
-        </article>
-    </section>
+    <!-- Comienza main content para @media con más width  -->
+    <div class="product__main__content">
 
-    <!-- Tiempos y costos de envío, imagen clickeable a página informativa -->
-    <section>
-        <article>
-            <a href=""><img src="" alt="Tiempos y Costos de Envío"></a>            
-        </article>
-    </section>
+        <!-- Imágenes de producto, clickeables para agrandar -->
+        <div class="product__left__column">
 
-    <!-- Puntuación del producto -->
-    <section>
-        <!-- Estrellas clickeables para dar puntuación -->
-        <article>
-            <a href=""><img src="" alt="Estrella1"></a>
-            <a href=""><img src="" alt="Estrella2"></a>
-            <a href=""><img src="" alt="Estrella3"></a>
-            <a href=""><img src="" alt="Estrella4"></a>
-            <a href=""><img src="" alt="Estrella5"></a>
-        </article>
-        <!-- Puntuación promedio en número -->
-        <article>
-            (X Puntos)
-        </article>
-    </section>
+                <section class ="product__img">
+                    <article class="product__image__large">
+                        <a href=""><img src="" alt="Imagen1"></a>
+                    </article>
+                    <article class="product__image__small">
+                        <a href=""><img src="" alt="Imagen2"></a>
+                    </article>
+                    <article class="product__image__small">
+                        <a href=""><img src="" alt="Imagen3"></a>
+                    </article>
+                </section>
 
-    <!-- Form para comprar producto -->
-    <section>
-    <form action="/productCart" method="GET"></form>
-        <article>
-            Nombre del producto
-        </article>
-        <article>
-            <label for="nroCantidad">Cantidad: </label>
-            <input type="number" id="nroCantidad" name="nroCantidad" value="0" min="0" max="24" autofocus required>
-        </article>
-        <article>
-            <button type="submit"><img src="" alt="Agregar al carrito"></button>
-        </article>
-        <article>
-            <button type="button"><img src="" alt="Comprar ahora"></button>
-        </article>
-    </form>
-    </section>
+                <!-- Tiempos y costos de envío, imagen clickeable a página informativa -->
+                <section class="product__shipping__info">
+                    <article>
+                        <a href=""><img src="" alt="Tiempos y Costos de Envío"></a>            
+                    </article>
+                </section>
+        </div>
 
-    <!-- Agregar a favoritos, imagen clickeable -->
-    <section>
-        <article>
-            <a href=""><img src="" alt="Agregar a favoritos"></a>            
-        </article>
-    </section>
+        <div class="product__right__column">
 
-    <!-- Descripción del producto -->
-    <main>
-        Información del producto
-    </main>
+
+        <!-- Puntuación del producto -->
+        <section class="product__ranking">
+            <!-- Estrellas clickeables para dar puntuación -->
+                <a href=""><img src="public/img/star_filled.png" alt="Star1"></a>
+                <a href=""><img src="public/img/star_filled.png" alt="Star2"></a>
+                <a href=""><img src="public/img/star_filled.png" alt="Star3"></a>
+                <a href=""><img src="public/img/star_empty.png" alt="Star4"></a>
+                <a href=""><img src="public/img/star_empty.png" alt="Star5"></a>
+                <p>(X Puntos)</p>
+        </section>
+
+        <!-- Form para comprar producto -->
+        <form class="product__buy__form" action="/productCart" method="GET">
+                
+        <div class="product__row__setter">
+            <h1 class="product__name">NOMBRE PRODUCTO</h1>
+            <p class="product__price">$XXX</p>
+        </div>
+
+        <div class="product__row__setter">
+           <label for="nroCantidad">Cantidad: </label>
+           <input class="product__amount__input" type="number" id="nroCantidad" name="nroCantidad" value="0" min="0" max="24" autofocus required>
+        </div>
+
+        <div class="product__row__setter">
+          <button class= "product__add__button" type="submit">AGREGAR AL CARRITO</button>
+          <a class="product__add__fav" href=""><img src="" alt="Favorito"></a>            
+        </div>
+        
+        <div class="product__row__setter">
+        <button type="button" class="product__buynow__button">COMPRAR AHORA</button>
+        </div>
+
+        </form>
+        
+                
+        <!-- Descripción del producto -->
+        <section class="product__info">
+            <p>Información del producto: Lorem, ipsum dolor sit amet consectetur adipisicing elit. Debitis, quam! Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptate, voluptas odio? Quam, repellat quidem! Impedit, facere nulla? Aliquam sed consequuntur ducimus, illum beatae distinctio vero facere. Eaque adipisci ipsam modi!</p>
+        </section>
+    <!-- Se cierra div de second column -->
+    </div>
+    
+
+    <!-- Se cierra div de main content -->
+    </div> 
+    
 
     <!-- Valoraciones de los clientes -->
-    <section>
+    <section class="product__user__scores">
         <article>Puntuación de los clientes</article>
         <!-- Puntuación promedio en imágenes (estrellas) -->
         <article>
-            <img src="" alt="Estrella1">
-            <img src="" alt="Estrella2">
-            <img src="" alt="Estrella3">
-            <img src="" alt="Estrella4">
-            <img src="" alt="Estrella5">
+            <img src="" alt="Star1">
+            <img src="" alt="Star2">
+            <img src="" alt="Star3">
+            <img src="" alt="Star4">
+            <img src="" alt="Star5">
         </article>
+        
+        <section class="product__user__reviews">
         <!-- Opiniones de clientes que ya compraron el producto -->
         <article>
-            Opinión del cliente 1
+            <p>Opinión del cliente 1: Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deserunt sit magnam omnis provident quasi amet assumenda saepe repudiandae repellat dolorem necessitatibus tempore rem, ratione dolorum reiciendis dolor veniam ab officiis?</p>
         </article>
         <article>
-            Opinión del cliente 2
+        <p>Opinión del cliente 2: Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam ad reprehenderit ab ducimus sed culpa aliquam ullam quas facilis accusantium? Quaerat voluptatum facere repellendus iure iusto veniam natus quo dolores.</p>
         </article>
+        </section>
     </section>
 
     <!-- Dejo vacío el footer para hacer copy paste de lo que arme Santi -->
