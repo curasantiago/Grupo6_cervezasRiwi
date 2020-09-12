@@ -1,6 +1,177 @@
 * {
     box-sizing: border-box;
     font-family: 'Oswald', sans-serif;
+    text-decoration: none;
+    color: black
+}
+
+
+.product__category {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: left;
+    
+}
+
+.product__category * {
+    padding: 1%;
+    color: #40C057;
+}
+
+.prod__left__column {
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    margin-top: 2%;
+}
+
+.product__img {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.product__image__large {
+    width: 100%;
+}
+.product__image__small {
+    width: 50%;
+}
+
+.shipping__info__button {
+    width: 100%;
+}
+
+.ranking__product {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    margin-top: 2%;
+    margin-left: 1%;
+    padding-left: 1%;
+}
+
+.ranking__product a {
+    width: 10%;
+}
+
+.ranking__product img {
+    width: 100%;
+}
+
+.ranking__product p {
+    width: 20%;
+    white-space: nowrap;
+    margin: 0px;
+}
+
+.buy__product__form {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-top: 2%;
+    }
+
+.buy__product__form * {
+    margin: 1%;
+    padding: 1%;
+}
+
+.row__setter {
+    margin: 0px;
+    padding: 0px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.amount__input {
+    width: 12%;
+    text-align: center;
+}
+
+.buy__product__form button {
+    justify-content: center;
+    overflow: hidden;   
+    white-space: nowrap; 
+}
+
+.add__cart__button {
+    width: 40%;
     background-color: #40C057;
+}
+
+.buynow__button {
+    width: 60%;
+    background-color: #FD7E14;
+}
+
+.product__info {
+    margin-top: 2%;
+}
+
+.product__info *{
+    padding: 1%;
+    text-align: justify;
+}
+
+.user__scores {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 2%;
+}
+
+.user__scores * {
+    width: 100%;
+    text-align: center;
+}
+
+.user__reviews {
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.user__reviews article {
+    width: 50%;
+    padding: 2%;
+    margin: 2%;
+}
+
+@media (min-width: 426px) and (max-width: 768px) {
+.ranking__product a {
+    width: 6%;
+}
+
+}
+
+
+@media (min-width: 769px) {
+    .main__content {
+    display: flex;
+    flex-wrap: wrap;
+    }
+    
+    .prod__left__column {
+        width: 50%;
+       }
+
+    .right__column {
+        width: 50%;
+        justify-content: space-evenly;
+    }
+
+    .ranking__product a {
+        width: 5%;
+    }
+
+    .buy__product__form {
+        width: 100%;
+    }
+    
+    .product__info {
+    width: 80%;
+    }
     
 }
