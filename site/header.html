@@ -3,28 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/site/public/css/style.css">
+    <script src="https://kit.fontawesome.com/5376d63d7e.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
     <title>Header</title>
 </head>
 
 <body>
     
-    <header>
+        <header class="header">
+            <div class="header-img-container">
+                <img src="/site/public/img/logo.png" alt="LOGO DE CERVEZAS RIWI" class="header-logo">
+            </div>
 
-        <img src="..." alt="LOGO DE CERVEZAS RIWI">
-        <a href="">Mi Cuenta</a>
-        <a href="">Mi carrito</a>
-        <a href="">Buscador</a>
+            <nav class="nav"> <!---------------BARRA DE NAVEGACIÓN---------------------->
+                <a href="">CERVEZAS</a>
+                <a href="">HISTORIA</a>
+                <a href="">AYUDA</a>
+                <a href="">CONTACTO</a>
+            </nav>
+
+            <div class="header-icons-container">
+                <a href=""><i class="fas fa-user header-icons"></i></a>
+                <a href=""><i class="fas fa-shopping-bag header-icons"></i></a>
+                <a href=""><i class="fas fa-key header-icons"></i></a>
+                <a href=""><i class="fas fa-bars header-icons" id="menu"></i></a>
+            </div>   
+
+         
+
+        </header>    
     
-
-        <nav> <!---------------BARRA DE NAVEGACIÓN---------------------->
-            <a href="">Cervezas</a>
-            <a href="">Historia</a>
-            <a href="">Ayuda</a>
-            <a href="">Contacto</a>
-        </nav>
-
-    </header>    
-
 </body>
 
 </html>
