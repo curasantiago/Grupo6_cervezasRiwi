@@ -5,9 +5,7 @@
     margin: 0px;
     padding: 0px;
     color: black;
-    font-family: 'Oswald', sans-serif;
-
-    
+    font-family: 'Oswald', sans-serif; 
 }
 
 /*-------------------HEADER----------------------*/
@@ -89,7 +87,7 @@
         padding: 10px;
     }
     .nav>a:hover {
-        background-color: #FD7E14; 
+        background-color: white; 
     }
 
     #menu {
