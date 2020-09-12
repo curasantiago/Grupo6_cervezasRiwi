@@ -1,11 +1,105 @@
 * {
     box-sizing: border-box;
     font-family: 'Oswald', sans-serif;
-    text-decoration: none;
-    color: black
+    /*background-color: #40C057;*/
+    margin: 0px;
+    padding: 0px;
+    color: black;
+    font-family: 'Oswald', sans-serif;
+ 
+}
+
+/*-------------------HEADER----------------------*/
+.header {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 9px;
+    justify-content: space-between;
+    background-color: #40C057;
+    opacity: 0.9;
+    margin: 0 auto;
+    border-bottom: 2px solid gainsboro; 
 }
 
 
+.header-img-container {
+    width: 12%;
+}
+
+
+.header-logo {
+    width: 75px;
+}
+
+.header-icons-container {
+    width: 50%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+}
+
+.nav {
+    display: none;
+}
+
+.nav>a {
+    text-decoration: none; 
+}
+
+.header-icons {
+    padding: 5px;
+    border-radius: 50%;
+    padding: 10px;
+    transition: all 0.4s;
+    font-size: 18px;
+}
+
+.header-icons:hover {
+    background-color: gainsboro;
+}
+
+@media (min-width: 760px) {
+    .header-img-container {
+        width: 5%;
+    }
+    .header-logo {
+       width: 80px;
+    }
+    .header-icons-container {
+        width: 20%;
+        justify-content: space-around;
+    }
+    .header-icons {
+        padding: 7px;
+        font-size: 20px;
+    }
+    .nav {
+        flex-direction: row;
+        justify-content: space-evenly;
+        display: flex;
+        align-items: center;
+        flex: 0.7;
+    }
+    .nav>a {
+       text-align: center;
+        width: auto;
+        transition: all 0.9s;
+        padding: 10px;
+    }
+    .nav>a:hover {
+        background-color: #FD7E14; 
+    }
+
+    #menu {
+        display: none;
+    }
+}
+
+/*----------------FIN HEADER---------------------------*/
+
+
+/* ------------------PRODUCT DETAIL---------------------- */
 .product__category {
     display: flex;
     flex-wrap: nowrap;
@@ -173,5 +267,5 @@
     .product__info {
     width: 80%;
     }
-    
-}
+
+/*--------------------------- FIN PRODUCT DETAIL --------------------------*/
