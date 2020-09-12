@@ -112,7 +112,7 @@
     color: #40C057;
 }
 
-.prod__left__column {
+.product__left__column {
     display: flex;
     flex-wrap: wrap;
     text-align: center;
@@ -133,11 +133,11 @@
     width: 50%;
 }
 
-.shipping__info__button {
+.product__shipping__info {
     width: 100%;
 }
 
-.ranking__product {
+.product__ranking {
     display: flex;
     flex-wrap: nowrap;
     align-items: center;
@@ -146,33 +146,33 @@
     padding-left: 1%;
 }
 
-.ranking__product a {
+.product__ranking a {
     width: 10%;
 }
 
-.ranking__product img {
+.product__ranking img {
     width: 100%;
 }
 
-.ranking__product p {
+.product__ranking p {
     width: 20%;
     white-space: nowrap;
     margin: 0px;
 }
 
-.buy__product__form {
+.product__buy__form {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     margin-top: 2%;
     }
 
-.buy__product__form * {
+.product__buy__form * {
     margin: 1%;
     padding: 1%;
 }
 
-.row__setter {
+.product__row__setter {
     margin: 0px;
     padding: 0px;
     width: 100%;
@@ -180,23 +180,23 @@
     align-items: center;
 }
 
-.amount__input {
+.product__amount__input {
     width: 12%;
     text-align: center;
 }
 
-.buy__product__form button {
+.product__buy__form button {
     justify-content: center;
     overflow: hidden;   
     white-space: nowrap; 
 }
 
-.add__cart__button {
+.product__add__button {
     width: 40%;
     background-color: #40C057;
 }
 
-.buynow__button {
+.product__buynow__button {
     width: 60%;
     background-color: #FD7E14;
 }
@@ -210,31 +210,31 @@
     text-align: justify;
 }
 
-.user__scores {
+.product__user__scores {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     margin-top: 2%;
 }
 
-.user__scores * {
+.product__user__scores * {
     width: 100%;
     text-align: center;
 }
 
-.user__reviews {
+.product__user__reviews {
     display: flex;
     flex-wrap: nowrap;
 }
 
-.user__reviews article {
+.product__user__reviews article {
     width: 50%;
     padding: 2%;
     margin: 2%;
 }
 
 @media (min-width: 426px) and (max-width: 768px) {
-.ranking__product a {
+.product__ranking a {
     width: 6%;
 }
 
@@ -242,25 +242,25 @@
 
 
 @media (min-width: 769px) {
-    .main__content {
+    .product__main__content {
     display: flex;
     flex-wrap: wrap;
     }
     
-    .prod__left__column {
+    .product__left__column {
         width: 50%;
        }
 
-    .right__column {
+    .product__right__column {
         width: 50%;
         justify-content: space-evenly;
     }
 
-    .ranking__product a {
+    .product__ranking a {
         width: 5%;
     }
 
-    .buy__product__form {
+    .product__buy__form {
         width: 100%;
     }
     
