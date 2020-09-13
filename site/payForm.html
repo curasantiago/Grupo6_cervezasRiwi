@@ -32,42 +32,45 @@
     <div class="payForm-app-container">
         <section class="payForm-section-img">
             <article class="payForm-article-img">
-                <img src="" alt="Imagen que ocupa la mitad de la pantalla" id="payForm-img"> <!----IMAGEN OCUPA LA MITAD------->
+                <img src="\img\payForm_beer.jpg" alt="cerveza" id="payForm-img"> <!----IMAGEN OCUPA LA MITAD------->
             </article>
         </section>
 
         <main class="payForm-main">
             <section class="payForm-section">
-                <article class="payForm-article">
-                    <h2 class="payForm-h2">INCLUIR MEDIO DE PAGO</h2>
+                <h2 class="payForm-h2">INCLUIR MEDIO DE PAGO</h2>
+                    <article class="payForm-article">
+                    
             
-                    <form action="" method="POST" class="payForm-form">          <!----FORMULARIO------->
-                        <input type="text" name="nombreApellido" id="nombreApellido" placeholder="Nombre y Apellido">
+                        <form action="" method="POST" class="payForm-form">          <!----FORMULARIO------->
+                            <input type="text" name="nombreApellido" id="nombreApellido" placeholder="Nombre y Apellido" class="payForm-input">
 
-                        <input type="text" name="DNI" id="DNI" placeholder="DNI">
-                        
-                        
-                        <label for="tipoTarjeta">Seleccione tipo de tarjeta: </label>
-                        <select name="tipoTarjeta" id="tipoTarjeta">
-                            <option value="credito">CREDITO</option>
-                            <option value="debito">DEBITO</option>
-                        </select>
-                        
-                        <input type="text" name="numeroTarjeta" id="numeroTarjeta" placeholder="Numero de tarjeta">
-                        
-                        <input type="text" name="fechaVencimiento" id="fechaVencimiento" placeholder="Fecha de vencimiento">
-                        
-                        <input type="password" name="codigoSeguridad" id="codigoSeguridad" placeholder="Código de seguridad">
-                        
-                        <input type="text" name="domicilioFacturacion" id="domicilioFacturacion" placeholder="Domicilio de facturación">
-                        
-                        <input type="radio" name="tyc" id="tyc">Términos y condiciones
-                        
-                        <button type="submit">CONFIRMAR</button>
-                    </form>
-                </article>
-            </section>
-        </main>
-    </div>
-</body>
+                            <input type="text" name="DNI" id="DNI" placeholder="DNI" class="payForm-input">
+                            
+                            
+                            <label for="tipoTarjeta">Seleccione tipo de tarjeta: </label>
+                            <select name="tipoTarjeta" id="tipoTarjeta">
+                                <option value="credito">CREDITO</option>
+                                <option value="debito">DEBITO</option>
+                            </select>
+                            
+                            <input type="text" name="nombreDeTarjeta" id="nombreDeTarjeta" placeholder="Nombre del titular" class="payForm-input" required>
+
+                            <input type="text" name="numeroTarjeta" id="numeroTarjeta" placeholder="Numero de tarjeta" class="payForm-input" required>
+
+                            <input type="text" name="fechaVencimiento" id="fechaVencimiento" placeholder="Fecha de vencimiento" class="payForm-input" required>
+                            
+                            <input type="password" name="codigoSeguridad" id="codigoSeguridad" placeholder="Código de seguridad" class="payForm-input" required>
+                            
+                            <input type="text" name="domicilioFacturacion" id="domicilioFacturacion" placeholder="Domicilio de facturación" class="payForm-input" required>
+                            
+                            <input type="radio" name="tyc" id="tyc" required> Términos y condiciones
+                            
+                        <button type="submit" class="payForm-button">CONFIRMAR</button>
+                     </form>
+                 </article>
+             </section>
+         </main>
+     </div>
+ </body>
 </html>
