@@ -13,19 +13,19 @@
     </header>
     
     <!-- Título y cantidad de items -->
-    <section>
+    <section class="cart__summary">
         <article>
-            Mi carrito
+            MI CARRITO
         </article>
         <article>
-            (X items)
+            (2 items)
         </article>
     </section>
 
     <!-- Carrito en sí, con precios, cantidades y precio total -->
     <main>
         <!-- Fila de títulos de información de los productos mostrada en carrito -->
-        <section>
+        <section class="cart__header">
             <article>ITEM</article>
             <article>PRECIO</article>
             <article>CANTIDAD</article>
@@ -33,70 +33,102 @@
         </section>
 
         <!-- Producto 1 -->
-        <section>
-            <!-- Imagen principal de producto, clickable a la página de productDetail -->
-            <article>
-                <a href="/productDetail"><img src="" alt="Imagen del producto 1"></a>
-            </article>
-            <!-- Nombre del producto -->
-            <article>
-                Nombre producto 1
-            </article>
-            <!-- Info del producto -->
-            <article>
-                Detalle producto 1
-            </article>
+        <section class="cart__item">
+            <!-- Imagen y nombre de producto -->
+            <div class="cart__item__img__name">
+                <a href="/productDetail"><img src="public/img/product003.jpg" alt="IMAGEN 1"></a>
+                <article class="cart__item__name__details">
+                        <p>Producto 1</p>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>           
+                </article>        
+            </div>
+            
+            <!-- Comienza header para mobile -->
+            <div class="cart__mobile__header">
+
+
+            <!-- Encabezados para versión móvil -->
+            <div class="cart__mobile__header__titles">
+                <article>PRECIO</article>
+                <article>CANTIDAD</article>
+                <article>TOTAL</article>
+            </div>
+
+
             <!-- Precio del producto -->
-            <article>
-                $XXX
-            </article>
-            <!-- Form de cantidad de producto, con opcion de aumentar y disminuir -->
-            <article>
-                <input type="number" value="1" min="0" max="24" form="finCompra" required>
-            </article>
-            <!-- Total del producto (precio x cantidad) -->
-            <article>
-                $XXX
-            </article>
+            <div class="cart__item__price__amount">
+                <article>
+                    $000
+                </article>
+                <!-- Form de cantidad de producto, con opcion de aumentar y disminuir -->
+                <article>
+                    <input type="number" value="1" min="0" max="24" form="finCompra" required>
+                </article>
+                <!-- Total del producto (precio x cantidad) -->
+                <article>
+                    $000
+                </article>
+            </div>
+
+            </div>
+            <!-- Fin de cart mobile header -->
+
         </section>
+        <!-- Fin producto 1 -->
 
 
         <!-- Producto 2 -->
-        <section>
-            <!-- Imagen principal de producto, clickable a la página de productDetail -->
-            <article>
-                <a href="/productDetail"><img src="" alt="Imagen del producto 2"></a>
-            </article>
-            <!-- Nombre del producto -->
-            <article>
-                Nombre producto 2
-            </article>
-            <!-- Info del producto -->
-            <article>
-                Detalle producto 2
-            </article>
+        <section class="cart__item">
+            <!-- Imagen y nombre de producto -->
+            <div class="cart__item__img__name">
+                <a href="/productDetail"><img src="public/img/product001.jpg" alt="IMAGEN 2"></a>
+                <article class="cart__item__name__details">
+                        <p>Producto 2</p>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>           
+                </article>        
+            </div>
+            
+            <!-- Comienza header para mobile -->
+            <div class="cart__mobile__header">
+
+
+            <!-- Encabezados para versión móvil -->
+            <div class="cart__mobile__header__titles">
+                <article>PRECIO</article>
+                <article>CANTIDAD</article>
+                <article>TOTAL</article>
+            </div>
+
+
             <!-- Precio del producto -->
-            <article>
-                $XXX
-            </article>
-            <!-- Form de cantidad de producto, con opcion de aumentar y disminuir -->
-            <article>
-                <input type="number" value="1" min="0" max="24" form="finCompra" required>
-            </article>
-            <!-- Total del producto (precio x cantidad) -->
-            <article>
-                $XXX
-            </article>
+            <div class="cart__item__price__amount">
+                <article>
+                    $000
+                </article>
+                <!-- Form de cantidad de producto, con opcion de aumentar y disminuir -->
+                <article>
+                    <input type="number" value="1" min="0" max="24" form="finCompra" required>
+                </article>
+                <!-- Total del producto (precio x cantidad) -->
+                <article>
+                    $000
+                </article>
+            </div>
+
+            </div>
+            <!-- Fin de cart mobile header -->
+
         </section>
+        <!-- Fin producto 2 -->
 
         <!-- Subtotal, costo de envío, total final y botón finalizar compra -->
         <section>
             <article>Subtotal</article>            
-            <article>$XXX</article>            
+            <article>$000</article>            
             <article>Envío</article>            
-            <article>$XXX</article>            
+            <article>$000</article>            
             <article>TOTAL</article>            
-            <article>$XXX</article>            
+            <article>$000</article>            
             <article>
                 <form action="/home" method="GET" id="finCompra">
                 <button type="submit"><img src="" alt="Finalizar compra"></button>            
