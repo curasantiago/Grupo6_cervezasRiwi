@@ -3,24 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulario de Pago</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="https://kit.fontawesome.com/5376d63d7e.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
+    <title>Login</title>
 </head>
-    <body>
-        <header>
+<body>
+        <header class="header">
+            <div class="header-img-container">
+                <img src="/img/logo.png" alt="LOGO DE CERVEZAS RIWI" class="header-logo">
+            </div>
 
-        </header>
-    
-        <section>
-            <article>
-                <img src="" alt="Imagen que ocupa la mitad de la pantalla"> <!----IMAGEN OCUPA LA MITAD------->
+            <nav class="nav"> <!---------------BARRA DE NAVEGACIÓN---------------------->
+                <a href="">CERVEZAS</a>
+                <a href="">HISTORIA</a>
+                <a href="">AYUDA</a>
+                <a href="">CONTACTO</a>
+            </nav>
+
+            <div class="header-icons-container">
+                <a href=""><i class="fas fa-user header-icons"></i></a>
+                <a href=""><i class="fas fa-shopping-bag header-icons"></i></a>
+                <a href=""><i class="fas fa-key header-icons"></i></a>
+                <a href=""><i class="fas fa-bars header-icons" id="menu"></i></a>
+            </div>   
+        </header>    
+   
+    <div class="payForm-app-container">
+        <section class="payForm-section-img">
+            <article class="payForm-article-img">
+                <img src="" alt="Imagen que ocupa la mitad de la pantalla" id="payForm-img"> <!----IMAGEN OCUPA LA MITAD------->
             </article>
         </section>
 
-        <main>
-            <h2>INCLUIR MEDIO DE PAGO</h2>
-            <section>
-                <article>
-                    <form action="" method="POST">          <!----FORMULARIO------->
+        <main class="payForm-main">
+            <section class="payForm-section">
+                <article class="payForm-article">
+                    <h2 class="payForm-h2">INCLUIR MEDIO DE PAGO</h2>
+            
+                    <form action="" method="POST" class="payForm-form">          <!----FORMULARIO------->
                         <input type="text" name="nombreApellido" id="nombreApellido" placeholder="Nombre y Apellido">
 
                         <input type="text" name="DNI" id="DNI" placeholder="DNI">
@@ -47,5 +68,6 @@
                 </article>
             </section>
         </main>
-    </body>
+    </div>
+</body>
 </html>

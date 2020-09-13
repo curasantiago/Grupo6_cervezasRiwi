@@ -11,7 +11,13 @@ app.get('/header', (req, res) => {
     res.sendFile(__dirname + '/header.html')
 })
 
+app.get('/login', (req, res) => {
+    res.sendFile(__dirname + '/login.html')
+})
 
+app.get('/payForm', (req, res) => {
+    res.sendFile(__dirname + '/payForm.html')
+})
 
 app.listen(3000, () => {
     console.log('Servidor corriendo..')
