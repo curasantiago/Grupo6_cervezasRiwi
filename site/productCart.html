@@ -5,11 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Carrito de compras</title>
     <link rel="stylesheet" href="public/css/style.css">
+    <script src="https://kit.fontawesome.com/5376d63d7e.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Dejo vacío el header para hacer copy paste después de lo que arme Pachi -->
-    <header>
 
+    <header class="header">
+        <div class="header-img-container">
+            <img src="public/img/logo.png" alt="LOGO DE CERVEZAS RIWI" class="header-logo">
+        </div>
+
+        <nav class="nav"> <!---------------BARRA DE NAVEGACIÓN---------------------->
+            <a href="">CERVEZAS</a>
+            <a href="">HISTORIA</a>
+            <a href="">AYUDA</a>
+            <a href="">CONTACTO</a>
+        </nav>
+
+        <div class="header-icons-container">
+            <a href=""><i class="fas fa-user header-icons"></i></a>
+            <a href=""><i class="fas fa-shopping-bag header-icons"></i></a>
+            <a href=""><i class="fas fa-key header-icons"></i></a>
+            <a href=""><i class="fas fa-bars header-icons" id="menu"></i></a>
+        </div>   
     </header>
     
     <!-- Título y cantidad de items -->
@@ -18,7 +36,7 @@
             MI CARRITO
         </article>
         <article>
-            (2 items)
+            (3 ITEMS)
         </article>
     </section>
 
@@ -38,7 +56,7 @@
             <div class="cart__item__img__name">
                 <a href="/productDetail"><img src="public/img/product003.jpg" alt="IMAGEN 1"></a>
                 <article class="cart__item__name__details">
-                        <p>Producto 1</p>
+                        <p>PRODUCTO 1</p>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>           
                 </article>        
             </div>
@@ -61,8 +79,10 @@
                     $000
                 </article>
                 <!-- Form de cantidad de producto, con opcion de aumentar y disminuir -->
-                <article>
-                    <input type="number" value="1" min="0" max="24" form="finCompra" required>
+                <article class="cart__product__amount">
+                    <textarea name="prod__amount_1" id="prod__amount_1" cols="2" rows="1" form="finCompra" readonly>1</textarea>
+                    <a href=""><img src="public/img/plus.png" alt=""></a>                    
+                    <a href=""><img src="public/img/minus.png" alt=""></a>
                 </article>
                 <!-- Total del producto (precio x cantidad) -->
                 <article>
@@ -83,7 +103,7 @@
             <div class="cart__item__img__name">
                 <a href="/productDetail"><img src="public/img/product001.jpg" alt="IMAGEN 2"></a>
                 <article class="cart__item__name__details">
-                        <p>Producto 2</p>
+                        <p>PRODUCTO 2</p>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>           
                 </article>        
             </div>
@@ -106,8 +126,10 @@
                     $000
                 </article>
                 <!-- Form de cantidad de producto, con opcion de aumentar y disminuir -->
-                <article>
-                    <input type="number" value="1" min="0" max="24" form="finCompra" required>
+                <article class="cart__product__amount">
+                    <textarea name="prod__amount_2" id="prod__amount_2" cols="2" rows="1" form="finCompra" readonly>2</textarea>
+                    <a href=""><img src="public/img/plus.png" alt=""></a>                    
+                    <a href=""><img src="public/img/minus.png" alt=""></a>
                 </article>
                 <!-- Total del producto (precio x cantidad) -->
                 <article>
@@ -122,16 +144,22 @@
         <!-- Fin producto 2 -->
 
         <!-- Subtotal, costo de envío, total final y botón finalizar compra -->
-        <section>
-            <article>Subtotal</article>            
-            <article>$000</article>            
-            <article>Envío</article>            
-            <article>$000</article>            
-            <article>TOTAL</article>            
-            <article>$000</article>            
+        <section class="cart__final__info">
+            <article class="cart__final__row__subtotal">
+                <p>Subtotal</p> 
+                <p>$000</p>
+            </article>
+            <article class="cart__final__row__subtotal">
+                <p>Envío</p> 
+                <p>$000</p>
+            </article>
+            <article class="cart__final__row__total">
+                <p>TOTAL</p> 
+                <p>$000</p>
+            </article>            
             <article>
                 <form action="/home" method="GET" id="finCompra">
-                <button type="submit"><img src="" alt="Finalizar compra"></button>            
+                <button class="cart__buy__button" type="submit">FINALIZAR COMPRA</button>            
                 </form>
             </article>
         </section>
