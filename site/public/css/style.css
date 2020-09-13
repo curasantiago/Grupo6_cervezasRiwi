@@ -13,12 +13,13 @@
 .header {
     display: flex;
     flex-wrap: wrap;
-    padding: 9px;
+    padding: 0px;
     justify-content: space-between;
-    background-color: #40C057;
+    background: linear-gradient(90deg, rgba(218,203,94,1) 0%, rgba(166,150,30,1) 100%, rgba(166,150,30,1) 100%, rgba(166,150,30,1) 100%);
     opacity: 0.9;
     margin: 0 auto;
     border-bottom: 2px solid gainsboro; 
+    
 }
 
 
@@ -336,172 +337,172 @@
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /*--------------------------- FIN PRODUCT DETAIL --------------------------*/
 
-/* CART INICIO - CARRITO DE COMPRAS */
+/*---------------------------LOGIN-------------------------------*/
+
+
+.login-app-container {
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    margin: 5px auto;
+    width: 380px;
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+    margin-top: 30px;
+    background: linear-gradient(90deg, rgba(242,242,242,1) 0%, rgba(235,230,230,1) 95%, rgba(247,247,247,1) 100%, rgba(242,242,242,1) 100%);
+}
+
+.login-main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+}
+
+.login-section-img {
+    display: none;
+}
+
+.login-section-usuario {
+    display: flex;
+    justify-content: center;
+}
+
+.login-cuenta {
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    padding: 20px;
+}
+
+#login-cuenta-button {
+    padding: 11px;
+    border-radius: 25px;
+    width: 100px;
+    border: none;
+    background: linear-gradient(90deg, rgba(240,225,114,1) 0%, rgba(166,150,30,1) 100%, rgba(166,150,30,1) 100%, rgba(166,150,30,1) 100%);
+    margin-left: 10px;
+    transition: all 0.5s;
+    
+}
+
+#login-cuenta-button:hover {
+    color: gainsboro;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    margin: 15px 0px;
+    
+   
+}
+
+.login-input {
+    margin: 15px 0px;
+    border-radius: 25px;
+    padding: 15px;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    width: 250px;
+    border-bottom: 2px solid grey;
+    border-block-start-style: none;
+    
+}
+
+.login-form-button {
+    padding: 13px;
+    border-radius: 20px;
+    width: 250px;
+    
+    border: none;
+    background: linear-gradient(90deg, rgba(240,225,114,1) 0%, rgba(166,150,30,1) 100%, rgba(166,150,30,1) 100%, rgba(166,150,30,1) 100%);
+    margin: 10px 0px;
+    transition:  all 0.5s;
+}
+
+.login-form-button:hover {
+    color: gainsboro;
+    
+}
+
+.login-form>p {
+    margin: 10px 5px;
+    
+}
+#login-form-a {
+    color: #a6961e;
+}
+#login-form-a:hover {
+    font-style: bold;
+    padding-left: 11px;
+}
+.login-section-redes {
+    padding: 17px;
+}
+
+.login-article-redes {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-icon {
+    
+    padding: 10px;
+    transition: all 0.7s;
+    border-radius: 50%;
+    border: 1px solid whitesmoke;
+    margin: 0 20px;
+}
+
+.login-icon:hover {
+    background: linear-gradient(90deg, rgba(240,225,114,1) 0%, rgba(166,150,30,1) 100%, rgba(166,150,30,1) 100%, rgba(166,150,30,1) 100%);
+    color: gainsboro; 
+}
+
+
+
+@media (min-width: 1000px) {
+    .login-app-container {
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+        padding: 0px;
+        width: 90%;
+        height: 90%;
+        
+    }
+  
+    .login-section-img {
+        display: flex;
+        flex: 1;
+       ;
+    }
+
+    .login-main {
+        flex: 1;
+        padding: 20px;
+    }
+
+    #login-img-beer {
+        width: 100%;
+        object-fit: cover;
+        height: 100%;
+       
+    }
+
+}
+
+/*--------------------------- FIN LOGIN-------------------------------*/
+
+
+/*--------------------------- CART INICIO - CARRITO DE COMPRAS ---------------------------*/
 .cart__summary {
     display: flex;
     flex-wrap: nowrap;
@@ -637,4 +638,4 @@
 
 }
 
-/* CART END - CARRITO DE COMPRAS */
+/* ---------------------------CART END - CARRITO DE COMPRAS ---------------------------*/
