@@ -19,7 +19,12 @@ app.get('/payForm', (req, res) => {
     res.sendFile(__dirname + '/payForm.html')
 })
 
+app.get('/registerForm', (req, res) => {
+    res.sendFile(__dirname + '/registerForm.html')
+})
+
 app.listen(3000, () => {
     console.log('Servidor corriendo..')
 });
+
 

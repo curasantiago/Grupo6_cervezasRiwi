@@ -1,43 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulario de Registro</title>
-</head>
-<body>
-    <header>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/css/style.css">
+        <script src="https://kit.fontawesome.com/5376d63d7e.js" crossorigin="anonymous"></script>
+        <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
+        <title>Registrarse</title>
+    </head>
+    <body>
+        <header class="header">
+                <div class="header-img-container">
+                    <img src="/img/logo.png" alt="LOGO DE CERVEZAS RIWI" class="header-logo">
+                </div>
 
-    </header>
+                <nav class="nav"> <!---------------BARRA DE NAVEGACIÓN---------------------->
+                    <a href="">CERVEZAS</a>
+                    <a href="">HISTORIA</a>
+                    <a href="">AYUDA</a>
+                    <a href="">CONTACTO</a>
+                </nav>
 
-    <section>
-        <article>
-            <img src="" alt="Imagen que ocupa la mitad de la pantalla"> <!----IMAGEN------------->
-        </article>
-    </section>
+                <div class="header-icons-container">
+                    <a href=""><i class="fas fa-user header-icons"></i></a>
+                    <a href=""><i class="fas fa-shopping-bag header-icons"></i></a>
+                    <a href=""><i class="fas fa-key header-icons"></i></a>
+                    <a href=""><i class="fas fa-bars header-icons" id="menu"></i></a>
+                </div>   
+        </header>    
+    
+        <div class="registerForm-app-container">
+            <section class="registerForm-section-img">
+                <article class="registerForm-article-img">
+                    <img src="/img/registerForm_beer2.jpg" alt="cerveza" id="registerForm-img"> <!----IMAGEN------------->
+                </article>
+            </section>
 
-    <main>
-        <section>
-            <article>
-                <a href="">Icono de facebook</a>
-                <button>Registrarse con Facebook</button>
-                <p>o</p>
-                <p>Registrarse con tu dirección de email</p>
-            </article>
-        </section>
+            <main class="registerForm-main">
+                
 
-        <section>
-            <article>
-                <form action="" method="post"> <!--------------FORMULARIO------------->
-                    <input type="text" name="nombre" id="nombre" placeholder="Nombre">
-                    <input type="text" name="apellido" id="apellido" placeholder="Apellido">
-                    <input type="email" name="nombre" id="nombre" placeholder="Email ">
-                    <input type="password" name="password" id="password" placeholder="Contraseña">
-                    <p>CAPTCHA</p>
-                    <button>CONFIRMAR</button>
-                </form>
-            </article>
-        </section>
-    </main>
+                <section class="registerForm-main">
+                    <div class="registerForm-section">
+                        <div class="registerForm-article">
+                            <a href=""><i class="fab fa-facebook-square fa-2x registerForm-fb"></i></a>
+                            <button class="registerForm-button-fb">Registrarse con Facebook</button>
+                    <article class="registerForm-article">
+                        
+                        <form action="" method="post"> <!--------------FORMULARIO------------->
+                            <p id="registerForm-p"> Registrarse con dirección de email</p>
+                            <input type="text" name="nombre" id="nombre" placeholder="Nombre" class="registerForm-input">
+                            <input type="text" name="apellido" id="apellido" placeholder="Apellido" class="registerForm-input">
+                            <input type="email" name="nombre" id="nombre" placeholder="Email" class="registerForm-input">
+                            <input type="password" name="password" id="password" placeholder="Contraseña" class="registerForm-input">
+                            <p>CAPTCHA</p>
+                            <button class="registerForm-button">CONFIRMAR</button>
+                        </form>
+                    </article>
+                </section>
+            </main>
+        </div>
 </body>
 </html>
