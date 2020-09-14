@@ -3,6 +3,9 @@ PROYECTO MARKETPLACE: RIWI CERVEZAS
 Riwi: Palabra quechua que hace referencia a cereales como el trigo o la cebada.
 
 
+TABLERO DE TRABAJO (TRELLO): https://trello.com/b/KsiDVWu8
+
+
 TEMÁTICA DEL SITIO. DESCRIPCIÓN DE PRODUCTOS OFRECIDOS
 
 Nos especializamos en la venta de cervezas nacionales. Ofrecemos una gran variedad de marcas artesanales e industriales. Queremos que nuestros productos brinden momentos de placer y alegría. Con este objetivo en mente nos propusimos orientar a nuestros clientes en este mundo de sabores de un modo fácil y dinámico y creamos un buscador en nuestro sitio que los ayudará a encontrar su cerveza ideal.
