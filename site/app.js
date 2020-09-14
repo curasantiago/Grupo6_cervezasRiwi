@@ -23,6 +23,14 @@ app.get('/registerForm', (req, res) => {
     res.sendFile(__dirname + '/registerForm.html')
 })
 
+app.get('/productDetail', (req, res) => {
+    res.sendFile(__dirname + '/productDetail.html')
+})
+
+app.get('/productCart', (req, res) => {
+    res.sendFile(__dirname + '/productCart.html')
+})
+
 app.listen(3000, () => {
     console.log('Servidor corriendo..')
 });
