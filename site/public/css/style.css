@@ -725,6 +725,78 @@
 
 /* ---------------------------CART END - CARRITO DE COMPRAS ---------------------------*/
 
+/* ---------------------------ingreso inicio - INGRESO ---------------------------*/
+body{
+    background:gainsboro;
+}
+.contener__logo{
+    
+    background:linear-gradient(90deg, rgba(218,203,94,1) 0%, rgba(166,150,30,1) 100%, rgba(166,150,30,1) 100%, rgba(166,150,30,1) 100%);
+    margin-left:auto;
+    margin-right:auto;
+}
+.contener__logo img{
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 15px;
+}
+.contenedor__formulario{
+    background:whitesmoke;
+    display:flex;
+    width: 100%;
+    text-align: center;
+    flex-direction:column;
+}
+.contiene__titulo{
+    width: 100%;    
+}
+.contiene__form{
+    margin-top: 30px;  
+}
+.formulario input{
+    border-radius: 25px;
+    border-bottom-right-radius: 25px;
+}
+.terminos__ingreso{
+    text-align: center;
+    background:linear-gradient(90deg, rgba(218,203,94,1) 0%, rgba(166,150,30,1) 100%, rgba(166,150,30,1) 100%, rgba(166,150,30,1) 100%);
+}
+.terminos__ingreso a{
+    color:black;
+}
+.boton__subir *:hover{
+    background:linear-gradient(90deg, rgba(218,203,94,1) 0%, rgba(166,150,30,1) 100%, rgba(166,150,30,1) 100%, rgba(166,150,30,1) 100%);
+    opacity: 0.8;
+    border-radius: 25px;
+    border-bottom-right-radius: 25px;
+}
+.boton__subir button{
+    transition: all 0.5s;
+}
+
+
+@media (min-width:426px){
+    .contener__logo img{
+        display:block;
+        margin:auto;
+    }
+}
+@media (min-width:726px){
+    .boton__subir button{
+        width: 100px;
+        height: 40px;
+    }
+    .contiene__form input{
+        width: 100px;
+        height: 40px; 
+    }
+}
+
+
+
+
+/* ---------------------------infreso fin - INGRESO ---------------------------*/
+
 
 
 
