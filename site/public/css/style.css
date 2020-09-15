@@ -548,6 +548,10 @@
     white-space: nowrap;
 }
 
+.cart__item__img__name a:hover {
+    opacity: 0.7;
+}
+
 .cart__item__img__name img {
     width: 100%;
 }
