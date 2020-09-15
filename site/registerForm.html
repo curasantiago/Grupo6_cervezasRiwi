@@ -11,7 +11,7 @@
     <body>
         <header class="header">
                 <div class="header-img-container">
-                    <img src="/img/logo.png" alt="LOGO DE CERVEZAS RIWI" class="header-logo">
+                    <a href="index.html"><img src="/img/logo.png" alt="LOGO DE CERVEZAS RIWI" class="header-logo"></a>
                 </div>
 
                 <nav class="nav"> <!---------------BARRA DE NAVEGACIÓN---------------------->
@@ -24,7 +24,7 @@
                 <div class="header-icons-container">
                     <a href=""><i class="fas fa-user header-icons"></i></a>
                     <a href=""><i class="fas fa-shopping-bag header-icons"></i></a>
-                    <a href=""><i class="fas fa-key header-icons"></i></a>
+                    <a href=""><i class="fas fa-search fa-lg"></i></a>
                     <a href=""><i class="fas fa-bars header-icons" id="menu"></i></a>
                 </div>   
         </header>    
@@ -48,10 +48,10 @@
                         
                         <form action="" method="post"> <!--------------FORMULARIO------------->
                             <p id="registerForm-p"> Registrarse con dirección de email</p>
-                            <input type="text" name="nombre" id="nombre" placeholder="Nombre" class="registerForm-input">
-                            <input type="text" name="apellido" id="apellido" placeholder="Apellido" class="registerForm-input">
-                            <input type="email" name="nombre" id="nombre" placeholder="Email" class="registerForm-input">
-                            <input type="password" name="password" id="password" placeholder="Contraseña" class="registerForm-input">
+                            <input type="text" name="nombre" id="nombre" placeholder="Nombre" class="registerForm-input" required>
+                            <input type="text" name="apellido" id="apellido" placeholder="Apellido" class="registerForm-input" required>
+                            <input type="email" name="nombre" id="nombre" placeholder="Email" class="registerForm-input" required>
+                            <input type="password" name="password" id="password" placeholder="Contraseña" class="registerForm-input" required>
                             <p>CAPTCHA</p>
                             <button class="registerForm-button">CONFIRMAR</button>
                         </form>
