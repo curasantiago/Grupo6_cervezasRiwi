@@ -32,6 +32,10 @@ app.get('/productCart', (req, res) => {
     res.sendFile(__dirname + '/productCart.html')
 })
 
+app.get('/ingreso', (req, res) => {
+    res.sendFile(__dirname + '/ingreso.html')
+})
+
 app.listen(3000, () => {
     console.log('Servidor corriendo..')
 });

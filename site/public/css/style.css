@@ -892,7 +892,7 @@ body{
     }
       .accion__comprar{
         width: 25%;
-        height: auto%;
+        height: auto;
     }
     .accion__artesanal{
         width: 25%;
@@ -910,24 +910,11 @@ body{
         height: auto;
     }
     .panel__inicial {
-      text-aligne:center;
+      text-align:center;
     }
 }
 
 /* ---------------------------FIN HOME ---------------------------*/
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 /*-----------------------------PAY FORM-----------------------------------------*/
 .payForm-app-container {
