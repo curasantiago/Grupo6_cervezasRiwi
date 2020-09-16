@@ -660,11 +660,15 @@
     overflow: hidden;   
     white-space: nowrap;
     background-color: whitesmoke;
-    width: 100%;
+    width: 200%;
     padding: 5%;
     box-sizing: content-box;
     background-color: #A6961E;
     color: white;
+    position: relative;
+    right: 100%;
+    padding: 5%;
+    font-size: 1.2em;
 }
 
 .cart__buy__button:hover {
