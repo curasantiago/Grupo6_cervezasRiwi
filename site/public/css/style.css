@@ -878,7 +878,7 @@ body{
     .contenedor__padre{
         flex-wrap: wrap; 
         width:100%;
-        height: 300px;      
+        height: 80%;      
     }
     .panel__inicial{   
         display:flex;
@@ -887,12 +887,12 @@ body{
         justify-content: space-between; 
         margin:15px
     }
-    .panel__inicial article{
-        padding:2%;
+    .panel__inicial article a{
+        padding:5%;
     }
       .accion__comprar{
         width: 25%;
-        height: auto%;
+        height: auto;
     }
     .accion__artesanal{
         width: 25%;
@@ -910,7 +910,7 @@ body{
         height: auto;
     }
     .panel__inicial {
-      text-aligne:center;
+      text-align:center;
     }
 }
 
