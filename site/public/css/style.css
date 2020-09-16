@@ -120,6 +120,7 @@
     flex-wrap: wrap;
     text-align: center;
     margin-top: 1%;
+    margin-right: 2%;
 }
 
 .product__img {
@@ -133,6 +134,7 @@
 
 .product__img * {
     width: 100%;
+    object-fit: cover;
 }
 
 .product__img *:hover {
@@ -223,8 +225,10 @@
 }
 
 .product__add__button {
-    width: 40%;
+    width: 80%;
     background-color: #a6a6a6;
+    padding: 3%;
+    font-size: 1.2em;
 }
 
 .product__add__fav {
@@ -235,12 +239,14 @@
 }
 
 .product__add__fav img {
-    width: 100%;
+    width: 150%;
 }
 
 .product__buynow__button {
-    width: 60%;
+    width: 100%;
+    padding: 3%;
     background-color: #dacb5e;
+    font-size: 1.2em;
 }
 
 .product__info {
@@ -308,7 +314,7 @@
     }
         
     .product__left__column {
-        width: 50%;
+        width: 48%;
        }
 
     .product__right__column {
@@ -317,27 +323,38 @@
     }
 
     .product__ranking a {
-        width: 5%;
+       width: 5%;
     }
 
     .product__buy__form {
         width: 100%;
     }
-    
-    .product__info {
-    width: 80%;
-    margin: 1.2%;
-    } 
- .product__user__stars img {
-    width: 2%;
-}
-}
+        
+    .product__add__button {
+        width: 60%;
+        padding: 1.5%;
+        font-size: 1em;
+    }
 
+    .product__add__fav img {
+        width: 100%;
+    }
+
+    .product__buynow__button {
+        width: 80%;
+        padding: 1.5%;
+        font-size: 1em;
+    }
+
+    .product__info {
+        width: 80%;
+        margin: 1.2%;
+    } 
+    
     .product__user__stars img {
         width: 2%;
     }
-
-
+}
 
 /*--------------------------- FIN PRODUCT DETAIL --------------------------*/
 
@@ -888,7 +905,7 @@ body{
         margin:15px
     }
     .panel__inicial article a{
-        padding:5%;
+        padding:6%;
     }
       .accion__comprar{
         width: 25%;
