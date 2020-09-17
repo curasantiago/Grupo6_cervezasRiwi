@@ -1216,3 +1216,16 @@ padding: 20px;
         display: flex;
     }
 }
+
+
+#recordarme {
+    margin-right: 5px;
+    margin-left: 10px;
+}
+
+.checkbox-container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+
+}
