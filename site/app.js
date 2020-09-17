@@ -8,10 +8,6 @@ app.get('/', (req, res) => {
     res.sendFile(__dirname + '/index.html')
 })
 
-app.get('/header', (req, res) => {
-    res.sendFile(__dirname + '/header.html')
-})
-
 app.get('/login', (req, res) => {
     res.sendFile(__dirname + '/login.html')
 })
@@ -34,6 +30,10 @@ app.get('/productCart', (req, res) => {
 
 app.get('/ingreso', (req, res) => {
     res.sendFile(__dirname + '/ingreso.html')
+})
+
+app.get('/header', (req, res) => {
+    res.sendFile(__dirname + '/header.html')
 })
 
 app.listen(3000, () => {
