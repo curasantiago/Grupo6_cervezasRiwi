@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/stylesheets/style.css">
+        <script src="https://kit.fontawesome.com/5376d63d7e.js" crossorigin="anonymous"></script>
+        <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
+        <title>Registrarse</title>
+    </head>
+    <body>
+        <%- include('partials/header') %>
+    
+        <div class="registerForm-app-container">
+            <section class="registerForm-section-img">
+                <article class="registerForm-article-img">
+                    <img src="/images/img/registerForm_beer2.jpg" alt="cerveza" id="registerForm-img"> <!----IMAGEN------------->
+                </article>
+            </section>
+
+            <main class="registerForm-main">
+                
+
+                <section class="registerForm-main">
+                    <div class="registerForm-section">
+                        <div class="registerForm-article">
+                            <a href=""><i class="fab fa-facebook-square fa-2x registerForm-fb"></i></a>
+                            <button class="registerForm-button-fb">Registrarse con Facebook</button>
+                    <article class="registerForm-article">
+                        
+                        <form action="" method="post"> <!--------------FORMULARIO------------->
+                            <p id="registerForm-p"> Registrarse con dirección de email</p>
+                            <input type="text" name="nombre" id="nombre" placeholder="Nombre" class="registerForm-input" required>
+                            <input type="text" name="apellido" id="apellido" placeholder="Apellido" class="registerForm-input" required>
+                            <input type="email" name="nombre" id="nombre" placeholder="Email" class="registerForm-input" required>
+                            <input type="password" name="password" id="password" placeholder="Contraseña" class="registerForm-input" required>
+                            <p>CAPTCHA</p>
+                            <button class="registerForm-button">CONFIRMAR</button>
+                        </form>
+                    </article>
+                </section>
+            </main>
+        </div>
+
+        <%- include('partials/footer') %>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cervezas Riwi</title>
+    <link rel="stylesheet" href="/stylesheets/style.css"></link>
+    <script src="https://kit.fontawesome.com/5376d63d7e.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+    <div class="contener__logo">        
+        <div class="logo__uno">   
+            <img src="/images/img/logo.png" alt="logo">   
+        </div>
+    </div>
+    <div class="contenedor__formulario">                     
+            <section class="seccion__formulario">
+                <div class="contiene__titulo">
+                   <h1 >
+                       Ingresa tu fecha de nacimiento
+                   </h1>
+                </div>
+            </section>
+        <div class="contiene__form">
+             <section class="formulario">                  
+                <form class="" action="" method="post"></form>              
+                            <label for="start">fecha de nacimiento:</label> <!-- para validar fecha -->
+                                 <input type="date" id="start" name="edad_start"
+                                   value="2002-01-01"
+                                   min="2002-01-01" max="2008-01-01">             
+                        <p class="boton__subir">
+                            <button type="submit">ingresar</button>              
+                        </p>
+                </form> 
+              </section>        
+        </div>                
+    </div>
+    <%- include('partials/footer') %>
+     
+</body>
+</html>
+

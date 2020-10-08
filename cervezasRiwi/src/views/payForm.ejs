@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <script src="https://kit.fontawesome.com/5376d63d7e.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
+    <title>Login</title>
+</head>
+<body>
+        <%- include('partials/header') %>
+   
+    <div class="payForm-app-container">
+        <section class="payForm-section-img">
+            <article class="payForm-article-img">
+                <img src="/images/img/payForm_beer.jpg" alt="cerveza" id="payForm-img"> <!----IMAGEN OCUPA LA MITAD------->
+            </article>
+        </section>
+
+        <main class="payForm-main">
+            <section class="payForm-section">
+                <h2 class="payForm-h2">INCLUIR MEDIO DE PAGO</h2>
+                    <article class="payForm-article">
+                    
+            
+                        <form action="" method="POST" class="payForm-form">          <!----FORMULARIO------->
+                            <input type="text" name="nombreApellido" id="nombreApellido" placeholder="Nombre y Apellido" class="payForm-input">
+
+                            <input type="text" name="DNI" id="DNI" placeholder="DNI" class="payForm-input">
+                            
+                            
+                            <label for="tipoTarjeta">Seleccione tipo de tarjeta: </label>
+                            <select name="tipoTarjeta" id="tipoTarjeta">
+                                <option value="credito">CREDITO</option>
+                                <option value="debito">DEBITO</option>
+                            </select>
+                            
+                            <input type="text" name="nombreDeTarjeta" id="nombreDeTarjeta" placeholder="Nombre del titular" class="payForm-input" required>
+
+                            <input type="text" name="numeroTarjeta" id="numeroTarjeta" placeholder="Numero de tarjeta" class="payForm-input" required>
+
+                            <input type="text" name="fechaVencimiento" id="fechaVencimiento" placeholder="Fecha de vencimiento" class="payForm-input" required>
+                            
+                            <input type="password" name="codigoSeguridad" id="codigoSeguridad" placeholder="Código de seguridad" class="payForm-input" required>
+                            
+                            <input type="text" name="domicilioFacturacion" id="domicilioFacturacion" placeholder="Domicilio de facturación" class="payForm-input" required>
+                            
+                            <input type="checkbox" name="tyc" id="tyc" required> Términos y condiciones
+                            
+                        <button type="submit" class="payForm-button">CONFIRMAR</button>
+                     </form>
+                 </article>
+             </section>
+         </main>
+    </div>
+
+    <%- include('partials/footer') %>
+ </body>
+</html>
