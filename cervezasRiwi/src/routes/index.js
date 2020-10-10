@@ -18,12 +18,20 @@ router.get('/payForm', (req, res) => {
   res.render('payForm')
 })
 
-router.get('/productCart', (req, res) => {
+router.get('/productDetail', (req, res) => {
   res.render('productDetail');
+})
+
+router.get('/productCart', (req, res) => {
+  res.render('productCart');
 })
 
 router.get('/registerForm', (req, res) => {
   res.render('registerForm');
+})
+
+router.get('/productCreate', (req, res) => {
+  res.render('productCreateForm.ejs');
 })
 
 module.exports = router;

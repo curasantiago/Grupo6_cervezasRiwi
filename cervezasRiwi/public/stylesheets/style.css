@@ -887,7 +887,7 @@ body{
     font-size: 20px; 
     text-align: center;
     margin:15px;
-    background-image: url(/img/barriles-de-cerveza.png);
+    background-image: url(/images/img/barriles-de-cerveza.png);
 }
 
 .accion__artesanal{
@@ -895,21 +895,21 @@ body{
     text-align: center;
     font-size: 20px; 
     margin:15px;   
-    background-image: url(/img/cerveza_barra.jpeg);
+    background-image: url(/images/img/cerveza_barra.jpeg);
 }
 .accion__industrial{
     background: linear-gradient(90deg, rgba(218,203,94,1) 0%, rgba(166,150,30,1) 100%, rgba(166,150,30,1) 100%, rgba(166,150,30,1) 100%);  
     text-align: center;
     font-size: 20px; 
     margin:15px;
-    background-image: url(/img/cerveza_barra.jpeg);
+    background-image: url(/images/img/cerveza_barra.jpeg);
 }
 .accion__elegir{
     background: linear-gradient(90deg, rgba(218,203,94,1) 0%, rgba(166,150,30,1) 100%, rgba(166,150,30,1) 100%, rgba(166,150,30,1) 100%);
     text-align: center;
     font-size: 20px; 
     margin:15px;
-    background-image: url(/img/barriles-de-cerveza.png);
+    background-image: url(/images/img/barriles-de-cerveza.png);
 }
 @media(min-width:769px){
     .contenedor__padre{
@@ -1229,3 +1229,97 @@ padding: 20px;
     align-items: center;
 
 }
+
+
+
+/* ---------------PRODUCT CREATE FORM--------------------- */
+
+.create__form__container {
+    width: 80%;
+    margin: 5px auto;
+    padding: 5px;
+    background: linear-gradient(90deg, rgba(242,242,242,1) 0%, rgba(235,230,230,1) 95%, rgba(247,247,247,1) 100%, rgba(242,242,242,1) 100%);
+    border-radius: 25px;
+}
+
+.create__form {
+    display: flex;
+    flex-direction: column;
+}
+
+.create__form * {
+    margin: 1%;
+    padding: 1%;
+    font-size: 1.3em;
+}
+
+.create__form__title {
+    text-align: center;
+    font-size: 1.3em;
+    padding: 2%;
+}
+
+.create__form__item {
+    border-radius: 25px;
+    padding: 10px;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    border-bottom: 2px solid grey;
+    border-block-start-style: none;
+    display: block;
+}
+
+.create__form__button__container {
+    display: flex;
+    justify-content: center;
+
+}
+.create__form__button {
+        width: 90%;
+        font-size: 1.3em;
+        margin: 30px 0px;
+        padding: 13px;
+        border-radius: 20px;
+        border: none;
+        background: linear-gradient(90deg, rgba(240,225,114,1) 0%, rgba(166,150,30,1) 100%, rgba(166,150,30,1) 100%, rgba(166,150,30,1) 100%);
+        transition:  all 0.5s;
+}
+
+.create__form__button:hover {
+        color: gainsboro;
+}
+
+.create__form textarea {
+    resize:none
+}
+
+@media (min-width: 768px) {
+    .create__form__container {
+        width: 60%;
+    }
+
+    .create__form * {
+        font-size: 1.2em;
+        margin: 1%;
+    }
+
+    .create__form__title {
+        padding: 1%;
+    }
+
+    .create__form {
+        display: grid;
+        grid-template-columns: 40% 40%;
+        text-align: right;
+        justify-content: center;
+    }
+
+    .create__form__button {
+        width: 60%;
+        padding: 1%;
+        margin: 20px 0px;
+    }
+}
+
+/* ---------------FIN PRODUCT CREATE FORM--------------------- */

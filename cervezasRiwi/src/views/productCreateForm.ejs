@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crear producto nuevo</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <script src="https://kit.fontawesome.com/5376d63d7e.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
+</head>
+<body>
+<%- include('partials/header') %>
+
+<!-- Formulario alta producto -->
+<div class="create__form__container">
+    <p class="create__form__title">ALTA NUEVO PRODUCTO</p>
+    <form class="create__form" action="/" method="POST" enctype="multipart/form-data" id="createProductForm">
+        <select name="category" id="category" class="create__form__item" required>
+            <option value ="">Categoría</option>
+            <option>INDUSTRIAL</option>
+            <option>ARTESANAL</option>
+        </select>
+        <select name="subcat" id="subcat" disabled class="create__form__item">
+            <option value= "">Subcategoría</option>
+            <option>RUBIA</option>
+            <option>ROJA</option>
+            <option>NEGRA</option>
+        </select>
+        
+        <label for="name">Nombre:</label>
+        <input type="text" name="name" id="name" placeholder="Ingrese el nombre del producto" minlength="5" maxlength="30" class="create__form__item" required>
+        
+        <label for="info">Información:</label>
+        <textarea name="info" id="info" placeholder="Ingrese descripción del producto" rows="3" cols="1" minlength="5" maxlength="300" class="create__form__item" required></textarea>
+        
+        <label for="price">Precio:</label>
+        <input type="number" name="price" id="price" min="1" placeholder="Ingrese el precio del producto" class="create__form__item" required>
+        
+        <label for="file">Imágenes:</label>
+        <input type="file" name="images" id="images" multiple>
+    </form>
+    <div class="create__form__button__container">
+    <button type="submit" value="submit" class="create__form__button" form="createProductForm">CREAR PRODUCTO</button>
+    </div>
+</div>
+<!-- Fin de formulario alta producto -->
+
+<%- include('partials/footer') %>
+
+</body>
+</html>
