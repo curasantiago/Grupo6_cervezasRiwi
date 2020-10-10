@@ -7,7 +7,7 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/login', (req, res) => {
-  res.render('login')
+  res.render('login', {title: "Login"})
 })
 
 router.get('/ingreso', (req, res) => {
@@ -23,7 +23,7 @@ router.get('/productDetail', (req, res) => {
 })
 
 router.get('/productCart', (req, res) => {
-  res.render('productCart');
+  res.render('productCart', {title: "Carrito de compras"});
 })
 
 router.get('/registerForm', (req, res) => {
