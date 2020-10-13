@@ -13,8 +13,13 @@
 
 <!-- Formulario alta producto -->
 <div class="create__form__container">
+
+
+    <!-- VER MIDDLEWARE VALIDATOR -->
+
     <p class="create__form__title">ALTA NUEVO PRODUCTO</p>
-    <form class="create__form" action="/" method="POST" enctype="multipart/form-data" id="createProductForm">
+    <form class="create__form" action="/productCreate" method="POST"  id="createProductForm">
+        <!-- enctype="multipart/form-data" -->
         <select name="category" id="category" class="create__form__item" required>
             <option value ="">Categoría</option>
             <option>INDUSTRIAL</option>

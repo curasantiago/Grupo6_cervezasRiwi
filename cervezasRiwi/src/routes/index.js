@@ -1,5 +1,7 @@
 var express = require('express');
 var router = express.Router();
+const { body, validationResult, check } = require('express-validator');
+const validator = require('../middlewares/routes/validator');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -32,6 +34,26 @@ router.get('/registerForm', (req, res) => {
 
 router.get('/productCreate', (req, res) => {
   res.render('productCreateForm.ejs');
+})
+
+// router.post('/productCreate',
+// [check("name")
+//         .isInt()
+//         .withMessage("Tiene que ser numero")
+// ],
+//   (req, res) => {
+//     let errors = validationResult(req);
+//     res.send(errors)
+//   })
+      
+router.post('/productCreate', validator.productCreate, (req, res) => {
+  let errors = validationResult(req);
+  
+  if(errors.errors == "") {
+      res.redirect('/') 
+     } else {
+      res.render('productCreateForm', {errors: errors.errors});
+    };
 })
 
 module.exports = router;
