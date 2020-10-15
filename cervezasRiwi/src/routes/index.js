@@ -33,7 +33,7 @@ router.get('/registerForm', (req, res) => {
 })
 
 router.get('/productCreate', (req, res) => {
-  res.render('productCreateForm.ejs');
+  res.render('productCreateForm');
 })
 
 // router.post('/productCreate',
