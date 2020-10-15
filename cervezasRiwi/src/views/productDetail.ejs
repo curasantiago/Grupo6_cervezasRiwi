@@ -37,7 +37,10 @@
         <!-- Imágenes de producto, clickeables para agrandar -->
         <div class="product__left__column">
 
-                <section class ="product__img">
+
+
+
+                <!-- <section class ="product__img">
                     <article class="product__image__large">
                         <a href=""><img src="/images/img/product001.jpg" alt="Imagen1"></a>
                     </article>
@@ -47,12 +50,60 @@
                     <article class="product__image__small">
                         <a href=""><img src="/images/img/product003.jpg" alt="Imagen3"></a>
                     </article>
-                </section>
+                </section> -->
+
+
+                <div class="wrap">
+                    <div class="wrap2">
+                      <div class="group">
+                        <input type="radio" name="test" id="0" value="0">
+                        <label for="2" class="previous">
+                            <img src="/images/img/arrowleft.png" alt="Previous">
+                        </label>
+                        <label for="1" class="next">
+                            <img src="/images/img/arrowright.png" alt="Next">
+                        </label>
+                        <div class="content">
+                          
+                          <img class="slide__image" src="/images/img/product001.jpg" alt="Imagen1">
+                        </div>
+                      </div>
+                      <div class="group">
+                        <input type="radio" name="test" id="1" value="1">
+                        <label for="0" class="previous">
+                            <img src="/images/img/arrowleft.png" alt="Previous">
+                        </label>
+                        <label for="2" class="next">
+                            <img src="/images/img/arrowright.png" alt="Next">
+                        </label>
+                        <div class="content">
+                          
+                          <img class="slide__image" src="/images/img/product002.jpg" alt="Imagen2">
+                        </div>
+                      </div>
+                      <div class="group">
+                        <input type="radio" name="test" id="2" value="2">
+                        <label for="1" class="previous">
+                            <img src="/images/img/arrowleft.png" alt="Previous">
+                        </label>
+                        <label for="0" class="next">
+                            <img src="/images/img/arrowright.png" alt="Next">
+                        </label>
+                        <div class="content">
+                          
+                          <img class="slide__image" src="/images/img/product003.jpg" alt="Imagen3">
+                        </div>
+                      </div>
+                      
+                      
+                    </div>
+                  </div>
+            
 
                 <!-- Tiempos y costos de envío, imagen clickeable a página informativa -->
-                <section class="product__shipping__info">
+                <div class="product__shipping__info">
                     <a href="">TIEMPOS Y COSTOS DE ENVÍO</a>            
-                </section>
+                </div>
         </div>
 
         <div class="product__right__column">
@@ -107,7 +158,7 @@
     
 
     <!-- Valoraciones de los clientes -->
-    <section class="product__user__scores">
+    <div class="product__user__scores">
         <p>Puntuación de los clientes</p>
         <!-- Puntuación promedio en imágenes (estrellas) -->
         <article class="product__user__stars">
@@ -127,7 +178,7 @@
         <p>Opinión del cliente 2: Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam ad reprehenderit ab ducimus sed culpa aliquam ullam quas facilis accusantium? Quaerat voluptatum facere repellendus iure iusto veniam natus quo dolores.</p>
         </article>
         </section>
-    </section>
+    </div>
 
     <!-- Dejo vacío el footer para hacer copy paste de lo que arme Santi -->
     <%- include('partials/footer') %>
