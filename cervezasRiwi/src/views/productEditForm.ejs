@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar producto</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <script src="https://kit.fontawesome.com/5376d63d7e.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
+</head>
+<body>
+<%- include('partials/header') %>
+
+<!-- Formulario alta producto -->
+<div class="edit__form__container">
+
+
+    <!-- VER MIDDLEWARE VALIDATOR -->
+
+    <p class="edit__form__title">EDITAR PRODUCTO</p>
+    <form class="edit__form" action="/productSaveEdit?_method=PATCH" method="POST"  id="editProductForm">
+        <!-- enctype="multipart/form-data" -->
+        <select name="category" id="category" class="edit__form__item" required>
+            <option value ="">Categoría</option>
+            <option>INDUSTRIAL</option>
+            <option selected="selected">ARTESANAL</option>
+        </select>
+        <select name="subcat" id="subcat" class="edit__form__item" required>
+            <option value= "">Subcategoría</option>
+            <option>RUBIA</option>
+            <option selected="selected">ROJA</option>
+            <option>NEGRA</option>
+        </select>
+        
+        <label for="name">Nombre:</label>
+        <input type="text" name="name" id="name" placeholder="Ingrese el nombre del producto" minlength="5" maxlength="30" class="edit__form__item" value="NOMBRE PRODUCTO" required>
+        
+        <label for="info">Información:</label>
+        <textarea name="info" id="info" placeholder="Ingrese descripción del producto" cols="1" minlength="5" maxlength="300" class="edit__form__item" required>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Debitis, quam! Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptate, voluptas odio? Quam, repellat quidem! Impedit, facere nulla? Aliquam sed consequuntur ducimus, illum beatae distinctio vero facere. Eaque adipisci ipsam modi!</textarea>
+        
+        <label for="price">Precio:</label>
+        <input type="number" name="price" id="price" min="1" placeholder="Ingrese el precio del producto" class="edit__form__item" value=125 required>
+        
+        <label for="file">Imágenes:</label>
+        
+        <div class="edit__form__load__images">
+                <article class="edit__form__product__img">
+                    <a target="_blank" href="/images/img/product001.jpg"><img src="/images/img/product001.jpg" alt="Imagen1"></a>
+                    <button type="button" title="Eliminar imagen">x</button>
+                </article>
+                <article class="edit__form__product__img">
+                    <a target="_blank" href="/images/img/product002.jpg"><img src="/images/img/product002.jpg" alt="Imagen2"></a>
+                    <button type="button" title="Eliminar imagen">x</button>
+                </article>
+                <article class="edit__form__product__img">
+                    <a target="_blank" href="/images/img/product003.jpg"><img src="/images/img/product003.jpg" alt="Imagen3"></a>
+                    <button type="button" title="Eliminar imagen">x</button>
+                </article>
+        </div>
+        <div>
+        </div>
+        <input type="file" name="images" id="images" multiple>
+    </form>
+    <div class="edit__form__button__container">
+    <button type="submit" value="submit" class="edit__form__button" form="editProductForm">GUARDAR PRODUCTO</button>
+    </div>
+    <form action="/productDelete?_method=DELETE" method="POST"  id="deleteProduct">
+    <div class="edit__form__button__container">
+    <button type="submit" value="submit" class="edit__form__delete__button">ELIMINAR PRODUCTO</button>
+    </div>
+    </form>
+</div>
+<!-- Fin de formulario alta producto -->
+
+<%- include('partials/footer') %>
+
+</body>
+</html>

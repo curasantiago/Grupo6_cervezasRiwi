@@ -1285,6 +1285,7 @@ padding: 20px;
 
 .create__form__button:hover {
         color: gainsboro;
+        cursor: pointer;
 }
 
 .create__form textarea {
@@ -1388,3 +1389,148 @@ div.wrap2 {
   }
   
 /* ---------------FIN SLIDER DE IMAGENES--------------- */
+
+/* ---------------PRODUCT EDIT FORM--------------------- */
+
+.edit__form__container {
+    width: 80%;
+    margin: 20px auto;
+    padding: 5px;
+    background: linear-gradient(90deg, rgba(242,242,242,1) 0%, rgba(235,230,230,1) 95%, rgba(247,247,247,1) 100%, rgba(242,242,242,1) 100%);
+    border-radius: 25px;
+}
+
+.edit__form {
+    display: flex;
+    flex-direction: column;
+}
+
+.edit__form * {
+    margin: 1%;
+    padding: 1%;
+    font-size: 1.3em;
+}
+
+.edit__form__title {
+    text-align: center;
+    font-size: 1.3em;
+    padding: 2%;
+    color: red;
+}
+
+.edit__form__item {
+    border-radius: 25px;
+    padding: 10px;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    border-bottom: 2px solid grey;
+    border-block-start-style: none;
+    display: block;
+}
+
+.edit__form__button__container {
+    display: flex;
+    justify-content: center;
+
+}
+.edit__form__button {
+        width: 90%;
+        font-size: 1.3em;
+        margin: 15px 0px;
+        padding: 13px;
+        border-radius: 20px;
+        border: none;
+        background: linear-gradient(90deg, rgba(240,225,114,1) 0%, rgba(166,150,30,1) 100%, rgba(166,150,30,1) 100%, rgba(166,150,30,1) 100%);
+        transition:  all 0.5s;
+}
+
+.edit__form__button:hover {
+        color: gainsboro;
+        cursor: pointer;
+}
+
+.edit__form textarea {
+    font-size: 1.1em;
+    resize:none;
+    height: 12em;
+}
+
+.edit__form__delete__button {
+    width: 90%;
+    font-size: 0.9em;
+    margin: 15px 0px;
+    padding: 13px;
+    border-radius: 20px;
+    border: none;
+    background: linear-gradient(90deg, rgb(240, 114, 114) 0%, rgb(216, 51, 51) 100%, rgb(126, 10, 10) 100%, rgb(134, 14, 14) 100%);
+    transition:  all 0.5s;
+}
+
+.edit__form__delete__button:hover {
+    color: gainsboro;
+    cursor: pointer;
+}
+
+.edit__form__load__images {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    text-align: center;
+    position: relative;
+}
+
+.edit__form__load__images img {
+    width: 90%;
+    
+}
+
+.edit__form__load__images button {
+    width: 2em;
+    font-size: 0.8em;
+    position: absolute;
+    bottom: 12%;
+    align-self: end;
+    margin-right: 4%;
+    
+}
+
+.edit__form__product__img {
+    display: flex;
+    flex-direction: column;
+}
+
+@media (min-width: 768px) {
+    .edit__form__container {
+        width: 80%;
+    }
+
+    .edit__form * {
+        font-size: 1.2em;
+        margin: 1%;
+    }
+
+    .edit__form__title {
+        padding: 1%;
+    }
+
+    .edit__form {
+        display: grid;
+        grid-template-columns: 40% 40%;
+        text-align: right;
+        justify-content: center;
+    }
+
+    .edit__form__button {
+        width: 60%;
+        padding: 1%;
+        margin: 20px 0px;
+    }
+
+    .edit__form__delete__button {
+        width: 60%;
+        padding: 1%;
+        margin: 20px 0px;
+    }
+}
+
+/* ---------------FIN PRODUCT EDIT FORM--------------------- */

@@ -36,6 +36,10 @@ router.get('/productCreate', (req, res) => {
   res.render('productCreateForm');
 })
 
+router.get('/productEdit', (req, res) => {
+  res.render('productEditForm');
+})
+
 // router.post('/productCreate',
 // [check("name")
 //         .isInt()
