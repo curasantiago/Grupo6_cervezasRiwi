@@ -634,7 +634,7 @@
     display: flex;
     flex-direction: column;
     align-items: flex-end;
-    margin-right: 2%;
+    margin-right: 5%;
 }
 
 .cart__final__info * { 
@@ -658,17 +658,14 @@
 .cart__buy__button {
     justify-content: center;
     overflow: hidden;   
-    white-space: nowrap;
+    /* white-space: nowrap; */
     background-color: whitesmoke;
-    width: 200%;
-    padding: 5%;
     box-sizing: content-box;
     background-color: #A6961E;
     color: white;
-    position: relative;
-    right: 100%;
     font-size: 1.2em;
     margin-bottom: 5%;
+    padding: 3%;
 }
 
 .cart__buy__button:hover {
