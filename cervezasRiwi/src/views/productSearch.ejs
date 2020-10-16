@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Productos</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <script src="https://kit.fontawesome.com/5376d63d7e.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
+</head>
+<body>
+    
+    <!-- HEADER -->
+    <%- include('partials/header') %>
+
+    <!-- FIN HEADER -->
+
+    <!-- Submenú de categorías de productos -->
+    <section class="productSearch__category">
+        <article>
+           <a href="/productSearch">CATEGORÍA</a>
+        </article>
+        
+        <article>
+            >
+        </article>
+
+        <article>
+            <a href="/productSearch">SUBCATEGORÍA</a>
+        </article>
+
+    </section>
+
+    <!-- Comienza main content -->
+    <div class="productSearch__main__content">
+
+        <!-- Productos buscados -->
+        <div class="productSearch__product__grid">
+            
+            <article class="productSearch__single__product">
+                <a href="/productDetail"><img src="/images/img/product001.jpg" alt="Producto1"></a>
+                <a href="/productDetail" class="productSearch__name"><h1>NOMBRE PRODUCTO</h1></a>
+                <p class="productSearch__price">$ 000.00</p>
+                <form action="/productCart" method="GET">
+                <button type="submit">COMPRAR</button>
+                </form>
+            </article>
+            
+            <article class="productSearch__single__product">
+                <a href="/productDetail"><img src="/images/img/product002.jpg" alt="Producto2"></a>
+                <a href="/productDetail" class="productSearch__name"><h1>NOMBRE PRODUCTO</h1></a>
+                <p class="productSearch__price">$ 000.00</p>
+                <form action="/productCart" method="GET">
+                <button type="submit">COMPRAR</button>
+                </form>
+            </article>
+
+
+            <article class="productSearch__single__product">
+                <a href="/productDetail"><img src="/images/img/product003.jpg" alt="Producto3"></a>
+                <a href="/productDetail" class="productSearch__name"><h1>NOMBRE PRODUCTO</h1></a>
+                <p class="productSearch__price">$ 000.00</p>
+                <form action="/productCart" method="GET">
+                <button type="submit">COMPRAR</button>
+                </form>
+            </article>
+            
+            <article class="productSearch__single__product">
+                <a href="/productDetail"><img src="/images/img/product003.jpg" alt="Producto4"></a>
+                <a href="/productDetail" class="productSearch__name"><h1>NOMBRE PRODUCTO</h1></a>
+                <p class="productSearch__price">$ 000.00</p>
+                <form action="/productCart" method="GET">
+                <button type="submit">COMPRAR</button>
+                </form>
+            </article>
+
+            <article class="productSearch__single__product">
+                <a href="/productDetail"><img src="/images/img/product001.jpg" alt="Producto5"></a>
+                <a href="/productDetail" class="productSearch__name"><h1>NOMBRE PRODUCTO</h1></a>
+                <p class="productSearch__price">$ 000.00</p>
+                <form action="/productCart" method="GET">
+                <button type="submit">COMPRAR</button>
+                </form>
+            </article>
+            
+            <article class="productSearch__single__product">
+                <a href="/productDetail"><img src="/images/img/product002.jpg" alt="Producto6"></a>
+                <a href="/productDetail" class="productSearch__name"><h1>NOMBRE PRODUCTO</h1></a>
+                <p class="productSearch__price">$ 000.00</p>
+                <form action="/productCart" method="GET">
+                <button type="submit">COMPRAR</button>
+                </form>
+            </article>
+
+        </div>
+
+    </div>
+    <!-- Dejo vacío el footer para hacer copy paste de lo que arme Santi -->
+    <%- include('partials/footer') %>
+</body>
+</html>
