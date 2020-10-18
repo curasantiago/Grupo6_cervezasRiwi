@@ -28,6 +28,10 @@ router.get('/productCart', (req, res) => {
   res.render('productCart', {title: "Carrito de compras"});
 })
 
+router.get('/productSearch', (req, res) => {
+  res.render('productSearch');
+})
+
 router.get('/registerForm', (req, res) => {
   res.render('registerForm');
 })
