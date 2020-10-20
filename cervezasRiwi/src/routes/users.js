@@ -7,13 +7,10 @@ var router = express.Router();
 const userController = require('../controllers/userController');  //pachi
 
 
-/* GET users listing. */
-//router.get('/', function(req, res, next) {
-//  res.send('respond with a resource');
-//});
-
 //---------------vista-----------------------//
-router.get('/', userController.usuario); 
+router.get('/register', userController.registro); 
+router.get('/login', userController.login); 
+router.get('/pay', userController.pagar);
 
 module.exports = router;
 

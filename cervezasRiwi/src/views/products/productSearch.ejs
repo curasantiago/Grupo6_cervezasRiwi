@@ -1,0 +1,92 @@
+<%- include('../partials/head') %>
+<body>
+    
+    <!-- HEADER -->
+    <%- include('../partials/header') %>
+
+    <!-- FIN HEADER -->
+
+    <!-- Submenú de categorías de productos -->
+    <section class="productSearch__category">
+        <article>
+           <a href="/products/search">CATEGORÍA</a>
+        </article>
+        
+        <article>
+            >
+        </article>
+
+        <article>
+            <a href="/products/search">SUBCATEGORÍA</a>
+        </article>
+
+    </section>
+
+    <!-- Comienza main content -->
+    <div class="productSearch__main__content">
+
+        <!-- Productos buscados -->
+        <div class="productSearch__product__grid">
+            
+            <article class="productSearch__single__product">
+                <a href="/products/detail"><img src="/images/img/product001.jpg" alt="Producto1"></a>
+                <a href="/products/detail" class="productSearch__name"><h1>NOMBRE PRODUCTO</h1></a>
+                <p class="productSearch__price">$ 000.00</p>
+                <form action="/products/cart" method="GET">
+                <button type="submit">COMPRAR</button>
+                </form>
+            </article>
+            
+            <article class="productSearch__single__product">
+                <a href="/products/detail"><img src="/images/img/product002.jpg" alt="Producto2"></a>
+                <a href="/products/detail" class="productSearch__name"><h1>NOMBRE PRODUCTO</h1></a>
+                <p class="productSearch__price">$ 000.00</p>
+                <form action="/products/cart" method="GET">
+                <button type="submit">COMPRAR</button>
+                </form>
+            </article>
+
+
+            <article class="productSearch__single__product">
+                <a href="/products/detail"><img src="/images/img/product003.jpg" alt="Producto3"></a>
+                <a href="/products/detail" class="productSearch__name"><h1>NOMBRE PRODUCTO</h1></a>
+                <p class="productSearch__price">$ 000.00</p>
+                <form action="/products/cart" method="GET">
+                <button type="submit">COMPRAR</button>
+                </form>
+            </article>
+            
+            <article class="productSearch__single__product">
+                <a href="/products/detail"><img src="/images/img/product003.jpg" alt="Producto4"></a>
+                <a href="/products/detail" class="productSearch__name"><h1>NOMBRE PRODUCTO</h1></a>
+                <p class="productSearch__price">$ 000.00</p>
+                <form action="/products/cart" method="GET">
+                <button type="submit">COMPRAR</button>
+                </form>
+            </article>
+
+            <article class="productSearch__single__product">
+                <a href="/products/detail"><img src="/images/img/product001.jpg" alt="Producto5"></a>
+                <a href="/products/detail" class="productSearch__name"><h1>NOMBRE PRODUCTO</h1></a>
+                <p class="productSearch__price">$ 000.00</p>
+                <form action="/products/cart" method="GET">
+                <button type="submit">COMPRAR</button>
+                </form>
+            </article>
+            
+            <article class="productSearch__single__product">
+                <a href="/products/detail"><img src="/images/img/product002.jpg" alt="Producto6"></a>
+                <a href="/products/detail" class="productSearch__name"><h1>NOMBRE PRODUCTO</h1></a>
+                <p class="productSearch__price">$ 000.00</p>
+                <form action="/products/cart" method="GET">
+                <button type="submit">COMPRAR</button>
+                </form>
+            </article>
+
+        </div>
+
+    </div>
+    <!-- Dejo vacío el footer para hacer copy paste de lo que arme Santi -->
+    <%- include('../partials/footer') %>
+</body>
+</html>

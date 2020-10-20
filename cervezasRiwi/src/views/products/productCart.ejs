@@ -1,8 +1,8 @@
-<!-- include('partials/head') %>-->
+<%- include('../partials/head') %>
 
 <body>
 
-    <%- include('partials/header') %>
+    <%- include('../partials/header') %>
     
     <!-- Título y cantidad de items -->
     <section class="cart__summary">
@@ -28,7 +28,7 @@
         <section class="cart__item">
             <!-- Imagen y nombre de producto -->
             <div class="cart__item__img__name">
-                <a href="/productDetail"><img src="/images/img/product003.jpg" alt="IMAGEN 1"></a>
+                <a href="/products/detail"><img src="/images/img/product003.jpg" alt="IMAGEN 1"></a>
                 <article class="cart__item__name__details">
                         <p>PRODUCTO 1</p>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>           
@@ -75,7 +75,7 @@
         <section class="cart__item">
             <!-- Imagen y nombre de producto -->
             <div class="cart__item__img__name">
-                <a href="/productDetail"><img src="/images/img/product001.jpg" alt="IMAGEN 2"></a>
+                <a href="/products/detail"><img src="/images/img/product001.jpg" alt="IMAGEN 2"></a>
                 <article class="cart__item__name__details">
                         <p>PRODUCTO 2</p>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>           
@@ -141,7 +141,7 @@
     </main>
 
     <!-- Dejo vacío el footer para hacer copy paste de lo que arme Santi -->
-    <%- include('partials/footer') %>
+    <%- include('../partials/footer') %>
     
 </body>
 </html>

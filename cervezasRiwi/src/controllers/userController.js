@@ -1,16 +1,16 @@
-const controller={
-    usuario:(req, res)=>{
-        res.render("index");
-   },
+const userController={
+    registro:(req, res)=>{
+        res.render("users/registerForm", {title: "Registrarse"});
+    },
    
     login:(req, res)=>{
-        res.render("login");
-   },
+        res.render("users/login", {title: "Login"});
+    }, 
    
-    ingresar:(req, res)=>{
-        res.render("ingreso");
-   }
+    pagar:(req, res)=>{
+        res.render("users/payForm", {title: "Incluir medio de pago"});
+    },
 }
 
-  module.exports = controller;
+  module.exports = userController;
   

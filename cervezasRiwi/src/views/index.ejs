@@ -1,14 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Riwi Cervezas</title>
-    <link rel="stylesheet" href="/stylesheets/style.css"></link>
-    <script src="https://kit.fontawesome.com/5376d63d7e.js" crossorigin="anonymous"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
-    
-</head>
+<%- include('partials/head') %>
+
 <body>
     <%- include('partials/header') %>
     
@@ -21,16 +12,16 @@
         <section class="panel__inicial"> 
           
             <article class= "accion__comprar">
-                 <a href="/productSearch">COMPRAR</a>            <!--paneles con opcines-->
+                 <a href="/products/search">COMPRAR</a>            <!--paneles con opcines-->
             </article> 
              <article class="accion__artesanal">
-                <a href="/productSearch">CERVEZAS ARTESANALES</a>
+                <a href="/products/search">CERVEZAS ARTESANALES</a>
             </article> 
             <article class="accion__industrial">
-                <a href="/productSearch">CERVEZAS INDUSTRIALES</a>
+                <a href="/products/search">CERVEZAS INDUSTRIALES</a>
             </article> 
             <article class="accion__elegir">
-                <a href="/productSearch">ELEGI TU CERVEZA</a>
+                <a href="/products/search">ELEGI TU CERVEZA</a>
             </article> 
           
         </section>

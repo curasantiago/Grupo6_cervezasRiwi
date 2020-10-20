@@ -1,15 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/stylesheets/style.css">
-    <script src="https://kit.fontawesome.com/5376d63d7e.js" crossorigin="anonymous"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
-    <title>Login</title>
-</head>
+<%- include('../partials/head') %>
+
 <body>
-    <%- include('partials/header') %>
+    <%- include('../partials/header') %>
     
             <div class="login-app-container">
                 <section class="login-section-img"><!--------------------IMAGEN--------------------------->
@@ -23,12 +15,14 @@
                         <div class="login-cuenta"><!-----------------CREAR------------------------>
                     
                             <p>¿No tiene cuenta?</p>
+                            <form action="/users/register" method="GET">
                             <button type="submit" id="login-cuenta-button">CREAR</button>
+                            </form>
 
                     </div>
                         <section class="login-section-usuario"><!--------USUARIO / CONTRASEÑA / LOGIN----------->
                             <article class="login-section-article-usuario">
-                                <form action="" method="post" class="login-form">
+                                <form action="/" method="POST" class="login-form">
                                     <input type="text" name="usuario" id=" usuario" placeholder="Usuario" class="login-input" required>
                                     <input type="password" name="password" id="password" placeholder=" Contraseña" class="login-input" required>
                                     <div class="checkbox-container">
@@ -51,7 +45,7 @@
                     </main>
                     </div>
 
-    <%- include('partials/footer') %>  
+    <%- include('../partials/footer') %>  
     
 </body>
 </html>

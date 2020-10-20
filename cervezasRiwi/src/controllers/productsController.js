@@ -1,44 +1,28 @@
 
-const controller={
-    show:(req, res)=>{
-        res.render("index");
-      },   
-        
-      login:(req, res)=>{
-          res.render("login");
-      }, 
-      
-      ingresar:(req, res)=>{
-          res.render("ingreso");
-      },
-      
-      pagar:(req, res)=>{
-          res.render("productCart");
-      },
-      
+const productsController={
+           
       detalle:(req, res)=>{
-          res.render("productDetail");
+          res.render("products/productDetail", {title: "Detalle de producto"});
       },
       
       carrito:(req, res)=>{
-          res.render("productCart");
+          res.render("products/productCart", {title: "Carrito de compras"});
       },
-      registro:(req, res)=>{
-          res.render("login");
-      },
+            
+      buscar:(req, res)=>{
+        res.render("products/productSearch", {title: "Productos"});
+    },
       
       crear:(req, res)=>{
-         res.render("productCreateForm");
+         res.render("products/productCreateForm", {title: "Crear producto nuevo"});
       },
+
       editar:(req, res)=>{
-          res.render("productEditForm");
+          res.render("products/productEditForm", {title: "Editar producto"});
       },
-      buscar:(req, res)=>{
-          res.render("productSearchForm");
-      }
+
+      
   }
   
-  
-  
-  module.exports = controller;
+  module.exports = productsController;
   

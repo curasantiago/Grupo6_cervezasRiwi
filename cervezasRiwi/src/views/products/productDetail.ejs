@@ -1,24 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Detalle de Producto</title>
-    <link rel="stylesheet" href="/stylesheets/style.css">
-    <script src="https://kit.fontawesome.com/5376d63d7e.js" crossorigin="anonymous"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
-</head>
+<%- include('../partials/head') %>
+
 <body>
     
     <!-- HEADER -->
-    <%- include('partials/header') %>
+    <%- include('../partials/header') %>
 
     <!-- FIN HEADER -->
 
     <!-- Submenú de categorías de productos -->
     <section class="product__category">
         <article>
-           <a href="/productSearch">CATEGORÍA</a>
+           <a href="/products/search">CATEGORÍA</a>
         </article>
         
         <article>
@@ -26,7 +18,7 @@
         </article>
 
         <article>
-            <a href="/productSearch">SUBCATEGORÍA</a>
+            <a href="/products/search">SUBCATEGORÍA</a>
         </article>
 
     </section>
@@ -37,22 +29,7 @@
         <!-- Imágenes de producto, clickeables para agrandar -->
         <div class="product__left__column">
 
-
-
-
-                <!-- <section class ="product__img">
-                    <article class="product__image__large">
-                        <a href=""><img src="/images/img/product001.jpg" alt="Imagen1"></a>
-                    </article>
-                    <article class="product__image__small">
-                        <a href=""><img src="/images/img/product002.jpg" alt="Imagen2"></a>
-                    </article>
-                    <article class="product__image__small">
-                        <a href=""><img src="/images/img/product003.jpg" alt="Imagen3"></a>
-                    </article>
-                </section> -->
-
-
+<!-- Carrusel de imágenes con CSS -->
                 <div class="wrap">
                     <div class="wrap2">
                       <div class="group">
@@ -94,7 +71,7 @@
                           <img class="slide__image" src="/images/img/product003.jpg" alt="Imagen3">
                         </div>
                       </div>
-                      
+                      <!-- FIN CARRUSEL DE IMAGENES -->
                       
                     </div>
                   </div>
@@ -121,7 +98,7 @@
         </section>
 
         <!-- Form para comprar producto -->
-        <form class="product__buy__form" action="/productCart" method="GET">
+        <form class="product__buy__form" action="/products/cart" method="GET">
                 
         <div class="product__row__setter">
             <h1 class="product__name">NOMBRE PRODUCTO</h1>
@@ -181,6 +158,6 @@
     </div>
 
     <!-- Dejo vacío el footer para hacer copy paste de lo que arme Santi -->
-    <%- include('partials/footer') %>
+    <%- include('../partials/footer') %>
 </body>
 </html>

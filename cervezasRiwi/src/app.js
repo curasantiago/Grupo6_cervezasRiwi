@@ -17,13 +17,16 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, '../public')));
 
 
+
 //------------rutas-----------------------//
-var indexRouter = require('./routes/index');
+var indexRouter = require('./routes/main');
 var usersRouter = require('./routes/users');
+var productsRouter = require('./routes/products');
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-//app.use('/products', indexRouter); comentado pachi
+app.use('/products', productsRouter);
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
