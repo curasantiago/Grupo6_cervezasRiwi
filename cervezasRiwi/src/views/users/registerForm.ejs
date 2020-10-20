@@ -19,14 +19,19 @@
                             <button class="registerForm-button-fb">Registrarse con Facebook</button>
                     <article class="registerForm-article">
                         
-                        <form action="" method="post"> <!--------------FORMULARIO------------->
+                        <form action="/users/register" method="POST"> <!--------------FORMULARIO------------->
                             <p id="registerForm-p"> Registrarse con dirección de email</p>
                             <input type="text" name="nombre" id="nombre" placeholder="Nombre" class="registerForm-input" required>
+
                             <input type="text" name="apellido" id="apellido" placeholder="Apellido" class="registerForm-input" required>
-                            <input type="email" name="nombre" id="nombre" placeholder="Email" class="registerForm-input" required>
+
+                            <input type="email" name="email" id="email" placeholder="Email" class="registerForm-input" required>
+
                             <input type="password" name="password" id="password" placeholder="Contraseña" class="registerForm-input" required>
+
                             <p>CAPTCHA</p>
-                            <button class="registerForm-button">CONFIRMAR</button>
+                            <button class="registerForm-button" type="submit">CONFIRMAR</button>
+                            
                         </form>
                     </article>
                 </section>
