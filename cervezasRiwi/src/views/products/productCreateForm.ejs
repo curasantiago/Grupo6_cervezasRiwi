@@ -10,14 +10,14 @@
     <!-- VER MIDDLEWARE VALIDATOR -->
 
     <p class="create__form__title">ALTA NUEVO PRODUCTO</p>
-    <form class="create__form" action="/products/search" method="GET"  id="createProductForm">
-        <!-- enctype="multipart/form-data" -->
+    <form class="create__form" action="/products/" method="POST"  id="createProductForm" enctype="multipart/form-data">
+        
         <select name="category" id="category" class="create__form__item" required>
             <option value ="">Categoría</option>
             <option>INDUSTRIAL</option>
             <option>ARTESANAL</option>
         </select>
-        <select name="subcat" id="subcat" disabled class="create__form__item">
+        <select name="subcategory" id="subcategory" class="create__form__item">
             <option value= "">Subcategoría</option>
             <option>RUBIA</option>
             <option>ROJA</option>

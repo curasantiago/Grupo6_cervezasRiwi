@@ -9,44 +9,64 @@
     <!-- VER MIDDLEWARE VALIDATOR -->
 
     <p class="edit__form__title">EDITAR PRODUCTO</p>
-    <form class="edit__form" action="/productSaveEdit?_method=PATCH" method="POST"  id="editProductForm">
+    <form class="edit__form" action="/products/<%=product.id%>?_method=PUT" method="POST"  id="editProductForm" >
         <!-- enctype="multipart/form-data" -->
         <select name="category" id="category" class="edit__form__item" required>
-            <option value ="">Categoría</option>
-            <option>INDUSTRIAL</option>
-            <option selected="selected">ARTESANAL</option>
+            <option value="">Categoría</option>
+            <option
+                <% if (product.category == "INDUSTRIAL") { %>
+                selected="selected"
+                <% } %>
+                >INDUSTRIAL</option>
+            <option
+            <% if (product.category == "ARTESANAL") { %>
+                selected="selected"
+                <% } %>
+            >ARTESANAL</option>
         </select>
         <select name="subcat" id="subcat" class="edit__form__item" required>
             <option value= "">Subcategoría</option>
-            <option>RUBIA</option>
-            <option selected="selected">ROJA</option>
-            <option>NEGRA</option>
+            <option
+            <% if (product.subcategory == "RUBIA") { %>
+                selected="selected"
+                <% } %>
+            >RUBIA</option>
+            <option
+            <% if (product.subcategory == "ROJA") { %>
+                selected="selected"
+                <% } %>
+            >ROJA</option>
+            <option
+            <% if (product.subcategory == "NEGRA") { %>
+                selected="selected"
+                <% } %>
+            >NEGRA</option>
         </select>
         
         <label for="name">Nombre:</label>
-        <input type="text" name="name" id="name" placeholder="Ingrese el nombre del producto" minlength="5" maxlength="30" class="edit__form__item" value="NOMBRE PRODUCTO" required>
+        <input type="text" name="name" id="name" placeholder="Ingrese el nombre del producto" minlength="5" maxlength="30" class="edit__form__item" value="<%= product.name %>" required>
         
         <label for="info">Información:</label>
-        <textarea name="info" id="info" placeholder="Ingrese descripción del producto" cols="1" minlength="5" maxlength="300" class="edit__form__item" required>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Debitis, quam! Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptate, voluptas odio? Quam, repellat quidem! Impedit, facere nulla? Aliquam sed consequuntur ducimus, illum beatae distinctio vero facere. Eaque adipisci ipsam modi!</textarea>
+        <textarea name="info" id="info" placeholder="Ingrese descripción del producto" cols="1" minlength="5" maxlength="300" class="edit__form__item" required><%= product.info %></textarea>
         
         <label for="price">Precio:</label>
-        <input type="number" name="price" id="price" min="1" placeholder="Ingrese el precio del producto" class="edit__form__item" value=125 required>
+        <input type="number" name="price" id="price" min="1" placeholder="Ingrese el precio del producto" class="edit__form__item" value=<%= product.price %> required>
         
         <label for="file">Imágenes:</label>
         
         <div class="edit__form__load__images">
                 <article class="edit__form__product__img">
-                    <a target="_blank" href="/images/img/product001.jpg"><img src="/images/img/product001.jpg" alt="Imagen1"></a>
+                    <a target="_blank" href="/images/products/<%= product.images %>"><img src="/images/products/<%= product.images %>" alt="Imagen1"></a>
                     <button type="button" title="Eliminar imagen">x</button>
                 </article>
-                <article class="edit__form__product__img">
+                <!-- <article class="edit__form__product__img">
                     <a target="_blank" href="/images/img/product002.jpg"><img src="/images/img/product002.jpg" alt="Imagen2"></a>
                     <button type="button" title="Eliminar imagen">x</button>
                 </article>
                 <article class="edit__form__product__img">
                     <a target="_blank" href="/images/img/product003.jpg"><img src="/images/img/product003.jpg" alt="Imagen3"></a>
                     <button type="button" title="Eliminar imagen">x</button>
-                </article>
+                </article> -->
         </div>
         <div>
         </div>

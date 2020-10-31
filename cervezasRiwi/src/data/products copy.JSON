@@ -1,0 +1,56 @@
+[
+  {
+    "id": 1,
+    "category": "INDUSTRIAL",
+    "subcategory": "ROJA",
+    "name": "Jabalina",
+    "info": "Citrus hazy Citrus hazy Citrus hazy Citrus hazy Citrus hazy ",
+    "price": "232",
+    "images": "product001.jpg"
+  },
+  {
+    "id": 2,
+    "category": "ARTESANAL",
+    "subcategory": "NEGRA",
+    "name": "jaba negra",
+    "info": "Citrus hazy Citrus hazy Citrus hazy Citrus hazy Citrus hazy ",
+    "price": "232",
+    "images": "product002.jpg"
+  },
+  {
+    "id": 3,
+    "category": "INDUSTRIAL",
+    "subcategory": "RUBIA",
+    "name": "Jabalina",
+    "info": "Citrus hazy Citrus hazy Citrus hazy Citrus hazy Citrus hazy ",
+    "price": "232",
+    "images": "product003.jpg"
+  },
+  {
+    "id": 4,
+    "category": "INDUSTRIAL",
+    "subcategory": "RUBIA",
+    "name": "Andes",
+    "info": "andes rubia",
+    "price": "100",
+    "images": "product001.jpg"
+  },
+  {
+    "id": 5,
+    "category": "ARTESANAL",
+    "subcategory": "NEGRA",
+    "name": "Stella artois",
+    "info": "Stella negra",
+    "price": "140",
+    "images": "images-1604150855534.jpeg"
+  },
+  {
+    "id": 6,
+    "category": "INDUSTRIAL",
+    "subcategory": "NEGRA",
+    "name": "Imperial",
+    "info": "Imperial Black",
+    "price": "111",
+    "images": "images-1604151314326.jpeg"
+  }
+]
