@@ -35,14 +35,14 @@
                       <div class="group">
                         <input type="radio" name="test" id="0" value="0" checked>
                         <label for="2" class="previous">
-                            <img src="/images/img/arrowleft.png" alt="Previous">
+                            <!-- <img src="/images/img/arrowleft.png" alt="Previous"> -->
                         </label>
                         <label for="1" class="next">
-                            <img src="/images/img/arrowright.png" alt="Next">
+                            <!-- <img src="/images/img/arrowright.png" alt="Next"> -->
                         </label>
                         <div class="content">
                           
-                          <img class="slide__image" src="/images/img/product001.jpg" alt="Imagen1">
+                          <img class="slide__image" src="/images/products/<%= product.images %>" alt="Imagen1">
                         </div>
                       </div>
                       <div class="group">
@@ -101,8 +101,8 @@
         <form class="product__buy__form" action="/products/cart" method="GET">
                 
         <div class="product__row__setter">
-            <h1 class="product__name">NOMBRE PRODUCTO</h1>
-            <p class="product__price">$ 000.00</p>
+            <h1 class="product__name"><%= product.name %></h1>
+            <p class="product__price">$ <%= product.price %></p>
         </div>
 
         <div class="product__row__setter">
@@ -124,7 +124,7 @@
                 
         <!-- Descripción del producto -->
         <section class="product__info">
-            <p>Información del producto: Lorem, ipsum dolor sit amet consectetur adipisicing elit. Debitis, quam! Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptate, voluptas odio? Quam, repellat quidem! Impedit, facere nulla? Aliquam sed consequuntur ducimus, illum beatae distinctio vero facere. Eaque adipisci ipsam modi!</p>
+            <p>Información del producto: <%= product.info %></p>
         </section>
     <!-- Se cierra div de second column -->
     </div>

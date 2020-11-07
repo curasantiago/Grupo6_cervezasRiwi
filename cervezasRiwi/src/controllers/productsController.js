@@ -11,7 +11,11 @@ const leerJsonProducts = () => {
 const productsController={
            
       detalle:(req, res)=>{
-          res.render("products/productDetail", {title: "Detalle de producto"});
+        let id = req.params.id;  
+        let DBproducts = leerJsonProducts();
+        let product = DBproducts.find(producto => producto.id == id);
+        
+        res.render("products/productDetail", {title: "Detalle de producto", product:product});
       },
       
       carrito:(req, res)=>{
@@ -19,7 +23,9 @@ const productsController={
       },
             
       buscar:(req, res)=>{
-        res.render("products/productSearch", {title: "Productos"});
+        let DBproducts = leerJsonProducts();
+
+        res.render("products/productSearch", {title: "Productos", products: DBproducts});
     },
 
     crear: (req, res)=> {
@@ -31,7 +37,7 @@ const productsController={
         let DBproducts = leerJsonProducts();
         
         let product = {
-            id: DBproducts[DBproducts.length -1].id + 1,
+            id: Number(DBproducts[DBproducts.length -1].id) + 1,
             ...req.body,
             images: req.files[0].filename
         }
@@ -39,7 +45,8 @@ const productsController={
         let nuevaDBProducts = [...DBproducts, product];
 
         fs.writeFileSync(pathJsonProducts, JSON.stringify(nuevaDBProducts, null, 2));
-        res.send("/../data/products.JSON");
+
+        res.redirect("/products/"+product.id);
     },
       
         
@@ -48,40 +55,55 @@ const productsController={
         let id = req.params.id;  
         let DBproducts = leerJsonProducts();
         let product = DBproducts.find(producto => producto.id == id);
-        console.log(product);
+        // console.log(product);
         res.render("products/productEditForm", {title: "Editar producto", product: product});
       },
 
       processEdit:(req, res)=> {
+        
         let id = req.params.id;
         let DBproducts = leerJsonProducts();
                 
         let indexOldProduct = DBproducts.findIndex(producto => producto.id == id);
         
-        // console.log(DBproducts);
-        // console.log("el req params id " + req.params.id)
+        console.log(req.files);
+        let imagen;
 
-        // console.log("el find " + DBproducts.find(producto => producto.id == req.params.id));
+        if(req.files == "") {
+            imagen = DBproducts[indexOldProduct].images
+        } else {
+            imagen = req.files[0].filename
+            // borrar foto vieja
+        };
 
-
-        // let indexOldProduct = DBproducts.indexOf(DBproducts.find(producto => producto.id == req.params.id));
-
-        // let indexProductoEditado = products.indexOf(products.find(producto => producto.id == req.params.id));
-
-        // console.log("el indice es: " + indexOldProduct)
+        
 
         let newProduct = {
-            id: req.params.id,
+            id: Number(req.params.id),
             ...req.body,
-            images: "holaa"
-        }
+            images: imagen
+        };
 
         DBproducts[indexOldProduct] = newProduct;
 
         fs.writeFileSync(pathJsonProducts, JSON.stringify(DBproducts, null, 2));
-        res.sendfile(path.resolve(__dirname + "/../data/products.JSON"));
+        
+        res.redirect("/products/"+newProduct.id);
 
-      }
+      },
+
+      processDelete: (req, res)=> {
+        
+        let id = req.params.id;
+        let DBproducts = leerJsonProducts();
+
+        let nuevaDBProducts = DBproducts.filter(producto => producto.id != id);
+        
+        fs.writeFileSync(pathJsonProducts, JSON.stringify(nuevaDBProducts, null, 2));
+        
+        res.json(pathJsonProducts)
+        // res.sendfile(path.resolve(__dirname + "/../data/products.JSON"));
+    }
 
       
   }

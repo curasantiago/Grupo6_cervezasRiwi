@@ -1,17 +1,17 @@
 [
   {
-    "id": "1",
+    "id": 1,
     "category": "INDUSTRIAL",
-    "subcat": "ROJA",
-    "name": "nombreeeeholaaaa",
+    "subcat": "NEGRA",
+    "name": "Prueba",
     "info": "Citrus hazy Citrus hazy Citrus hazy Citrus hazy Citrus hazy ",
     "price": "232",
-    "images": "holaa"
+    "images": "product001.jpg"
   },
   {
     "id": 2,
     "category": "ARTESANAL",
-    "subcategory": "NEGRA",
+    "subcat": "NEGRA",
     "name": "jaba negra",
     "info": "Citrus hazy Citrus hazy Citrus hazy Citrus hazy Citrus hazy ",
     "price": "232",
@@ -20,37 +20,100 @@
   {
     "id": 3,
     "category": "INDUSTRIAL",
-    "subcategory": "RUBIA",
+    "subcat": "RUBIA",
     "name": "Jabalina",
     "info": "Citrus hazy Citrus hazy Citrus hazy Citrus hazy Citrus hazy ",
     "price": "232",
     "images": "product003.jpg"
   },
   {
-    "id": "4",
+    "id": 4,
     "category": "INDUSTRIAL",
     "subcat": "RUBIA",
     "name": "Andes",
     "info": "andes rubia",
     "price": "100",
-    "images": "holaa"
+    "images": "product001.jpg"
   },
   {
     "id": 5,
     "category": "ARTESANAL",
-    "subcategory": "NEGRA",
+    "subcat": "NEGRA",
     "name": "Stella artois",
     "info": "Stella negra",
     "price": "140",
-    "images": "images-1604150855534.jpeg"
+    "images": "product003.jpg"
   },
   {
     "id": 6,
     "category": "INDUSTRIAL",
-    "subcategory": "NEGRA",
+    "subcat": "NEGRA",
     "name": "Imperial",
     "info": "Imperial Black",
     "price": "111",
-    "images": "images-1604151314326.jpeg"
+    "images": "product002.jpg"
+  },
+  {
+    "id": 7,
+    "category": "INDUSTRIAL",
+    "subcat": "RUBIA",
+    "name": "Corona",
+    "info": "Corona rubia",
+    "price": "180",
+    "images": "images-1604748931713.jpg"
+  },
+  {
+    "id": 8,
+    "category": "INDUSTRIAL",
+    "subcat": "ROJA",
+    "name": "Rojitttt",
+    "info": "Cerveza roja",
+    "price": "100",
+    "images": "images-1604756154060.jpg"
+  },
+  {
+    "id": 9,
+    "category": "INDUSTRIAL",
+    "subcat": "NEGRA",
+    "name": "Sourrr",
+    "info": "Cerveza agria",
+    "price": "200",
+    "images": "images-1604756964665.jpg"
+  },
+  {
+    "id": 10,
+    "category": "INDUSTRIAL",
+    "subcat": "ROJA",
+    "name": "Huerca",
+    "info": "Cerveza huerca",
+    "price": "200",
+    "images": "images-1604758166646.jpg"
+  },
+  {
+    "id": 11,
+    "category": "INDUSTRIAL",
+    "subcat": "RUBIA",
+    "name": "Cerveza Sol",
+    "info": "Cerveza Sol",
+    "price": "250",
+    "images": "images-1604758357923.jpg"
+  },
+  {
+    "id": 12,
+    "category": "INDUSTRIAL",
+    "subcat": "NEGRA",
+    "name": "Bia Saigon",
+    "info": "Bia Saigon",
+    "price": "100",
+    "images": "images-1604758410879.jpg"
+  },
+  {
+    "id": 13,
+    "category": "INDUSTRIAL",
+    "subcat": "RUBIA",
+    "name": "Wiltshire Gold",
+    "info": "Wiltshire Gold",
+    "price": "140",
+    "images": "images-1604759306289.jpg"
   }
 ]

@@ -28,60 +28,16 @@
         <!-- Productos buscados -->
         <div class="productSearch__product__grid">
             
+            <% products.forEach(product => { %>
             <article class="productSearch__single__product">
-                <a href="/products/detail"><img src="/images/img/product001.jpg" alt="Producto1"></a>
-                <a href="/products/detail" class="productSearch__name"><h1>NOMBRE PRODUCTO</h1></a>
-                <p class="productSearch__price">$ 000.00</p>
+                <a href="/products/<%= product.id %>"><img src="/images/products/<%= product.images %>" alt="<%=product.name%>"></a>
+                <a href="/products/<%= product.id %>" class="productSearch__name"><h1><%= product.name %></h1></a>
+                <p class="productSearch__price">$ <%= product.price %></p>
                 <form action="/products/cart" method="GET">
                 <button type="submit">COMPRAR</button>
                 </form>
             </article>
-            
-            <article class="productSearch__single__product">
-                <a href="/products/detail"><img src="/images/img/product002.jpg" alt="Producto2"></a>
-                <a href="/products/detail" class="productSearch__name"><h1>NOMBRE PRODUCTO</h1></a>
-                <p class="productSearch__price">$ 000.00</p>
-                <form action="/products/cart" method="GET">
-                <button type="submit">COMPRAR</button>
-                </form>
-            </article>
-
-
-            <article class="productSearch__single__product">
-                <a href="/products/detail"><img src="/images/img/product003.jpg" alt="Producto3"></a>
-                <a href="/products/detail" class="productSearch__name"><h1>NOMBRE PRODUCTO</h1></a>
-                <p class="productSearch__price">$ 000.00</p>
-                <form action="/products/cart" method="GET">
-                <button type="submit">COMPRAR</button>
-                </form>
-            </article>
-            
-            <article class="productSearch__single__product">
-                <a href="/products/detail"><img src="/images/img/product003.jpg" alt="Producto4"></a>
-                <a href="/products/detail" class="productSearch__name"><h1>NOMBRE PRODUCTO</h1></a>
-                <p class="productSearch__price">$ 000.00</p>
-                <form action="/products/cart" method="GET">
-                <button type="submit">COMPRAR</button>
-                </form>
-            </article>
-
-            <article class="productSearch__single__product">
-                <a href="/products/detail"><img src="/images/img/product001.jpg" alt="Producto5"></a>
-                <a href="/products/detail" class="productSearch__name"><h1>NOMBRE PRODUCTO</h1></a>
-                <p class="productSearch__price">$ 000.00</p>
-                <form action="/products/cart" method="GET">
-                <button type="submit">COMPRAR</button>
-                </form>
-            </article>
-            
-            <article class="productSearch__single__product">
-                <a href="/products/detail"><img src="/images/img/product002.jpg" alt="Producto6"></a>
-                <a href="/products/detail" class="productSearch__name"><h1>NOMBRE PRODUCTO</h1></a>
-                <p class="productSearch__price">$ 000.00</p>
-                <form action="/products/cart" method="GET">
-                <button type="submit">COMPRAR</button>
-                </form>
-            </article>
+        <% }) %>
 
         </div>
 

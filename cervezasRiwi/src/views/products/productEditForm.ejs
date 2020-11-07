@@ -9,8 +9,7 @@
     <!-- VER MIDDLEWARE VALIDATOR -->
 
     <p class="edit__form__title">EDITAR PRODUCTO</p>
-    <form class="edit__form" action="/products/<%=product.id%>?_method=PUT" method="POST"  id="editProductForm" >
-        <!-- enctype="multipart/form-data" -->
+    <form class="edit__form" action="/products/<%=product.id%>?_method=PUT" method="POST"  id="editProductForm" enctype="multipart/form-data">
         <select name="category" id="category" class="edit__form__item" required>
             <option value="">Categoría</option>
             <option
@@ -27,17 +26,17 @@
         <select name="subcat" id="subcat" class="edit__form__item" required>
             <option value= "">Subcategoría</option>
             <option
-            <% if (product.subcategory == "RUBIA") { %>
+            <% if (product.subcat == "RUBIA") { %>
                 selected="selected"
                 <% } %>
             >RUBIA</option>
             <option
-            <% if (product.subcategory == "ROJA") { %>
+            <% if (product.subcat == "ROJA") { %>
                 selected="selected"
                 <% } %>
             >ROJA</option>
             <option
-            <% if (product.subcategory == "NEGRA") { %>
+            <% if (product.subcat == "NEGRA") { %>
                 selected="selected"
                 <% } %>
             >NEGRA</option>
@@ -57,7 +56,7 @@
         <div class="edit__form__load__images">
                 <article class="edit__form__product__img">
                     <a target="_blank" href="/images/products/<%= product.images %>"><img src="/images/products/<%= product.images %>" alt="Imagen1"></a>
-                    <button type="button" title="Eliminar imagen">x</button>
+                    <!-- <button type="button" title="Eliminar imagen">x</button> -->
                 </article>
                 <!-- <article class="edit__form__product__img">
                     <a target="_blank" href="/images/img/product002.jpg"><img src="/images/img/product002.jpg" alt="Imagen2"></a>
@@ -70,16 +69,18 @@
         </div>
         <div>
         </div>
-        <input type="file" name="images" id="images" multiple>
+        <input type="file" name="images" id="images">
     </form>
     <div class="edit__form__button__container">
-    <button type="submit" value="submit" class="edit__form__button" form="editProductForm">GUARDAR PRODUCTO</button>
+    <button type="submit" value="submit" class="edit__form__button" form="editProductForm">EDITAR PRODUCTO</button>
     </div>
-    <form action="/productDelete?_method=DELETE" method="POST"  id="deleteProduct">
+    
+    <form action="/products/<%=product.id%>?_method=DELETE" method="POST"  id="deleteProduct">
     <div class="edit__form__button__container">
     <button type="submit" value="submit" class="edit__form__delete__button">ELIMINAR PRODUCTO</button>
     </div>
     </form>
+
 </div>
 <!-- Fin de formulario alta producto -->
 

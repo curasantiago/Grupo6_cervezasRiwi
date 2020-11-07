@@ -30,12 +30,21 @@ const upload = multer({ storage: storage,
 
 const productsController = require('../controllers/productsController');
 
-router.get('/detail', productsController.detalle); 
+ 
 router.get('/cart', productsController.carrito); 
-router.get('/search', productsController.buscar); 
+
 router.get('/create', productsController.crear); 
+
 router.get('/:id/edit', productsController.editar); 
-router.put('/:id', productsController.processEdit);
+
+router.get('/:id', productsController.detalle);
+
+router.get('/', productsController.buscar);
+
+router.put('/:id', upload.any(), productsController.processEdit);
+
+router.delete('/:id', productsController.processDelete);
+
 router.post('/', upload.any(), productsController.processCreate); 
 
 
