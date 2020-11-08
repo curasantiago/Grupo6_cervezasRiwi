@@ -3,6 +3,28 @@ Jamboard: https://jamboard.google.com/d/1kqTkwzlSrIPL8H1haLnDO3necgWa0L0pzbJv6_l
 
 ---------------------------------------------------------------------------------------------------------
 
+Retrospectiva Sprint 3
+Startfish Retrospective
+
+1) Start doing:
+- Juntarnos a trabajar en grupo
+- Probar el weekly
+- Investigar animaciones
+
+2) More of:
+- Chequear trello seguido
+
+3) Keep doing
+- Organización de tiempos
+- División de tareas
+- Feedback de compañeros de trabajos realizados
+- Sostener la buena onda. Decir lo que nos inquieta
+
+4) Less of: -
+5) Stop doing: -
+
+---------------------------------------------------------------------------------------------------------
+
 Retrospectiva Sprint 2
 Starfish Retrospective
 

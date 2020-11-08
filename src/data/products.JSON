@@ -1,119 +1,119 @@
 [
   {
     "id": 1,
-    "category": "INDUSTRIAL",
-    "subcat": "NEGRA",
-    "name": "Prueba",
-    "info": "Citrus hazy Citrus hazy Citrus hazy Citrus hazy Citrus hazy ",
-    "price": "232",
-    "images": "product001.jpg"
+    "category": "ARTESANAL",
+    "subcat": "RUBIA",
+    "name": "Ipa Jabalina 473ml",
+    "info": "Cerveza de color amarillo, seca, amarga e intensamente lúpulada. Con un perfil de fermentación limpio que le da gran tomabilidad permitiendo que destaquen los aromas y sabores cítricos y resinosos aportados por los lúpulos Cítra y Simcome.",
+    "price": "230",
+    "images": "images-1604795265863.jpg"
   },
   {
     "id": 2,
-    "category": "ARTESANAL",
-    "subcat": "NEGRA",
-    "name": "jaba negra",
-    "info": "Citrus hazy Citrus hazy Citrus hazy Citrus hazy Citrus hazy ",
-    "price": "232",
-    "images": "product002.jpg"
+    "category": "INDUSTRIAL",
+    "subcat": "RUBIA",
+    "name": "Peroni Nastro Azzuro 330ml",
+    "info": "Color amarillo dorado muy intenso. Aromas a maltas y lúpulos típicos de las cervezas lager premium. En boca se muestra muy ligera, con un toque de malta al principio seguida de un final amargo con un toque picante.",
+    "price": "200",
+    "images": "images-1604795478199.jpg"
   },
   {
     "id": 3,
     "category": "INDUSTRIAL",
     "subcat": "RUBIA",
-    "name": "Jabalina",
-    "info": "Citrus hazy Citrus hazy Citrus hazy Citrus hazy Citrus hazy ",
-    "price": "232",
-    "images": "product003.jpg"
+    "name": "Bavaria Premium 330ml",
+    "info": "Una cerveza pura, con un agradable retrogusto ligeramente amargo. Bavaria Premium es una cerveza rubia, brillante, que no contiene más que cebada, trigo y el lúpulo. Tiene un aroma con notas de granos y frutas, limpio y puro.",
+    "price": "180",
+    "images": "images-1604795616416.jpg"
   },
   {
     "id": 4,
     "category": "INDUSTRIAL",
     "subcat": "RUBIA",
-    "name": "Andes",
-    "info": "andes rubia",
-    "price": "100",
-    "images": "product001.jpg"
+    "name": "Toña Nicaragua 473ml",
+    "info": "Cerveza tipo lager con excelente balance entre cuerpo y sabor suave que representa las tradiciones y costumbres nicaragüenses.",
+    "price": "250",
+    "images": "images-1604795851000.jpg"
   },
   {
     "id": 5,
-    "category": "ARTESANAL",
-    "subcat": "NEGRA",
-    "name": "Stella artois",
-    "info": "Stella negra",
-    "price": "140",
-    "images": "product003.jpg"
+    "category": "INDUSTRIAL",
+    "subcat": "ROJA",
+    "name": "Estrella Damm 473ml",
+    "info": "Cerveza lager de sabor y carácter universal, ideal para tomar en cualquier momento del día. De cuidada elaboración y gran calidad, fruto de la selección de sus materias primas. Destaca su cremosa espuma aromatizada por el lúpulo y su refrescante sabor.\r\n",
+    "price": "160",
+    "images": "images-1604795937785.jpg"
   },
   {
     "id": 6,
-    "category": "INDUSTRIAL",
-    "subcat": "NEGRA",
-    "name": "Imperial",
-    "info": "Imperial Black",
-    "price": "111",
-    "images": "product002.jpg"
+    "category": "ARTESANAL",
+    "subcat": "RUBIA",
+    "name": "Desperados 330ml",
+    "info": "Pale Lager. Cerveza rubia refrescante y ligera con aromas de tequila y acompañados de cítricos, consiguiendo una mezcla perfecta. La cerveza Desperados es la primera del mundo con un toque de Tequila.",
+    "price": "185",
+    "images": "images-1604796038362.jpg"
   },
   {
     "id": 7,
     "category": "INDUSTRIAL",
     "subcat": "RUBIA",
-    "name": "Corona",
-    "info": "Corona rubia",
+    "name": "Corona 330ml",
+    "info": "Corona es una cerveza premium, clásica y auténtica, reconocida mundialmente por su alta calidad, el sabor distintivo y su imagen. Es una cerveza que transmite tranquilidad y relajación, invitando a los consumidores a desconectarse de todos los días a través de experiencias agradables.",
     "price": "180",
     "images": "images-1604748931713.jpg"
   },
   {
     "id": 8,
-    "category": "INDUSTRIAL",
+    "category": "ARTESANAL",
     "subcat": "ROJA",
-    "name": "Rojitttt",
-    "info": "Cerveza roja",
-    "price": "100",
+    "name": "Five Summers 330ml",
+    "info": "American Pale Ale. Aroma a pomelo y pino que lleva a un suave sabor cítrico que finaliza con un carácter robusto de malta.",
+    "price": "280",
     "images": "images-1604756154060.jpg"
   },
   {
     "id": 9,
-    "category": "INDUSTRIAL",
-    "subcat": "NEGRA",
-    "name": "Sourrr",
-    "info": "Cerveza agria",
+    "category": "ARTESANAL",
+    "subcat": "RUBIA",
+    "name": "Jabalina Sour 473ml",
+    "info": "Una cerveza liviana, refrescante y con acidez notoria lograda por el agregado de un cultivo láctico. En sabor y aroma explota en frutas tropicales por el agregado generoso de Guayaba, maracuyá y lima.",
     "price": "200",
     "images": "images-1604756964665.jpg"
   },
   {
     "id": 10,
-    "category": "INDUSTRIAL",
+    "category": "ARTESANAL",
     "subcat": "ROJA",
-    "name": "Huerca",
-    "info": "Cerveza huerca",
-    "price": "200",
+    "name": "Huerca La Güerita 330ml",
+    "info": "Exquisita Cerveza Premium tipo Blonde Ale,  de color dorado claro, perfil muy suave y balanceado con aroma cítrico y sensación de frescura inigualable.",
+    "price": "100",
     "images": "images-1604758166646.jpg"
   },
   {
     "id": 11,
     "category": "INDUSTRIAL",
     "subcat": "RUBIA",
-    "name": "Cerveza Sol",
-    "info": "Cerveza Sol",
-    "price": "250",
+    "name": "Sol 330ml",
+    "info": "Cerveza clara, de color dorado, con espuma consistente. Exquisito aroma, fresco y afrutado. Liviana, poco amarga, con un sabor suave y refrescante.",
+    "price": "90",
     "images": "images-1604758357923.jpg"
   },
   {
     "id": 12,
-    "category": "INDUSTRIAL",
-    "subcat": "NEGRA",
-    "name": "Bia Saigon",
-    "info": "Bia Saigon",
-    "price": "100",
+    "category": "ARTESANAL",
+    "subcat": "RUBIA",
+    "name": "Bia Saigon 330ml",
+    "info": "Cerveza vietnamita. Cocida con cebada y arroz, tiene un color dorado brillante con una espuma cremosa y espesa. A la nariz es muy limpia y cítrica.",
+    "price": "265",
     "images": "images-1604758410879.jpg"
   },
   {
     "id": 13,
-    "category": "INDUSTRIAL",
+    "category": "ARTESANAL",
     "subcat": "RUBIA",
-    "name": "Wiltshire Gold",
-    "info": "Wiltshire Gold",
-    "price": "140",
+    "name": "Wiltshire Gold 500ml",
+    "info": "Ale clara y dorada. Usa la malta inglesa Maris Otter que crea un dulce sabor. Los lúpulos tradicionales le dan a cerveza un aroma floral delicado.",
+    "price": "260",
     "images": "images-1604759306289.jpg"
   }
 ]
