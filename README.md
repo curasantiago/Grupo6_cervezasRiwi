@@ -38,3 +38,15 @@ https://truelinkswear.com/shop/ Venta de ropa. Diseño simple, pocos colores, ti
 www.heineken.com La pagina tiene un diseño muy simple, pero a la vez es muy amigable, se activan los paneles al pasar con el mouse. Si bien no realiza el comercio, tiene detalles de diseño, tipografias, logos.   
 
 https://www.cervezapatagonia.com.ar/ Es una página de cerveza “artesanal” que tiene interesantes funcionalidades. Desde un video como background, hasta un menú que al apretarlo se desliza y ocupa toda la pantalla
+
+PASOS PARA LA INSTALACIÓN DEL PROYECTO:
+
+1. Descargar desde github el proyecto en formato ZIP
+
+2. Extraerlo e ingresar a la carpeta Grupo6_cervezasRiwi-master
+
+3. Dentro de la misma, abrir una terminal y ejectutar el comando 'npm install'
+
+4. Una vez finalizada la instalación, ejecutar 'npm start'
+
+5. Abrir su navegador de preferencia e ingresar en la url localhost:3000 y disfrutar la experiencia
