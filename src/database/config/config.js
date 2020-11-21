@@ -8,7 +8,6 @@ module.exports = {
     "dialect": "mysql",
     define:{
       underscored: true,
-      paranoid: true
     }
   },
   "test": {

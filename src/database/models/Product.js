@@ -13,7 +13,8 @@ module.exports = (sequelize, dataTypes) => {
     }
 
     config = {
-        tableName: 'products'
+        tableName: 'products',
+        paranoid: true
     }
 
     let Products = sequelize.define(alias, cols, config);
