@@ -7,12 +7,15 @@ var router = express.Router();
 const userController = require('../controllers/userController');  //pachi
 
 
-//---------------vista-----------------------//
+router.post('/register', userController.processRegister); 
 router.get('/register', userController.registro); 
-// router.post('/register', userController.processRegister); 
+
+router.get('/detail/:id', userController.detail);
+router.get('/edit/:id', userController.edit);
+router.post('/edit/:id', userController.processEdit);
 
 router.get('/login', userController.login); 
-// router.post('/login', userController.processLogin);
+router.post('/login', userController.processLogin);
 
 router.get('/pay', userController.pagar);
 

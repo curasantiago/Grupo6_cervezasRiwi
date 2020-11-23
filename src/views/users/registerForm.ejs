@@ -15,21 +15,29 @@
                 <section class="registerForm-main">
                     <div class="registerForm-section">
                         <div class="registerForm-article">
-                            <a href=""><i class="fab fa-facebook-square fa-2x registerForm-fb"></i></a>
-                            <button class="registerForm-button-fb">Registrarse con Facebook</button>
+                            <!-- <a href=""><i class="fab fa-facebook-square fa-2x registerForm-fb"></i></a>
+                            <button class="registerForm-button-fb">Registrarse con Facebook</button> -->
+                            <p>REGISTRAR NUEVO USUARIO</p>
                     <article class="registerForm-article">
                         
-                        <form action="/users/register" method="POST"> <!--------------FORMULARIO------------->
-                            <p id="registerForm-p"> Registrarse con dirección de email</p>
-                            <input type="text" name="nombre" id="nombre" placeholder="Nombre" class="registerForm-input" required>
+                        <!--------------FORMULARIO------------->
+                        <form action="/users/register" method="POST"> 
+                            <!-- <p id="registerForm-p"> Registrarse con dirección de email</p> -->
+                            <input type="text" name="first_name" id="first_name" placeholder="Nombre" class="registerForm-input" >
 
-                            <input type="text" name="apellido" id="apellido" placeholder="Apellido" class="registerForm-input" required>
+                            <input type="text" name="last_name" id="last_name" placeholder="Apellido" class="registerForm-input" >
 
-                            <input type="email" name="email" id="email" placeholder="Email" class="registerForm-input" required>
+                            <input type="email" name="email" id="email" placeholder="Email" class="registerForm-input" >
 
-                            <input type="password" name="password" id="password" placeholder="Contraseña" class="registerForm-input" required>
+                            <label for="birthdate">FECHA DE NACIMIENTO</label>
+                            <input type="date" name="birthdate" id="birthdate" class="registerForm-input" >
 
-                            <p>CAPTCHA</p>
+                            <input type="text" name="address" id="address" placeholder="Domicilio" class="registerForm-input" >
+
+                            <label for="password">CONTRASEÑA</label>
+                            <input class="registerForm-input" type="password" name="password" id="password">
+<!-- 
+                            <p>CAPTCHA</p> -->
                             <button class="registerForm-button" type="submit">CONFIRMAR</button>
                             
                         </form>

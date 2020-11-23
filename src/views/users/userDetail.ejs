@@ -1,0 +1,25 @@
+<%- include('../partials/head') %>
+
+<body>
+<%- include('../partials/header') %>
+
+<!-- Información del usuario -->
+<div class="userDetail-container">
+
+    <p>INFORMACIÓN DE <%=usuario.first_name.toUpperCase() + " " + usuario.last_name.toUpperCase()%></p>
+    
+    <section class="userDetail-article">
+        <p>EMAIL: <%=usuario.email%></p>
+        <p>FECHA DE NACIMIENTO: <%=usuario.birthdate%></p>
+        <p>DIRECCIÓN: <%=usuario.address%></p>
+    </section>
+    <form action="/users/edit/<%=usuario.id%>" method="GET" id="toEditUser"></form>
+    <div class="userDetail-button-container">
+    <button type="submit" value="submit" class="userDetail-button" form="toEditUser">EDITAR INFORMACIÓN</button>
+    </div>
+</div>
+
+<%- include('../partials/footer') %>
+
+</body>
+</html>
