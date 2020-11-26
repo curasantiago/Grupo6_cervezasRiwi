@@ -7,23 +7,31 @@
 <div class="userEdit-container">
 
     <p class="userEdit-title">EDITAR INFORMACIÓN DE USUARIO</p>
-    
+   
     <section class="userEdit-article">
-
+        <% if (typeof errorMsg != "undefined") { %>
+            <p class="userEdit-title" style="color: orangered"><%=errorMsg%></p>
+        <% } %>
         <form class="userEdit-article" action="/users/edit/<%=usuario.id%>" method="POST" id="processEdit">
+            
 
             <label>NOMBRE: </label>
             <input class="userEdit-input" type="text" id="first_name" name="first_name" value="<%=usuario.first_name%>">
             <label>APELLIDO: </label>
             <input class="userEdit-input" type="text" id="last_name" name="last_name" value="<%=usuario.last_name%>">
+            
+            
+            
             <label>EMAIL: </label>
             <input class="userEdit-input" type="email" id="email" name="email" value="<%=usuario.email%>">
             <label>FECHA DE NACIMIENTO: </label>
             <input class="userEdit-input" type="date" id="birthdate" name="birthdate" value="<%=usuario.birthdate.toLocaleString()%>">
             <label>DIRECCIÓN: </label>
             <input class="userEdit-input" type="text" id="address" name="address" value="<%=usuario.address%>">
-            <label>CONTRASEÑA: </label>
+            <label>MODIFICAR CONTRASEÑA: </label>
             <input class="userEdit-input" type="password" id="password" name="password">
+            <label>REPETIR CONTRASEÑA NUEVA: </label>
+            <input class="userEdit-input" type="password" id="repassword" name="repassword">
        
         </form>
     </section>

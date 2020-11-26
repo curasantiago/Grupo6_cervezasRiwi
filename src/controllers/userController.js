@@ -19,14 +19,28 @@ const userController={
    
     processRegister: async (req, res)=>{
       let nuevoUsuario = req.body;
-      nuevoUsuario.password = bcrypt.hashSync(nuevoUsuario.password, 10);
+        // CHEQUEO DE MATCH DE CONTRASEÑAS 
+        if (nuevoUsuario.password != nuevoUsuario.repassword) {
+          res.render("users/registerForm", {title: "Registrarse", datosLlenos: nuevoUsuario, errorMsg: "Contraseñas diferentes"});
+        } else {
       
-      try {
-            await Users.create(nuevoUsuario);
-            res.redirect('/');
-          } catch (error) {
-            console.log(error);
-          }      
+              delete nuevoUsuario.repassword
+              nuevoUsuario.password = bcrypt.hashSync(nuevoUsuario.password, 10);
+                    
+              try {
+                let checkUserEmail = await Users.findAll({where: {email: nuevoUsuario.email}})
+                if (checkUserEmail == "") {
+                  await Users.create(nuevoUsuario);
+                  res.redirect('./login');
+                } else {
+                  res.render("users/registerForm", {title: "Registrarse", datosLlenos: nuevoUsuario, errorMsg: "Email no válido"});
+                }
+
+              } catch (error) {
+                    console.log(error);
+              }
+    }
+
     },
 
     detail: async (req, res) =>{
@@ -50,32 +64,77 @@ const userController={
     processEdit: async (req,res) => {
       let usuarioEditado = req.body;
       
-      // SI MODIFICO SU CONTRASEÑA
-      if (usuarioEditado.password != "") {
 
-        usuarioEditado.password = bcrypt.hashSync(usuarioEditado.password, 10);
-        
-        
-        try {      
-          await Users.update(usuarioEditado, {
-              where: {id: req.params.id}
-          });
-          res.redirect('../detail/'+req.params.id)
-        } catch (error) {
+      // SI MODIFICO SU CONTRASEÑA
+      if (usuarioEditado.password != "" || usuarioEditado.repassword != "") {
+
+        // CHEQUEAR MATCH DE CONTRASEÑAS
+        // SI FALLA EL MATCH      
+        if (usuarioEditado.password != usuarioEditado.repassword) {
+          try {
+            let usuario = await Users.findByPk(req.params.id);
+            usuarioEditado.id = usuario.id;
+            res.render('users/userEdit', {usuario: usuarioEditado, title: "Editar Información", errorMsg: "Contraseñas diferentes"})
+          } catch (error) {
             console.log(error)
-        }
+          }
+
+        } else {
+        // SI NO FALLA EL MATCH DE CONTRASEÑAS
+              delete usuarioEditado.repassword
+              usuarioEditado.password = bcrypt.hashSync(usuarioEditado.password, 10);
+                
+              try {      
+                // CHEQUEO DE CAMBIO DE EMAIL
+                let usuario = await Users.findByPk(req.params.id)
+                let checkUserEmail = await Users.findAll({
+                  where: { email: {[Op.not]: usuario.email}, [Op.and] : {email: usuarioEditado.email} }
+                })
+                
+                // SI EL EMAIL NO EXISTE EN DB, POR LO TANTO ES VALIDO
+                if (checkUserEmail == "") {
+
+                    await Users.update(usuarioEditado, {
+                        where: {id: req.params.id}
+                    });
+                    res.redirect('../detail/'+req.params.id)
+                  
+                // SI EL EMAIL YA EXISTE
+                } else {
+                    usuarioEditado.id = usuario.id;
+                    res.render('users/userEdit', {usuario: usuarioEditado, title: "Editar Información", errorMsg: "Email no válido"})
+                }
+              } catch (error) {
+                  console.log(error)
+              }
+      }
 
       // SI NO MODIFICO CONTRASEÑA  
       } else {
 
           try {      
+            delete usuarioEditado.repassword
             let usuario = await Users.findByPk(req.params.id);
             usuarioEditado.password = usuario.password
+            
+            // CHEQUEO DE CAMBIO DE EMAIL
+            let checkUserEmail = await Users.findAll({
+              where: { email: {[Op.not]: usuario.email}, [Op.and] : {email: usuarioEditado.email} }
+            })
+            
+            // SI EL EMAIL NO EXISTE EN DB, POR LO TANTO ES VALIDO
+            if (checkUserEmail == "") {
 
-            await Users.update(usuarioEditado, {
-                where: {id: req.params.id}
-            });
-            res.redirect('../detail/'+req.params.id)
+                await Users.update(usuarioEditado, {
+                    where: {id: req.params.id}
+                });
+                res.redirect('../detail/'+req.params.id)
+                
+            // SI EL EMAIL YA EXISTE
+              } else {
+                usuarioEditado.id = usuario.id;
+                res.render('users/userEdit', {usuario: usuarioEditado, title: "Editar Información", errorMsg: "Email no válido"})
+              }
           } catch (error) {
               console.log(error)
           }

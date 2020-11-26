@@ -18,29 +18,48 @@
                             <!-- <a href=""><i class="fab fa-facebook-square fa-2x registerForm-fb"></i></a>
                             <button class="registerForm-button-fb">Registrarse con Facebook</button> -->
                             <p>REGISTRAR NUEVO USUARIO</p>
-                    <article class="registerForm-article">
                         
+                    <article class="registerForm-article">
+                       
                         <!--------------FORMULARIO------------->
-                        <form action="/users/register" method="POST"> 
+                        <form action="/users/register" method="POST" id="registerForm" name="registerForm">
+                            <% if (typeof errorMsg != "undefined") { %>
+                                <p style="color: orangered"><%=errorMsg%></p>
+                            <% } %> 
                             <!-- <p id="registerForm-p"> Registrarse con dirección de email</p> -->
-                            <input type="text" name="first_name" id="first_name" placeholder="Nombre" class="registerForm-input" >
+                            <input type="text" name="first_name" id="first_name" placeholder="Nombre" class="registerForm-input" <% if (typeof datosLlenos != "undefined"){ %>value="<%=datosLlenos.first_name%>"<%}%>>
 
-                            <input type="text" name="last_name" id="last_name" placeholder="Apellido" class="registerForm-input" >
+                            <input type="text" name="last_name" id="last_name" placeholder="Apellido" class="registerForm-input" <% if (typeof datosLlenos != "undefined"){ %>value="<%=datosLlenos.last_name%>"<%}%>>
 
-                            <input type="email" name="email" id="email" placeholder="Email" class="registerForm-input" >
+                            
+                            <input type="email" name="email" id="email" placeholder="Email" class="registerForm-input" <% if (typeof datosLlenos != "undefined"){ %>value="<%=datosLlenos.email%>"<%}%>>
+                            
 
                             <label for="birthdate">FECHA DE NACIMIENTO</label>
-                            <input type="date" name="birthdate" id="birthdate" class="registerForm-input" >
+                            <input type="date" name="birthdate" id="birthdate" class="registerForm-input" <% if (typeof datosLlenos != "undefined"){ %>value="<%=datosLlenos.birthdate%>"<%}%>>
 
-                            <input type="text" name="address" id="address" placeholder="Domicilio" class="registerForm-input" >
+                            <input type="text" name="address" id="address" placeholder="Domicilio" class="registerForm-input" <% if (typeof datosLlenos != "undefined"){ %>value="<%=datosLlenos.address%>"<%}%>>
 
                             <label for="password">CONTRASEÑA</label>
                             <input class="registerForm-input" type="password" name="password" id="password">
-<!-- 
-                            <p>CAPTCHA</p> -->
-                            <button class="registerForm-button" type="submit">CONFIRMAR</button>
                             
-                        </form>
+                            <label for="repassword">REPETIR CONTRASEÑA</label>
+                            <input class="registerForm-input" type="password" name="repassword" id="repassword">
+                            <button class="registerForm-button" type="submit">CONFIRMAR</button>
+                            </form>
+                            
+                            
+                                <!-- <article class="registerForm-article">
+                                    <div class="registerForm-section">
+                                    
+                                    </div>
+                                </article>
+                             -->
+                            
+
+                            
+                            
+                        
                     </article>
                 </section>
             </main>
