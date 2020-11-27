@@ -39,7 +39,9 @@ router.get('/:id/edit', productsController.editar);
 
 router.get('/:id', productsController.detalle);
 
-router.get('/', productsController.buscar);
+router.get('/', productsController.listar);
+
+router.post('/', productsController.buscar);
 
 router.put('/:id', upload.any(), productsController.processEdit);
 

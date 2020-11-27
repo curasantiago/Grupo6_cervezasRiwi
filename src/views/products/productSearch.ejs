@@ -6,21 +6,37 @@
 
     <!-- FIN HEADER -->
 
+    
+    <% if (typeof query != "undefined") { %>
+     
+        <section class="productSearch__category">
+            <article>
+                <%=query%>
+            </article>
+        </section>
+    <% } %>
     <!-- Submenú de categorías de productos -->
-    <section class="productSearch__category">
-        <article>
-           <a href="/products/">CATEGORÍA</a>
-        </article>
-        
-        <article>
-            >
-        </article>
+        <section class="productSearch__category">
+            <article>
+                <select>
+                    <option>CATEGORÍA</option>
+                </select>
+                <!-- <a href="/products/">CATEGORÍA</a> -->
+            </article>    
 
-        <article>
-            <a href="/products/">SUBCATEGORÍA</a>
-        </article>
+            <article>
+                >
+            </article>
 
-    </section>
+            <article>
+                <select>
+                    <option>SUBCATEGORÍA</option>
+                </select>
+                <!-- <a href="/products/">SUBCATEGORÍA</a> -->
+            </article>
+
+        </section>
+    
 
     <!-- Comienza main content -->
     <div class="productSearch__main__content">
@@ -30,7 +46,7 @@
             
             <% products.forEach(product => { %>
             <article class="productSearch__single__product">
-                <a href="/products/<%= product.id %>"><img src="/images/products/<%= product.images %>" alt="<%=product.name%>"></a>
+                <a href="/products/<%= product.id %>"><img src="/images/products/<%= product.image %>" alt="<%=product.name%>"></a>
                 <a href="/products/<%= product.id %>" class="productSearch__name"><h1><%= product.name %></h1></a>
                 <p class="productSearch__price">$ <%= product.price %></p>
                 <form action="/products/cart" method="GET">

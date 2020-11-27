@@ -1,6 +1,9 @@
 const fs = require("fs");
 const path = require("path");
 
+const {Products, sequelize} = require('../database/models');
+const {Op} = require('sequelize');
+
 const pathJsonProducts = path.join(__dirname , "/../data/products.JSON");
 
 const leerJsonProducts = () => {
@@ -10,22 +13,38 @@ const leerJsonProducts = () => {
 
 const productsController={
            
-      detalle:(req, res)=>{
+      detalle: async (req, res)=>{
         let id = req.params.id;  
-        let DBproducts = leerJsonProducts();
-        let product = DBproducts.find(producto => producto.id == id);
+        try {
+          let product = await Products.findByPk(id);
+          res.render("products/productDetail", {title: "Detalle de producto", product});
+        } catch (error) {
+          console.log(error)
+        }
         
-        res.render("products/productDetail", {title: "Detalle de producto", product:product});
+        // let DBproducts = leerJsonProducts();
+        // let product = DBproducts.find(producto => producto.id == id);
+        
       },
       
       carrito:(req, res)=>{
           res.render("products/productCart", {title: "Carrito de compras"});
       },
             
-      buscar:(req, res)=>{
-        let DBproducts = leerJsonProducts();
+      buscar: async (req, res)=>{
+        let query = req.body.query;
+        
+        try {
+          let products = await Products.findAll({
+            where: { name: {[Op.like]: "%"+ query + "%"} }
+          });
+          res.render("products/productSearch", {title: "Productos", products, query: "RESULTADOS DE BÚSQUEDA " + query.toUpperCase()});  
+        } catch (error) {
+          console.log(error)
+        }
+        // let DBproducts = leerJsonProducts();
 
-        res.render("products/productSearch", {title: "Productos", products: DBproducts});
+        
     },
 
     crear: (req, res)=> {
@@ -103,6 +122,17 @@ const productsController={
         
         res.json(pathJsonProducts)
         // res.sendfile(path.resolve(__dirname + "/../data/products.JSON"));
+    },
+
+    listar: async (req,res) =>{ 
+      
+      try {
+        let products = await Products.findAll();
+        res.render("products/productSearch", {title: "Productos", products});  
+      } catch (error) {
+        console.log(error)
+      };
+
     }
 
       

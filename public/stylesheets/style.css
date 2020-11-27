@@ -1747,3 +1747,21 @@ div.wrap2 {
 }
 
 /*----------------- FIN USER EDIT -------------------*/
+
+
+
+.header-hide {
+    display: none;
+}
+
+#search-input {
+    width: 0px;
+    transition: width .15s ease-in-out;
+    height: 2.5em;
+    padding-left: 1%;
+}
+
+#search-input:focus {
+    width: 150px;
+}
+

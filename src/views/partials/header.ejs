@@ -10,10 +10,17 @@
         <a href="">CONTACTO</a>
     </nav>
 
-    <div class="header-icons-container">
+    <div class="header-icons-container" id="header-buttons">
         <a href="/users/login"><i class="fas fa-user header-icons"></i></a>
         <a href="/products/cart"><i class="fas fa-shopping-bag header-icons"></i></a>
-        <a href="/products/"><i class="fas fa-search fa-lg"></i></a>
+        <a href="/products/" id="search-button"><i class="fas fa-search fa-lg"></i></a>
         <a href=""><i class="fas fa-bars header-icons" id="menu"></i></a>
-    </div>   
+    </div>
+    
+    <div class="header-icons-container header-hide" id="search-bar">
+        <form action="/products" method="POST">
+            <input id="search-input" autofocus type="text" name="query" id="query" placeholder="BUSCAR CERVEZA">
+        </form>
+        <a href=""><i class="fas fa-bars header-icons" id="menu"></i></a>
+    </div>
 </header>    
