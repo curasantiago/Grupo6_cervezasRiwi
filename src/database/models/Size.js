@@ -7,10 +7,18 @@ module.exports = (sequelize, dataTypes) => {
     }
 
     config = {
-        tableName: 'sizes'
+        tableName: 'sizes',
+        timestamps: true
     }
 
     let Sizes = sequelize.define(alias, cols, config);
+
+    Sizes.associate = (models) => {
+        Sizes.hasMany(models.Products, {
+            as: 'size_product',
+            foreignKey: 'id_size'
+        })
+    }
 
     return Sizes;
 

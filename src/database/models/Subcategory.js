@@ -9,10 +9,27 @@ module.exports = (sequelize, dataTypes) => {
     }
 
     config = {
-        tableName: 'subcategories'
+        tableName: 'subcategories',
+        timestamps: true
     }
 
     let SubCategories = sequelize.define(alias, cols, config);
+
+
+    SubCategories.associate = (models) => {
+
+        SubCategories.hasMany(models.Products, {
+            as: 'product',
+            foreignKey: 'id_subcategory'
+        })
+
+        SubCategories.belongsTo(models.Categories, {
+            as: 'subcategory_categories',
+            foreignKey: 'id_category'
+        })
+
+
+    }
 
     return SubCategories;
 

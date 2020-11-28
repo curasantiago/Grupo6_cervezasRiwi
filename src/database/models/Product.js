@@ -13,10 +13,23 @@ module.exports = (sequelize, dataTypes) => {
 
     config = {
         tableName: 'products',
-        paranoid: true
+        timestamps: true
     }
 
     let Products = sequelize.define(alias, cols, config);
+
+    Products.associate = (models) => {
+        Products.belongsTo(models.SubCategories, {
+            as: 'subcategory',
+            foreignKey: 'id_subcategory'
+        });
+
+    
+        Products.belongsTo(models.Sizes, {
+            as: 'size',
+            foreignKey: 'id_size'
+        })
+    }
 
     return Products;
 
