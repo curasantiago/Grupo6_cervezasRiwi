@@ -67,6 +67,25 @@ body {
     background-color: gainsboro;
 }
 
+/* NUEVAS CLASES y ID DE BUSCADOR EN HEADER */
+
+.header-hide {
+    display: none;
+}
+
+#search-input {
+    width: 0px;
+    transition: width .15s ease-in-out;
+    height: 2.5em;
+    padding-left: 1%;
+}
+
+#search-input:focus {
+    width: 150px;
+}
+
+/* FIN NUEVAS CLASES */
+
 @media (min-width: 760px) {
     .header-img-container {
         width: 5%;
@@ -1614,6 +1633,17 @@ div.wrap2 {
     opacity: 0.7;
 }
 
+#select-category {
+    padding: 5px;
+    font-size: 1.2em
+}
+
+#select-subcat {
+    display:none;
+    padding: 5px;
+    font-size: 1.2em
+}
+
 @media (min-width: 769px) {
 
     .productSearch__category * {
@@ -1748,20 +1778,4 @@ div.wrap2 {
 
 /*----------------- FIN USER EDIT -------------------*/
 
-
-
-.header-hide {
-    display: none;
-}
-
-#search-input {
-    width: 0px;
-    transition: width .15s ease-in-out;
-    height: 2.5em;
-    padding-left: 1%;
-}
-
-#search-input:focus {
-    width: 150px;
-}
 

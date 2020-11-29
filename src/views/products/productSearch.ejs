@@ -1,42 +1,55 @@
 <%- include('../partials/head') %>
+
+<!-- JS FRONT DE BUSCADOR POR CATEGORIAS -->
+<script src="/js/subcategorysearch.js" defer></script>
+<!-- CONVERSION DE TABLAS DE BASE DE DATOS PARA PODER SER USADAS EN JSFRONT -->
+<script type="text/javascript" defer>
+    let categories = '<%-JSON.stringify(categories)%>'
+    let subcategories = '<%-JSON.stringify(subcategories)%>';
+</script>
+
 <body>
     
     <!-- HEADER -->
     <%- include('../partials/header') %>
-
+    
     <!-- FIN HEADER -->
 
     
-    <% if (typeof query != "undefined") { %>
-     
-        <section class="productSearch__category">
-            <article>
-                <%=query%>
-            </article>
-        </section>
-    <% } %>
+        
     <!-- Submenú de categorías de productos -->
         <section class="productSearch__category">
             <article>
-                <select>
-                    <option>CATEGORÍA</option>
+                <select id="select-category">
+                    <option value="">CATEGORÍA</option>
+                    <% categories.forEach(cat => { %>
+                        <option value="<%=cat.id%>"><%=cat.name%></option>
+                    <% }) %>
                 </select>
-                <!-- <a href="/products/">CATEGORÍA</a> -->
             </article>    
 
+    <!-- Submenu de Subcategorias oculto hasta que se selecciona una categoria -->
             <article>
-                >
-            </article>
-
-            <article>
-                <select>
-                    <option>SUBCATEGORÍA</option>
+                <form  id="subcatsearch" name="subcatsearch" action="/products" method="POST">
+                <select name="query" id="select-subcat">
+                    <option value="">SUBCATEGORÍA</option>
                 </select>
-                <!-- <a href="/products/">SUBCATEGORÍA</a> -->
+                </form>       
             </article>
 
         </section>
     
+    <!-- Informacion buscada si se usó el buscador del header o de subcategorias -->
+
+        <% if (typeof query != "undefined") { %>
+     
+            <section class="productSearch__category">
+                <article>
+                    <%=query%>
+                </article>
+            </section>
+        <% } %>
+
 
     <!-- Comienza main content -->
     <div class="productSearch__main__content">
@@ -47,7 +60,7 @@
             <% products.forEach(product => { %>
             <article class="productSearch__single__product">
                 <a href="/products/<%= product.id %>"><img src="/images/products/<%= product.image %>" alt="<%=product.name%>"></a>
-                <a href="/products/<%= product.id %>" class="productSearch__name"><h1><%= product.name %></h1></a>
+                <a href="/products/<%= product.id %>" class="productSearch__name"><h1><%= product.name %> <%=product.size.value%></h1></a>
                 <p class="productSearch__price">$ <%= product.price %></p>
                 <form action="/products/cart" method="GET">
                 <button type="submit">COMPRAR</button>
@@ -58,7 +71,8 @@
         </div>
 
     </div>
-    <!-- Dejo vacío el footer para hacer copy paste de lo que arme Santi -->
+    <!-- footer -->
     <%- include('../partials/footer') %>
+    <!-- Fin footer -->
 </body>
 </html>

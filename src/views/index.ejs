@@ -15,10 +15,18 @@
                  <a href="/products/">COMPRAR</a>            <!--paneles con opcines-->
             </article> 
              <article class="accion__artesanal">
-                <a href="/products/">CERVEZAS ARTESANALES</a>
+                <form action="/products" method="POST">
+                    <a href="javascript:;" onclick="parentNode.submit()" style="cursor: pointer;">CERVEZAS ARTESANALES</a>
+                    <input type="hidden" name="query" value="all">
+                    <input type="hidden" name="searchAllCat" value="1">
+                </form>
             </article> 
             <article class="accion__industrial">
-                <a href="/products/">CERVEZAS INDUSTRIALES</a>
+            <form action="/products" method="POST">
+                <a href="javascript:;" onclick="parentNode.submit()" style="cursor: pointer;">CERVEZAS INDUSTRIALES</a>
+                <input type="hidden" name="query" value="all">
+                <input type="hidden" name="searchAllCat" value="2">
+            </form>
             </article> 
             <article class="accion__elegir">
                 <a href="/products/">ELEGI TU CERVEZA</a>

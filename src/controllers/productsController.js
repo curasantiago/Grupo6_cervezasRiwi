@@ -1,7 +1,7 @@
 const fs = require("fs");
 const path = require("path");
 
-const {Products, sequelize} = require('../database/models');
+const {Products, SubCategories, Categories, sequelize} = require('../database/models');
 const {Op} = require('sequelize');
 
 const pathJsonProducts = path.join(__dirname , "/../data/products.JSON");
@@ -16,7 +16,9 @@ const productsController={
       detalle: async (req, res)=>{
         let id = req.params.id;  
         try {
-          let product = await Products.findByPk(id);
+          let product = await Products.findByPk(id, {
+            include:{all:true}
+          });
           res.render("products/productDetail", {title: "Detalle de producto", product});
         } catch (error) {
           console.log(error)
@@ -32,18 +34,71 @@ const productsController={
       },
             
       buscar: async (req, res)=>{
-        let query = req.body.query;
+
+        try {
+          const subcategories = await SubCategories.findAll({include:{all: true}});
+          const categories = await Categories.findAll({include:{all: true}});
+          let query = req.body.query;
+          let isNumber = parseInt(query);
+          let infoResultados;
         
+        // SI BUSCO POR NOMBRE, O SEA SI NO ES UN NUMERO Y SI NO SELECCIONO MOSTRAR TODAS LAS SUBCATEGORIAS
+
+      if (!isNumber && req.body.searchAllCat == undefined) {
+
         try {
           let products = await Products.findAll({
-            where: { name: {[Op.like]: "%"+ query + "%"} }
-          });
-          res.render("products/productSearch", {title: "Productos", products, query: "RESULTADOS DE BÚSQUEDA " + query.toUpperCase()});  
+              where: { name: {[Op.like]: "%"+ query + "%"} },
+              include: {all: true}
+            });
+          infoResultados = "RESULTADOS DE BÚSQUEDA '" + query.toUpperCase() + "'";
+          res.render("products/productSearch", {title: "Productos", products, subcategories, categories, query: infoResultados});
         } catch (error) {
           console.log(error)
         }
-        // let DBproducts = leerJsonProducts();
+        
+        // SI SELECCIONO MOSTRAR TODAS LAS SUBCATEGORIAS DE LA CATEGORIA
 
+      } else if (req.body.searchAllCat != undefined) {
+        
+        // CHEQUEO DE CUAL ES LA CATEGORÍA SELECCIONADA PARA PODER ENVIAR EL NOMBRE A LA VISTA
+        let category_id = req.body.searchAllCat;
+        const catSelected = categories.find(cat => cat.id == category_id);
+
+        try {
+        // BUSCA PRODUCTOS, INCLUYE SUBCATEGORIAS Y SOLO LO ELIGE SI EL ID_CATEGORIA DE LA SUBCATEGORIA COINCIDE
+          let products = await Products.findAll({
+            include: [{model: SubCategories, as: 'subcategory', where: {id_category: category_id}}, 'size']          
+          });
+          
+          infoResultados = "RESULTADOS DE BÚSQUEDA " + catSelected.name.toUpperCase();
+          res.render("products/productSearch", {title: "Productos", products, subcategories, categories, query: infoResultados});
+        } catch (error) {
+          console.log(error)
+        }
+
+        // SI BUSCO POR SUBCATEGORIA
+
+      } else {
+
+          try {
+            const subcatBuscada = subcategories.find(subcat => subcat.id == isNumber)
+            const catDeSubcat = categories.find(cat => cat.id == subcatBuscada.id_category);
+            let products = await Products.findAll({
+                where: { id_subcategory: isNumber },
+                include: {all: true}
+              });
+            let infoResultados = "RESULTADOS DE BÚSQUEDA " + catDeSubcat.name.toUpperCase() + " > " +  subcatBuscada.name.toUpperCase();
+            res.render("products/productSearch", {title: "Productos", products, subcategories, categories, query: infoResultados});
+          } catch (error) {
+            console.log(error)
+          }
+        
+      }
+
+      } catch (error) {
+        console.log(error);
+      }
         
     },
 
@@ -127,8 +182,10 @@ const productsController={
     listar: async (req,res) =>{ 
       
       try {
-        let products = await Products.findAll();
-        res.render("products/productSearch", {title: "Productos", products});  
+        const categories = await Categories.findAll({include:{all: true}});
+        const subcategories = await SubCategories.findAll({include:{all: true}});
+        let products = await Products.findAll({include:{all: true}});
+        res.render("products/productSearch", {title: "Productos", products, subcategories, categories});  
       } catch (error) {
         console.log(error)
       };
