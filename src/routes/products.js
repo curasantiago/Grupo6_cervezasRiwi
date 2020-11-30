@@ -34,7 +34,7 @@ const productsController = require('../controllers/productsController');
 router.get('/cart', productsController.carrito); 
 
 router.get('/create', productsController.crear); 
-router.post('/', upload.any(), productsController.processCreate); 
+router.post('/create', upload.any(), productsController.processCreate);  // CHEQUEAR MAS TARDE
 
 router.get('/:id/edit', productsController.editar); 
 

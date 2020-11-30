@@ -115,8 +115,8 @@ const productsController={
 
     processCreate:(req, res)=>{
 
-        res.send(req.body)
-        
+        res.json(req.body)
+
         // let DBproducts = leerJsonProducts();
         
         // let product = {
