@@ -1,7 +1,7 @@
 const fs = require("fs");
 const path = require("path");
 
-const {Products, SubCategories, Categories, sequelize} = require('../database/models');
+const {Products, SubCategories, Categories, sequelize, Sizes } = require('../database/models');
 const {Op} = require('sequelize');
 
 const pathJsonProducts = path.join(__dirname , "/../data/products.JSON");
@@ -14,12 +14,19 @@ const leerJsonProducts = () => {
 const productsController={
            
       detalle: async (req, res)=>{
+
         let id = req.params.id;  
         try {
           let product = await Products.findByPk(id, {
             include:{all:true}
           });
-          res.render("products/productDetail", {title: "Detalle de producto", product});
+          let category = await Categories.findByPk(product.subcategory.id);
+          let size = await Sizes.findByPk(product.size.id)
+
+          
+          res.render("products/productDetail", {title: "Detalle de producto", product, category, size});
+          // res.json(size)
+          
         } catch (error) {
           console.log(error)
         }

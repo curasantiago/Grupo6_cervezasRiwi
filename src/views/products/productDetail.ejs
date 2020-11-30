@@ -10,7 +10,11 @@
     <!-- Submenú de categorías de productos -->
     <section class="product__category">
         <article>
-           <a href="/products/">CATEGORÍA</a>
+            <form action="/products" method="post">
+                <a type="javascript:;" onclick="parentNode.submit()"  style="cursor: pointer;"><%= category.name %></a>
+                <input type="hidden" name="searchAllCat" value="<%= category.id %>">
+            </form>
+            
         </article>
         
         <article>
@@ -18,7 +22,10 @@
         </article>
 
         <article>
-            <a href="/products/">SUBCATEGORÍA</a>
+            <form action="/products" method="post">
+                <a type="javascript:;" onclick="parentNode.submit()"  style="cursor: pointer;"><%= product.subcategory.name %></a>
+                <input type="hidden" name="query" value="<%= product.subcategory.id %>">
+            </form>
         </article>
 
     </section>
@@ -101,7 +108,7 @@
         <form class="product__buy__form" action="/products/cart" method="GET">
                 
         <div class="product__row__setter">
-            <h1 class="product__name"><%= product.name %></h1>
+            <h1 class="product__name"><%= product.name %> <%= product.size.value %></h1>
             <p class="product__price">$ <%= product.price %></p>
         </div>
 

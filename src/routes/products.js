@@ -43,6 +43,8 @@ router.get('/', productsController.listar);
 
 router.post('/', productsController.buscar);
 
+router.post('/productDetail', productsController.buscar);
+
 router.put('/:id', upload.any(), productsController.processEdit);
 
 router.delete('/:id', productsController.processDelete);
