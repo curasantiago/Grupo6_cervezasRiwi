@@ -34,6 +34,7 @@ const productsController = require('../controllers/productsController');
 router.get('/cart', productsController.carrito); 
 
 router.get('/create', productsController.crear); 
+router.post('/', upload.any(), productsController.processCreate); 
 
 router.get('/:id/edit', productsController.editar); 
 
@@ -49,7 +50,6 @@ router.put('/:id', upload.any(), productsController.processEdit);
 
 router.delete('/:id', productsController.processDelete);
 
-router.post('/', upload.any(), productsController.processCreate); 
 
 
 // router.post('/productCreate',

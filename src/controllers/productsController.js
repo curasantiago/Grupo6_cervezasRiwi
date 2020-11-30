@@ -114,20 +114,22 @@ const productsController={
     },
 
     processCreate:(req, res)=>{
+
+        res.send(req.body)
         
-        let DBproducts = leerJsonProducts();
+        // let DBproducts = leerJsonProducts();
         
-        let product = {
-            id: Number(DBproducts[DBproducts.length -1].id) + 1,
-            ...req.body,
-            images: req.files[0].filename
-        }
+        // let product = {
+        //     id: Number(DBproducts[DBproducts.length -1].id) + 1,
+        //     ...req.body,
+        //     images: req.files[0].filename
+        // }
 
-        let nuevaDBProducts = [...DBproducts, product];
+        // let nuevaDBProducts = [...DBproducts, product];
 
-        fs.writeFileSync(pathJsonProducts, JSON.stringify(nuevaDBProducts, null, 2));
+        // fs.writeFileSync(pathJsonProducts, JSON.stringify(nuevaDBProducts, null, 2));
 
-        res.redirect("/products/"+product.id);
+        // res.redirect("/products/"+product.id);
     },
       
         
