@@ -109,13 +109,24 @@ const productsController={
         
     },
 
-    crear: (req, res)=> {
-    res.render("products/productCreateForm", {title: "Crear producto nuevo"});  
+    crear: async (req, res)=> {
+      try{   
+      const category= await Categories.findAll();
+      const subcategory= await SubCategories.findAll();
+      const capacidad= await Sizes.findAll();
+    res.render("products/productCreateForm", {title: "Crear producto nuevo", category, subcategory, capacidad});  
+  }catch (error){
+
+  }
     },
 
-    processCreate:(req, res)=>{
-
-        res.json(req.body)
+    processCreate: async(req, res)=>{
+      try{   
+         let image= req.files[0].filename
+         let productoEntero= {...req.body, image}
+          await Products.create(productoEntero)
+          
+          res.redirect("/");
 
         // let DBproducts = leerJsonProducts();
         
@@ -130,6 +141,9 @@ const productsController={
         // fs.writeFileSync(pathJsonProducts, JSON.stringify(nuevaDBProducts, null, 2));
 
         // res.redirect("/products/"+product.id);
+      }catch (error){   
+      console.log(error)
+    }
     },
       
         

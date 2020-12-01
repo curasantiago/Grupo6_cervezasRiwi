@@ -12,16 +12,38 @@
     <p class="create__form__title">ALTA NUEVO PRODUCTO</p>
     <form class="create__form" action="/products/create" method="POST"  id="createProductForm" enctype="multipart/form-data">
         
-        <select name="category" id="category" class="create__form__item" required>
-            <option value ="">Categoría</option>
-            <option>INDUSTRIAL</option>
-            <option>ARTESANAL</option>
+        <select name="id_category" id="category" class="create__form__item" required>
+
+            <option value ="1">Categoría</option>
+              <%  category.forEach(categorias=>{%>
+                 <option value="<%categorias.id%>"><%=categorias.name%>  
+                 </option>
+                <%})%>
+        
+            
+            <!-- <option value = "1">INDUSTRIAL</option>
+            <option value = "1">ARTESANAL</option>  -->
         </select>
-        <select name="subcat" id="subcat" class="create__form__item">
-            <option value= "">Subcategoría</option>
-            <option>RUBIA</option>
-            <option>ROJA</option>
-            <option>NEGRA</option>
+        <select name="id_subcategory" id="subcat" class="create__form__item">
+            <option value= "1">Subcategoría</option>
+             <% subcategory.forEach(subcategoria=>{ %>
+            <option value= "<%=subcategoria.id%>"> <%=subcategoria.name%>
+            </option>       
+            <% }) %>
+
+            <!-- <option value= "1">ROJA</option>
+            <option value= "1">NEGRA</option> -->
+        </select>
+
+        <select name="id_size" id="size" class="create__form__item" required>
+            <option value ="1">Tamaño</option>
+            <% capacidad.forEach(tamaño=>{ %>
+                <option value="<%=tamaño.id%>"><%=tamaño.value%>
+                </option>
+
+        <%   })   %>
+             <!-- <option value = "1">300ml</option>
+            <option value = "1">500ml</option> -->
         </select>
         
         <label for="name">Nombre:</label>
@@ -34,7 +56,9 @@
         <input type="number" name="price" id="price" min="1" placeholder="Ingrese el precio del producto" class="create__form__item" required>
         
         <label for="file">Imágenes:</label>
-        <input type="file" name="images" id="images" multiple>
+        <input type="file" name="image" id="image" multiple>
+
+        
     </form>
     <div class="create__form__button__container">
     <button type="submit" value="submit" class="create__form__button" form="createProductForm">CREAR PRODUCTO</button>
