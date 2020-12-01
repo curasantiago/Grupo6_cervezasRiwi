@@ -20,12 +20,12 @@ const productsController={
           let product = await Products.findByPk(id, {
             include:{all:true}
           });
-          let category = await Categories.findByPk(product.subcategory.id);
+          let category = await Categories.findByPk(product.subcategory.id_category);
           let size = await Sizes.findByPk(product.size.id)
 
           
           res.render("products/productDetail", {title: "Detalle de producto", product, category, size});
-          // res.json(size)
+          // res.json(category)
           
         } catch (error) {
           console.log(error)
