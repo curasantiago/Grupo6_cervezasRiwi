@@ -9,7 +9,7 @@
     <!-- VER MIDDLEWARE VALIDATOR -->
 
     <p class="edit__form__title">EDITAR PRODUCTO</p>
-    <form class="edit__form" action="/products/<%=product.id%>?_method=PUT" method="POST"  id="editProductForm" enctype="multipart/form-data">
+    <form class="edit__form" action="/products/<%=Number(product.id)%>?_method=PUT" method="POST"  id="editProductForm" enctype="multipart/form-data">
         <select name="category" id="category" class="edit__form__item" required>
             <option value="">Categoría</option>
             <option

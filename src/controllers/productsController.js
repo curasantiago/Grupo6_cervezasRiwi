@@ -189,16 +189,24 @@ const productsController={
 
       },
 
-      processDelete: (req, res)=> {
-        
-        let id = req.params.id;
-        let DBproducts = leerJsonProducts();
+      processDelete: async (req, res)=> {
+        try {
+          let fileToDelete = await Products.findByPk(req.params.id);
+          await fileToDelete.destroy();
+          res.redirect('/products');
+          // res.json(fileToDelete);
+          
+        } catch(err) {
+          console.log(err);
+        }
+        // let id = req.params.id;
+        // let DBproducts = leerJsonProducts();
 
-        let nuevaDBProducts = DBproducts.filter(producto => producto.id != id);
+        // let nuevaDBProducts = DBproducts.filter(producto => producto.id != id);
         
-        fs.writeFileSync(pathJsonProducts, JSON.stringify(nuevaDBProducts, null, 2));
+        // fs.writeFileSync(pathJsonProducts, JSON.stringify(nuevaDBProducts, null, 2));
         
-        res.json(pathJsonProducts)
+        // res.json(pathJsonProducts)
         // res.sendfile(path.resolve(__dirname + "/../data/products.JSON"));
     },
 
