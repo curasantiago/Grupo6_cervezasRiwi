@@ -317,6 +317,14 @@ body {
     text-align: justify;
 }
 
+#edit-detail {
+    display: block;
+}
+
+#delete-button {
+    display: block;
+}
+
 @media (min-width: 426px) and (max-width: 768px) {
 
     .product__ranking a {
