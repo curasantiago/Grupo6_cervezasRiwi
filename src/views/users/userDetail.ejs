@@ -15,8 +15,12 @@
     </section>
     <form action="/users/edit/<%=usuario.id%>" method="GET" id="toEditUser"></form>
     <div class="userDetail-button-container">
-    <button type="submit" value="submit" class="userDetail-button" form="toEditUser">EDITAR INFORMACIÓN</button>
+        <button type="submit" value="submit" class="userDetail-button" form="toEditUser">EDITAR INFORMACIÓN</button>
     </div>
+    <div class="userDetail-button-container">
+        <a href="/products/create"><button type="button" id="login-cuenta-button" style="cursor: pointer; font-size: 1em; ">AGREGAR PRODUCTO</button></a>
+    </div>
+    
 </div>
 
 <%- include('../partials/footer') %>

@@ -6,13 +6,10 @@
 <!-- Formulario alta producto -->
 <div class="create__form__container">
 
-
-    <!-- VER MIDDLEWARE VALIDATOR -->
-
     <p class="create__form__title">ALTA NUEVO PRODUCTO</p>
     <form class="create__form" action="/products/create" method="POST"  id="createProductForm" enctype="multipart/form-data">
         
-        <select name="id_category" id="category" class="create__form__item" required>
+        <select name="id_category" id="category" class="create__form__item">
 
             <option value ="1">Categoría</option>
               <%  category.forEach(categorias=>{%>
@@ -21,8 +18,6 @@
                 <%})%>
         
             
-            <!-- <option value = "1">INDUSTRIAL</option>
-            <option value = "1">ARTESANAL</option>  -->
         </select>
         <select name="id_subcategory" id="subcat" class="create__form__item">
             <option value= "1">Subcategoría</option>
@@ -30,30 +25,25 @@
             <option value= "<%=subcategoria.id%>"> <%=subcategoria.name%>
             </option>       
             <% }) %>
-
-            <!-- <option value= "1">ROJA</option>
-            <option value= "1">NEGRA</option> -->
         </select>
 
-        <select name="id_size" id="size" class="create__form__item" required>
+        <select name="id_size" id="size" class="create__form__item">
             <option value ="1">Tamaño</option>
             <% capacidad.forEach(tamaño=>{ %>
                 <option value="<%=tamaño.id%>"><%=tamaño.value%>
                 </option>
-
         <%   })   %>
-             <!-- <option value = "1">300ml</option>
-            <option value = "1">500ml</option> -->
         </select>
+        <div></div>
         
         <label for="name">Nombre:</label>
-        <input type="text" name="name" id="name" placeholder="Ingrese el nombre del producto" minlength="5" maxlength="30" class="create__form__item" required>
+        <input type="text" name="name" id="name" placeholder="Ingrese el nombre del producto" minlength="5" maxlength="30" class="create__form__item">
         
         <label for="info">Información:</label>
-        <textarea name="info" id="info" placeholder="Ingrese descripción del producto" rows="3" cols="1" minlength="5" maxlength="300" class="create__form__item" required></textarea>
+        <textarea name="info" id="info" placeholder="Ingrese descripción del producto" rows="3" cols="1" minlength="5" maxlength="300" class="create__form__item"></textarea>
         
         <label for="price">Precio:</label>
-        <input type="number" name="price" id="price" min="1" placeholder="Ingrese el precio del producto" class="create__form__item" required>
+        <input type="number" name="price" id="price" min="1" placeholder="Ingrese el precio del producto" class="create__form__item">
         
         <label for="file">Imágenes:</label>
         <input type="file" name="image" id="image" multiple>

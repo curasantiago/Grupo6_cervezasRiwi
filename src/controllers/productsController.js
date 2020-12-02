@@ -110,23 +110,26 @@ const productsController={
     },
 
     crear: async (req, res)=> {
-      try{   
-      const category= await Categories.findAll();
-      const subcategory= await SubCategories.findAll();
-      const capacidad= await Sizes.findAll();
-    res.render("products/productCreateForm", {title: "Crear producto nuevo", category, subcategory, capacidad});  
-  }catch (error){
+      
+      try {
 
-  }
+        const category= await Categories.findAll();
+        const subcategory= await SubCategories.findAll();
+        const capacidad= await Sizes.findAll();
+        res.render("products/productCreateForm", {title: "Crear producto nuevo", category, subcategory, capacidad});  
+      
+      } catch (error) {
+        console.log(error)
+      }
     },
 
     processCreate: async(req, res)=>{
-      try{   
-         let image= req.files[0].filename
+      try {   
+         let image = req.files[0].filename
          let productoEntero= {...req.body, image}
-          await Products.create(productoEntero)
+         await Products.create(productoEntero)
           
-          res.redirect("/");
+        res.redirect("/products");
 
         // let DBproducts = leerJsonProducts();
         
@@ -141,9 +144,9 @@ const productsController={
         // fs.writeFileSync(pathJsonProducts, JSON.stringify(nuevaDBProducts, null, 2));
 
         // res.redirect("/products/"+product.id);
-      }catch (error){   
+      } catch (error){   
       console.log(error)
-    }
+      }
     },
       
       
@@ -163,24 +166,40 @@ const productsController={
         try{  
         const product = await req.params.id;  
       
-        const prodEdit = await Products.findByPk(product);
+        const prodEdit = await Products.findByPk(product, {include:{all: true}});
         //  res.send(prodEdit)
          const categoria = await Categories.findAll() 
-         const subcategoria = await Subcategories.findAll();
+         const subcategoria = await SubCategories.findAll({include:{all: true}});
          const size = await Sizes.findAll();
-         res.render("products/productEditForm", {prodEdit,categoria, subcategoria, size});
+         res.render("products/productEditForm", {title: "Editar producto", prodEdit,categoria, subcategoria, size});
        }  catch(err){
           console.log(err)
         
       } 
 
       },
+
       processEdit:async(req,res)=> {
         try{ 
-          const productId=req.params.id;
-        
-          const cambiosProd= await Products.findByPk(productId);
-          await cambiosProd.update(req.body)
+          const productId = req.params.id;
+          const productToEdit = await Products.findByPk(productId)
+          let image;
+
+          if(req.files == "") {
+              image = productToEdit.image
+          } else {
+              image = req.files[0].filename
+          };
+          
+          let productEdited = {...req.body, image}
+          
+           
+          await Products.update(productEdited, {
+            where: {id: req.params.id}
+          });
+
+          res.redirect("/products/" + productId)
+          
 
         }catch (err){
           
@@ -190,7 +209,7 @@ const productsController={
       
 
       },
-//---------------------------------------------------------------------------fin CODIGO DE PACHI- REVISAR-------------------------------------//
+//---------------------------------------fin CODIGO DE PACHI- REVISAR-------------------------------------//
       // processEdit:(req, res)=> {
         
       //   let id = req.params.id;
