@@ -37,6 +37,7 @@ router.get('/create', productsController.crear);
 router.post('/create', upload.any(), productsController.processCreate);  // CHEQUEAR MAS TARDE
 
 router.get('/:id/edit', productsController.editar); 
+router.put('/:id', upload.any(), productsController.processEdit);
 
 router.get('/:id', productsController.detalle);
 
@@ -46,7 +47,7 @@ router.post('/', productsController.buscar);
 
 router.post('/productDetail', productsController.buscar);
 
-router.put('/:id', upload.any(), productsController.processEdit);
+
 
 router.delete('/:id', productsController.processDelete);
 

@@ -149,55 +149,80 @@ const productsController={
       
 //const {Products, SubCategories, Categories, sequelize, Sizes  
 
-      editar:(req, res)=>{
-        let id = req.params.id;  
-        let DBproducts = leerJsonProducts();
-        let product = DBproducts.find(producto => producto.id == id);
-        // console.log(product);
-        res.render("products/productEditForm", {title: "Editar producto", product: product});
-      },
-      // editar:async(req, res)=>{
-      //   const product = await req.params.id;  
-      //
-      //   const prodEdit = await Products.findByPk(product);
-      //   const categoria = await Categories.findAll() 
-      //   const subcategoria = await Subcategories.findAll();
-      //   const size = await Sizes.findAll();
-      //   res.render("products/productEditForm", {prodEdit, categoria, subcategoria, size});
+      // editar:(req, res)=>{
+      //   let id = req.params.id;  
+      //   let DBproducts = leerJsonProducts();
+      //   let product = DBproducts.find(producto => producto.id == id);
+      //   // console.log(product);
+      //   res.render("products/productEditForm", {title: "Editar producto", product: product});
       // },
 
-      processEdit:(req, res)=> {
+
+      //---------------------------------------------------------------------------NUEVO CODIGO DE PACHI- REVISAR-------------------------------------//
+      editar:async(req, res)=>{
+        try{  
+        const product = await req.params.id;  
+      
+        const prodEdit = await Products.findByPk(product);
+        //  res.send(prodEdit)
+         const categoria = await Categories.findAll() 
+         const subcategoria = await Subcategories.findAll();
+         const size = await Sizes.findAll();
+         res.render("products/productEditForm", {prodEdit,categoria, subcategoria, size});
+       }  catch(err){
+          console.log(err)
         
-        let id = req.params.id;
-        let DBproducts = leerJsonProducts();
-                
-        let indexOldProduct = DBproducts.findIndex(producto => producto.id == id);
-        
-        console.log(req.files);
-        let imagen;
-
-        if(req.files == "") {
-            imagen = DBproducts[indexOldProduct].images
-        } else {
-            imagen = req.files[0].filename
-            // borrar foto vieja
-        };
-
-        
-
-        let newProduct = {
-            id: Number(req.params.id),
-            ...req.body,
-            images: imagen
-        };
-
-        DBproducts[indexOldProduct] = newProduct;
-
-        fs.writeFileSync(pathJsonProducts, JSON.stringify(DBproducts, null, 2));
-        
-        res.redirect("/products/"+newProduct.id);
+      } 
 
       },
+      processEdit:async(req,res)=> {
+        try{ 
+          const productId=req.params.id;
+        
+          const cambiosProd= await Products.findByPk(productId);
+          await cambiosProd.update(req.body)
+
+        }catch (err){
+          
+            console.log(err);
+        
+      }
+      
+
+      },
+//---------------------------------------------------------------------------fin CODIGO DE PACHI- REVISAR-------------------------------------//
+      // processEdit:(req, res)=> {
+        
+      //   let id = req.params.id;
+      //   let DBproducts = leerJsonProducts();
+                
+      //   let indexOldProduct = DBproducts.findIndex(producto => producto.id == id);
+        
+      //   console.log(req.files);
+      //   let imagen;
+
+      //   if(req.files == "") {
+      //       imagen = DBproducts[indexOldProduct].images
+      //   } else {
+      //       imagen = req.files[0].filename
+      //       // borrar foto vieja
+      //   };
+
+        
+
+      //   let newProduct = {
+      //       id: Number(req.params.id),
+      //       ...req.body,
+      //       images: imagen
+      //   };
+
+      //   DBproducts[indexOldProduct] = newProduct;
+
+      //   fs.writeFileSync(pathJsonProducts, JSON.stringify(DBproducts, null, 2));
+        
+      //   res.redirect("/products/"+newProduct.id);
+
+      // },
 
       processDelete: async (req, res)=> {
         try {

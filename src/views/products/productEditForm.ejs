@@ -7,13 +7,49 @@
 
 
     <!-- VER MIDDLEWARE VALIDATOR -->
-
+<!-- ----------------------------------------------------------revisar nuevo cidigo de pachi----------------------------- -->
     <p class="edit__form__title">EDITAR PRODUCTO</p>
     <form class="edit__form" action="/products/<%=Number(product.id)%>?_method=PUT" method="POST"  id="editProductForm" enctype="multipart/form-data">
         <select name="category" id="category" class="edit__form__item" required>
             <option value="">Categoría</option>
-            <option
-                <% if (product.category == "INDUSTRIAL") { %>
+            
+            <%categoria.forEach(categori=>{ %>
+           <%if(prodEdit.CategoriesId =categori.id){%>
+            <option value="<%categori.id%>" selected> <%=categori.name%></option>
+
+           <% } else{ %>
+              <option value="<%categori.id%>"> <%=categori.name%></option>
+           <%  } %>
+           <% }) %>
+
+
+        <select name="subcat" id="subcat" class="edit__form__item" required>
+            <option value= "">Subcategoría</option>
+            <%subcategoria.forEach(subCat=>{ %>
+                <%if(prodEdit.subCategories =subCat.id){%>
+                 <option value="<%subCat.id%>" selected> <%=subCat.name%></option>
+     
+                <% } else{ %>
+                   <option value="<%subCat.id%>"> <%=subCat.name%></option>
+                <%  } %>
+                <% }) %>
+          
+        </select>
+        <select name="size" id="size" class="edit__form__item" required>
+            <option value= "">Tamaño</option>
+            <%size.forEach(tamaño=>{ %>
+                <%if(prodEdit.Size =tamaño.id){%>
+                 <option value="<%tamaño.id%>" selected> <%=tamaño.name%></option>
+     
+                <% } else{ %>
+                   <option value="<%tamaño.id%>"> <%=Tamaño.name%></option>
+                <%  } %>
+                <% }) %>
+         
+        </select>        
+     <!--    --------------------------------------------------------------------fin codigo nuevo de pachi ver---------------------------------- -->
+        <option>
+            <% if (product.category == "INDUSTRIAL") { %>
                 selected="selected"
                 <% } %>
                 >INDUSTRIAL</option>
@@ -22,8 +58,8 @@
                 selected="selected"
                 <% } %>
             >ARTESANAL</option>
-        </select>
-        <select name="subcat" id="subcat" class="edit__form__item" required>
+            </select>
+            <select name="subcat" id="subcat" class="edit__form__item" required>
             <option value= "">Subcategoría</option>
             <option
             <% if (product.subcat == "RUBIA") { %>
@@ -40,22 +76,24 @@
                 selected="selected"
                 <% } %>
             >NEGRA</option>
-        </select>
+            </select>
         
+         -------------------------------------------------------------PACHI MODIFICACION DE LOS 3 VALUE, Y LAS IMAGES---------------------------------------------- -->
+
         <label for="name">Nombre:</label>
-        <input type="text" name="name" id="name" placeholder="Ingrese el nombre del producto" minlength="5" maxlength="30" class="edit__form__item" value="<%= product.name %>" required>
+        <input type="text" name="name" id="name" placeholder="Ingrese el nombre del producto" minlength="5" maxlength="30" class="edit__form__item" value="<%= prodEdit.name %>" required>
         
         <label for="info">Información:</label>
-        <textarea name="info" id="info" placeholder="Ingrese descripción del producto" cols="1" minlength="5" maxlength="300" class="edit__form__item" required><%= product.info %></textarea>
+        <textarea name="info" id="info" placeholder="Ingrese descripción del producto" cols="1" minlength="5" maxlength="300" class="edit__form__item" required><%= prodEdit.info %></textarea>
         
         <label for="price">Precio:</label>
-        <input type="number" name="price" id="price" min="1" placeholder="Ingrese el precio del producto" class="edit__form__item" value=<%= product.price %> required>
+        <input type="number" name="price" id="price" min="1" placeholder="Ingrese el precio del producto" class="edit__form__item" value=<%= prodEdit.price %> required>
         
         <label for="file">Imágenes:</label>
         
         <div class="edit__form__load__images">
                 <article class="edit__form__product__img">
-                    <a target="_blank" href="/images/products/<%= product.images %>"><img src="/images/products/<%= product.images %>" alt="Imagen1"></a>
+                    <a target="_blank" href="/images/products/<%= prodEdit.images %>"><img src="/images/products/<%= prodEdit.images %>" alt="Imagen1"></a>
                     <!-- <button type="button" title="Eliminar imagen">x</button> -->
                 </article>
                 <!-- <article class="edit__form__product__img">
