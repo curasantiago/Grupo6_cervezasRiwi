@@ -146,7 +146,8 @@ const productsController={
     }
     },
       
-        
+      
+//const {Products, SubCategories, Categories, sequelize, Sizes  
 
       editar:(req, res)=>{
         let id = req.params.id;  
@@ -155,6 +156,15 @@ const productsController={
         // console.log(product);
         res.render("products/productEditForm", {title: "Editar producto", product: product});
       },
+      // editar:async(req, res)=>{
+      //   const product = await req.params.id;  
+      //
+      //   const prodEdit = await Products.findByPk(product);
+      //   const categoria = await Categories.findAll() 
+      //   const subcategoria = await Subcategories.findAll();
+      //   const size = await Sizes.findAll();
+      //   res.render("products/productEditForm", {prodEdit, categoria, subcategoria, size});
+      // },
 
       processEdit:(req, res)=> {
         
