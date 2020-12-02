@@ -134,9 +134,9 @@
             <p>Información del producto: <%= product.info %></p>
         </section>
 
-    </form>
+    
     <div class="edit__form__button__container " id="edit-detail">
-    <button type="submit" value="submit" class="edit__form__button" form="editProductForm">EDITAR PRODUCTO</button>
+    <a href="/products/<%= product.id %>/edit"><button type="submit" value="submit" class="edit__form__button" form="editProductForm">EDITAR PRODUCTO</button></a>
     </div>
     
     <form action="/products/<%=product.id%>?_method=DELETE" method="POST"  id="deleteProduct">
