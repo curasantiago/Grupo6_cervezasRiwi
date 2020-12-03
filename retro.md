@@ -2,6 +2,30 @@ RETROSPECTIVAS GRUPO 6
 Jamboard: https://jamboard.google.com/d/1kqTkwzlSrIPL8H1haLnDO3necgWa0L0pzbJv6_lmehE/edit?usp=sharing
 
 ---------------------------------------------------------------------------------------------------------
+Retrospectiva Sprint 5
+Starfish Retrospective
+
+1) Start doing:
+- Realizar más tareas opcionales
+
+2) More of:
+- Testear trabajo de compañeros
+
+3) Keep doing:
+- Retrospectiva al comienzo
+- Juntarnos a trabajar en grupo
+- Pedir ayuda a los compañeros
+- Feedback de compañeros de trabajos realizados
+- División de tareas
+- Sostener la buena onda. Decir lo que nos inquieta y opinar
+
+4) Less of:
+- Organización de tiempos más aproximada
+
+5) Stop doing:
+- Mandar mensajes en horarios no laborales
+
+---------------------------------------------------------------------------------------------------------
 Retrospectiva Sprint 4
 Starfish Retrospective
 
