@@ -1,5 +1,12 @@
 <%- include('../partials/head') %>
 
+<!-- JS FRONT DE BUSCADOR POR CATEGORIAS -->
+<script src="/js/select-subcategory.js" defer></script>
+<!-- CONVERSION DE TABLAS DE BASE DE DATOS PARA PODER SER USADAS EN JSFRONT -->
+<script type="text/javascript" defer>
+    let subcategories = '<%-JSON.stringify(subcategory)%>';
+</script>
+
 <body>
 <%- include('../partials/header') %>
 
@@ -7,26 +14,26 @@
 <div class="create__form__container">
 
     <p class="create__form__title">ALTA NUEVO PRODUCTO</p>
+
     <form class="create__form" action="/products/create" method="POST"  id="createProductForm" enctype="multipart/form-data">
         
+        <!-- SELECT DE CATEGORIAS -->
         <select name="id_category" id="category" class="create__form__item">
-
-            <option value ="1">Categoría</option>
-              <%  category.forEach(categorias=>{%>
-                 <option value="<%categorias.id%>"><%=categorias.name%>  
+            <option value ="">Categoría</option>
+              <%  category.forEach(categorias=>{ %>
+                 <option value="<%=categorias.id%>"><%=categorias.name%>  
                  </option>
                 <%})%>
-        
-            
-        </select>
-        <select name="id_subcategory" id="subcat" class="create__form__item">
-            <option value= "1">Subcategoría</option>
-             <% subcategory.forEach(subcategoria=>{ %>
-            <option value= "<%=subcategoria.id%>"> <%=subcategoria.name%>
-            </option>       
-            <% }) %>
         </select>
 
+        <!-- SELECT DE SUBCATEGORIAS -->
+        <select name="id_subcategory" id="subcat" class="create__form__item">
+            <option value= "">Subcategoría</option>
+            <option value= "">(Seleccione una categoría)</option>
+             
+        </select>
+
+        <!-- SELECT DE SIZES -->
         <select name="id_size" id="size" class="create__form__item">
             <option value ="1">Tamaño</option>
             <% capacidad.forEach(tamaño=>{ %>

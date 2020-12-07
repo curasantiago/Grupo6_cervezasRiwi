@@ -1,4 +1,12 @@
 <%- include('../partials/head') %>
+
+<!-- JS FRONT DE BUSCADOR POR CATEGORIAS -->
+<script src="/js/select-subcategory.js" defer></script>
+<!-- CONVERSION DE TABLAS DE BASE DE DATOS PARA PODER SER USADAS EN JSFRONT -->
+<script type="text/javascript" defer>
+    let subcategories = '<%-JSON.stringify(subcategoria)%>';
+</script>
+
 <body>
 <%- include('../partials/header') %>
 
@@ -7,12 +15,12 @@
 
 
     <!-- VER MIDDLEWARE VALIDATOR -->
-<!-- ----------------------------------------------------------revisar nuevo cidigo de pachi----------------------------- -->
+
     <p class="edit__form__title">EDITAR PRODUCTO</p>
     <form class="edit__form" action="/products/<%=Number(prodEdit.id)%>?_method=PUT" method="POST"  id="editProductForm" enctype="multipart/form-data">
         
-        <select name="id_category" id="category" class="edit__form__item" required>
-        <option value="1">Categoría</option>
+        <select name="id_category" id="category" class="edit__form__item">
+        <option value="">Categoría</option>
         
         <%categoria.forEach(categori=>{ %>
             <%if(prodEdit.subcategory.id_category == categori.id){%>
@@ -24,12 +32,12 @@
         </select>
 
         <select name="id_subcategory" id="subcat" class="edit__form__item" required>
-        <option value= "1">Subcategoría</option>
+        <option value= "">Subcategoría</option>
         
         <%subcategoria.forEach(subCat=>{ %>
             <%if(prodEdit.id_subcategory == subCat.id){%>
                 <option value="<%=subCat.id%>" selected> <%=subCat.name%></option>
-            <% } else{ %>
+            <% } else if (prodEdit.subcategory.id_category == subCat.id_category){ %>
                 <option value="<%=subCat.id%>"> <%=subCat.name%></option>
             <%  } %>
         <% }) %>
