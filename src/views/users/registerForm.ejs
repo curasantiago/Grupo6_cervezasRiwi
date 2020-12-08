@@ -25,7 +25,15 @@
                         <form action="/users/register" method="POST" id="registerForm" name="registerForm">
                             <% if (typeof errorMsg != "undefined") { %>
                                 <p style="color: orangered"><%=errorMsg%></p>
+
                             <% } %> 
+
+                            <% if(typeof errors != "undefined") { %>
+                                <% errors.forEach(error => { %>
+                                    <p style="color: orangered"><%= error.msg %></p>
+                                <% }) %>
+                            <% } %>
+
                             <!-- <p id="registerForm-p"> Registrarse con dirección de email</p> -->
                             <input type="text" name="first_name" id="first_name" placeholder="Nombre" class="registerForm-input" <% if (typeof datosLlenos != "undefined"){ %>value="<%=datosLlenos.first_name%>"<%}%>>
 

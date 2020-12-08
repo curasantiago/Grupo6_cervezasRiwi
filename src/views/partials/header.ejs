@@ -8,6 +8,10 @@
         <a href="">HISTORIA</a>
         <a href="">AYUDA</a>
         <a href="">CONTACTO</a>
+
+        <% if (usuarioSession) { %>
+            <p>¡Bienvenido <%=usuarioSession.first_name%>!</p>
+        <% } %>
     </nav>
 
     <div class="header-icons-container" id="header-buttons">

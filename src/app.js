@@ -5,6 +5,16 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var methodOverride = require('method-override');
 var app = express();
+var session = require('express-session')
+var loginVariable = require('./middlewares/app/loginVariable')
+
+app.use(session({
+  secret: 'keyboard cat',
+  resave: true,
+  saveUninitialized: true
+}));
+app.use(cookieParser());
+app.use(loginVariable);
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -13,7 +23,6 @@ app.set('view engine', 'ejs');
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-app.use(cookieParser());
 app.use(express.static(path.join(__dirname, '../public')));
 
 

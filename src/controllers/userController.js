@@ -10,6 +10,8 @@ const {Users, sequelize} = require('../database/models');
 const {Op} = require('sequelize');
 const bcrypt = require('bcrypt');
 
+const { validationResult } = require('express-validator');
+
 const userController={
 
 
@@ -19,46 +21,64 @@ const userController={
    
     processRegister: async (req, res)=>{
       let nuevoUsuario = req.body;
+      let errors = validationResult(req);
+
         // CHEQUEO DE MATCH DE CONTRASEÑAS 
-        if (nuevoUsuario.password != nuevoUsuario.repassword) {
-          res.render("users/registerForm", {title: "Registrarse", datosLlenos: nuevoUsuario, errorMsg: "Contraseñas diferentes"});
-        } else {
+        // if (nuevoUsuario.password != nuevoUsuario.repassword) {
+        //   res.render("users/registerForm", {title: "Registrarse", datosLlenos: nuevoUsuario, errorMsg: "Contraseñas diferentes"});
+        // } else {
       
-              delete nuevoUsuario.repassword
-              nuevoUsuario.password = bcrypt.hashSync(nuevoUsuario.password, 10);
+        //       delete nuevoUsuario.repassword
+        //       nuevoUsuario.password = bcrypt.hashSync(nuevoUsuario.password, 10);
                     
-              try {
-                let checkUserEmail = await Users.findAll({where: {email: nuevoUsuario.email}})
-                if (checkUserEmail == "") {
-                  await Users.create(nuevoUsuario);
-                  res.redirect('./login');
-                } else {
-                  res.render("users/registerForm", {title: "Registrarse", datosLlenos: nuevoUsuario, errorMsg: "Email no válido"});
-                }
+        // let checkUserEmail = await Users.findAll({where: {email: nuevoUsuario.email}})
+        // if (checkUserEmail == "") {
+          
+          try {
+                  if (errors.isEmpty()){
+
+                    await Users.create(nuevoUsuario);
+                    res.redirect('./login');
+                  
+                  }  else {
+                    res.render("users/registerForm", {title: "Registrarse", errors: errors.errors});
+                  }
+                
+                
+                // } else {
+                //   res.render("users/registerForm", {title: "Registrarse", datosLlenos: nuevoUsuario, errorMsg: "Email no válido"});
+                // }
 
               } catch (error) {
                     console.log(error);
               }
-    }
+    // }
 
     },
 
     detail: async (req, res) =>{
+      
       try {  
         let usuario = await Users.findByPk(req.params.id)
         res.render('users/userDetail', {usuario, title: usuario.first_name + " " + usuario.last_name})
       } catch (error) {
           console.log(error);
       }
+
+    
     },
 
     edit: async (req, res) => {
+      
+
       try {  
         let usuario = await Users.findByPk(req.params.id)
         res.render('users/userEdit', {usuario, title: "Editar Información"})
       } catch (error) {
           console.log(error);
       }
+
+    
     },
 
     processEdit: async (req,res) => {
@@ -142,10 +162,21 @@ const userController={
     },
 
     login:(req, res)=>{
+        if(req.session.usuarioLoggeado) {
+          res.redirect("/users/detail/" + req.session.usuarioLoggeado.id)
+        } else {
         res.render("users/login", {title: "Login"});
+        }
     }, 
 
+    logout: (req,res)=>{
+      req.session.destroy();
+      res.clearCookie('recordame');
+      res.redirect('/users/login');
+    },
+
     processLogin: async (req, res)=>{
+      
       try {
         
         let usuarioMail = req.body.email;
@@ -155,7 +186,7 @@ const userController={
         let usuario = await Users.findAll({
           where: {email : usuarioMail}
         })
-      
+        
 
         if (usuario == "") {
           let error = "Usuario no encontrado."
@@ -163,8 +194,13 @@ const userController={
         
         } else if (bcrypt.compareSync(usuarioPass, usuario[0].password)) {
 
+            req.session.usuarioLoggeado = usuario[0];
+            
+            if (req.body.recordame != undefined) {
+              res.cookie('recordame', usuario[0], {maxAge: 30000});
+            }
             res.render('users/userDetail', {usuario: usuario[0], title: usuario[0].first_name + " " + usuario[0].last_name})
-          
+
           } else {
 
           let error = "Contraseña incorrecta."

@@ -9,6 +9,13 @@ const mainController = require('../controllers/mainController');  //pachi
 
 //---------------vista-----------------------//
 router.get('/', mainController.index);
+router.get('/pruebaLogin', (req, res) => {
+    if(req.session.usuarioLoggeado) {
+        res.send("Hay session")
+    } else {
+        res.send("no hay session")
+    }
+})
 router.get('/ingreso', mainController.ingresar);
 router.get('/probandoData', async (req, res) => {
     let products = await Products.findAll({
