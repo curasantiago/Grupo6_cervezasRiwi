@@ -1,6 +1,7 @@
 const { body, validationResult } = require('express-validator')
 const {Users, sequelize} = require('../../database/models');
 const {Op} = require('sequelize');
+const path = require('path');
 
 const validator = {
     userCreate:
@@ -113,12 +114,86 @@ const validator = {
     ],
     productCreate: 
     [
+        body("id_category")
+        .notEmpty()
+        .withMessage("Elija una categoría"),
+        body("id_subcategory")
+        .notEmpty()
+        .withMessage("Elija una subcategoría"),
+        body("id_size")
+        .notEmpty()
+        .withMessage("Elija un tamaño"),
         body("name")
-        .isInt()
-        .withMessage("Nombre obligatorio"),
+        .notEmpty()
+        .withMessage("Nombre obligatorio")
+        .bail()
+        .isLength({min: 5})
+        .withMessage("El mínimo de caracteres del nombre es 5"),
         body("info")
+        .notEmpty()
+        .withMessage("Información del producto obligatoria")
+        .bail()
         .isLength({min: 8})
-        .withMessage("Info obligatoria")
+        .withMessage("El mínimo de caracteres de la información del producto es 8"),
+        body("price")
+        .isInt({min: 10, max: 999})
+        .withMessage("Ingrese un precio entre 10 y 9999"),
+        body("image")
+        .custom(function(value, {req}) {
+             if (req.file != undefined) {
+                return true
+             } else {
+                return false
+             }
+        })
+        .withMessage("Imagen obligatoria")
+        .bail()
+        .custom(function(value, {req}) {
+            const acceptedExtensions = [".jpg", ".jpeg", ".png"];
+            const ext = path.extname(req.file.originalname);
+            const resultado = acceptedExtensions.includes(ext);
+            return resultado
+        })
+        .withMessage("Formato de imagen no válido")
+    ],
+    productEdit: 
+    [
+        body("id_category")
+        .notEmpty()
+        .withMessage("Elija una categoría"),
+        body("id_subcategory")
+        .notEmpty()
+        .withMessage("Elija una subcategoría"),
+        body("id_size")
+        .notEmpty()
+        .withMessage("Elija un tamaño"),
+        body("name")
+        .notEmpty()
+        .withMessage("Nombre obligatorio")
+        .bail()
+        .isLength({min: 5})
+        .withMessage("El mínimo de caracteres del nombre es 5"),
+        body("info")
+        .notEmpty()
+        .withMessage("Información del producto obligatoria")
+        .bail()
+        .isLength({min: 8})
+        .withMessage("El mínimo de caracteres de la información del producto es 8"),
+        body("price")
+        .isInt({min: 10, max: 999})
+        .withMessage("Ingrese un precio entre 10 y 9999"),
+        body("image")
+        .custom(function(value, {req}) {
+            if(req.file != undefined) {
+                const acceptedExtensions = [".jpg", ".jpeg", ".png"];
+                const ext = path.extname(req.file.originalname);
+                const resultado = acceptedExtensions.includes(ext);
+                return resultado
+            } else {
+                return true
+            }
+        })
+        .withMessage("Formato de imagen no válido")
     ]
 };
 

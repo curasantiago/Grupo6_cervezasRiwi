@@ -7,53 +7,101 @@
     let subcategories = '<%-JSON.stringify(subcategory)%>';
 </script>
 
+<% if (typeof infoIngresada != "undefined") { %>
+    <script type="text/javascript" defer>
+        let infoIngresada = '<%-JSON.stringify(infoIngresada)%>';
+    </script>
+<% } %>
+
 <body>
 <%- include('../partials/header') %>
 
 <!-- Formulario alta producto -->
 <div class="create__form__container">
+   
 
     <p class="create__form__title">ALTA NUEVO PRODUCTO</p>
+
+    <% if(typeof errors != "undefined") { %>
+        <% errors.forEach(error => { %>
+            <p class="create__form__title" style="color: orangered;"><%= error.msg %></p> 
+        <% }) %> 
+    <% } %>
+    
 
     <form class="create__form" action="/products/create" method="POST"  id="createProductForm" enctype="multipart/form-data">
         
         <!-- SELECT DE CATEGORIAS -->
         <select name="id_category" id="category" class="create__form__item">
             <option value ="">Categoría</option>
-              <%  category.forEach(categorias=>{ %>
+                            
+            <% if (typeof infoIngresada != "undefined") { %>
+            
+                <% category.forEach(categorias=>{ %>
+                    <option value="<%=categorias.id%>" <% if (categorias.id == infoIngresada.id_category) { %>
+                     selected
+                    <% } %>><%=categorias.name%></option>
+                    <% }) %>
+                    
+            <% } else { %>
+
+            <% category.forEach(categorias=>{ %>
                  <option value="<%=categorias.id%>"><%=categorias.name%>  
                  </option>
                 <%})%>
+            
+            <% } %>
         </select>
 
         <!-- SELECT DE SUBCATEGORIAS -->
         <select name="id_subcategory" id="subcat" class="create__form__item">
+       
+            
             <option value= "">Subcategoría</option>
             <option value= "">(Seleccione una categoría)</option>
-             
+     
         </select>
 
         <!-- SELECT DE SIZES -->
         <select name="id_size" id="size" class="create__form__item">
-            <option value ="1">Tamaño</option>
-            <% capacidad.forEach(tamaño=>{ %>
-                <option value="<%=tamaño.id%>"><%=tamaño.value%>
-                </option>
-        <%   })   %>
+
+            <option value ="">Tamaño</option>
+
+            <% if (typeof infoIngresada != "undefined") { %>
+            
+                <% capacidad.forEach(tamaño=>{ %>
+                    <option value="<%=tamaño.id%>" <% if (tamaño.id == infoIngresada.id_size) { %>
+                     selected
+                    <% } %>><%=tamaño.value%></option>
+                    <% }) %>
+                    
+            <% } else { %>
+       
+                <% capacidad.forEach(tamaño=>{ %>
+                    <option value="<%=tamaño.id%>"><%=tamaño.value%>
+                    </option>
+                <%   })   %>
+            
+            <% } %>
+
         </select>
         <div></div>
         
         <label for="name">Nombre:</label>
-        <input type="text" name="name" id="name" placeholder="Ingrese el nombre del producto" minlength="5" maxlength="30" class="create__form__item">
+        <input type="text" name="name" id="name" placeholder="Ingrese el nombre del producto" class="create__form__item" <% if (typeof infoIngresada != "undefined") { %>
+         value="<%=infoIngresada.name%>"
+        <% } %>>
         
         <label for="info">Información:</label>
-        <textarea name="info" id="info" placeholder="Ingrese descripción del producto" rows="3" cols="1" minlength="5" maxlength="300" class="create__form__item"></textarea>
+        <textarea name="info" id="info" placeholder="Ingrese descripción del producto" rows="3" cols="1" class="create__form__item"><% if (typeof infoIngresada != "undefined") { %><%=infoIngresada.info%><% } %></textarea>
         
         <label for="price">Precio:</label>
-        <input type="number" name="price" id="price" min="1" placeholder="Ingrese el precio del producto" class="create__form__item">
+        <input type="number" name="price" id="price" placeholder="Ingrese el precio del producto" class="create__form__item"<% if (typeof infoIngresada != "undefined") { %>
+            value="<%=infoIngresada.price%>"
+           <% } %>>
         
-        <label for="file">Imágenes:</label>
-        <input type="file" name="image" id="image" multiple>
+        <label for="file">Imagen:</label>
+        <input type="file" name="image" id="image">
 
         
     </form>

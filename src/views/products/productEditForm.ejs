@@ -13,8 +13,12 @@
 <!-- Formulario alta producto -->
 <div class="edit__form__container">
 
+        <% if(typeof errors != "undefined") { %>
+            <% errors.forEach(error => { %>
+                <p class="create__form__title" style="color: orangered;"><%= error.msg %></p> 
+            <% }) %> 
+        <% } %>
 
-    <!-- VER MIDDLEWARE VALIDATOR -->
 
     <p class="edit__form__title">EDITAR PRODUCTO</p>
     <form class="edit__form" action="/products/<%=Number(prodEdit.id)%>?_method=PUT" method="POST"  id="editProductForm" enctype="multipart/form-data">
@@ -31,8 +35,8 @@
         <% }) %>
         </select>
 
-        <select name="id_subcategory" id="subcat" class="edit__form__item" required>
-        <option value= "">Subcategoría</option>
+        <select name="id_subcategory" id="subcat" class="edit__form__item">
+        <option value="">Subcategoría</option>
         
         <%subcategoria.forEach(subCat=>{ %>
             <%if(prodEdit.id_subcategory == subCat.id){%>
@@ -45,8 +49,8 @@
 
         <div></div>
 
-        <select name="id_size" id="size" class="edit__form__item" required>
-        <option value="1">Tamaño</option>
+        <select name="id_size" id="size" class="edit__form__item">
+        <option value="">Tamaño</option>
         
         <%size.forEach(tamaño=>{ %>
             <%if(prodEdit.id_size == tamaño.id){%>
@@ -57,20 +61,18 @@
         <% }) %>
          
         </select>        
-     <!-------------------------------------fin codigo nuevo de pachi ver--------------------------- -->
-    
-    <!----------------PACHI MODIFICACION DE LOS 3 VALUE, Y LAS IMAGES----------------------->
+     
 
         <label for="name">Nombre:</label>
-        <input type="text" name="name" id="name" placeholder="Ingrese el nombre del producto" minlength="5" maxlength="30" class="edit__form__item" value="<%= prodEdit.name %>">
+        <input type="text" name="name" id="name" placeholder="Ingrese el nombre del producto" class="edit__form__item" value="<%= prodEdit.name %>">
         
         <label for="info">Información:</label>
-        <textarea name="info" id="info" placeholder="Ingrese descripción del producto" cols="1" minlength="5" maxlength="300" class="edit__form__item"><%= prodEdit.info %></textarea>
+        <textarea name="info" id="info" placeholder="Ingrese descripción del producto" cols="1" class="edit__form__item"><%= prodEdit.info %></textarea>
         
         <label for="price">Precio:</label>
-        <input type="number" name="price" id="price" min="1" placeholder="Ingrese el precio del producto" class="edit__form__item" value=<%= prodEdit.price %>>
+        <input type="number" name="price" id="price" class="edit__form__item" value=<%= prodEdit.price %>>
         
-        <label for="file">Imágenes:</label>
+        <label for="file">Imagen:</label>
         
         <div class="edit__form__load__images">
                 <article class="edit__form__product__img">
@@ -88,7 +90,7 @@
         </div>
         <div>
         </div>
-        <input type="file" name="images" id="images">
+        <input type="file" name="image" id="image">
     </form>
 
     <div class="edit__form__button__container">
@@ -96,9 +98,9 @@
     </div>
     
     <form action="/products/<%=prodEdit.id%>?_method=DELETE" method="POST"  id="deleteProduct">
-    <div class="edit__form__button__container">
-    <button type="submit" value="submit" class="edit__form__delete__button">ELIMINAR PRODUCTO</button>
-    </div>
+        <div class="edit__form__button__container">
+            <button type="submit" value="submit" class="edit__form__delete__button">ELIMINAR PRODUCTO</button>
+        </div>
     </form>
 
 </div>
