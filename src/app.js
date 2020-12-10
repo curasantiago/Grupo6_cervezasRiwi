@@ -31,12 +31,15 @@ app.use(express.static(path.join(__dirname, '../public')));
 var indexRouter = require('./routes/main');
 var usersRouter = require('./routes/users');
 var productsRouter = require('./routes/products');
+var productsApi = require('./routes/api/productsApi');
+
 
 app.use(methodOverride('_method'));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/products', productsRouter);
+app.use('/api/products', productsApi);
 
 
 // catch 404 and forward to error handler
