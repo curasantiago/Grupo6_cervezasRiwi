@@ -43,22 +43,21 @@ const validator = {
         }).withMessage("El email no puede tener espacios")
         .bail()
         .custom(async function(value){
-            
             let checkUserEmail;
-
             try {
             checkUserEmail = await Users.findAll({where: {email: value}})
-            } catch (error) {
-                console.log(error)
+            
+            } catch(err) {
+                console.log(err)
             }
-            
-            console.log(checkUserEmail == undefined)
-            
-            if (checkUserEmail == undefined) {
-                    return true
+            if (checkUserEmail == '') {
+               
+                return true;
             } else {
-                    return false
+                console.log('hello')
+                return false;
             }
+            
 
             // if (emailExiste) {
             //     return false
@@ -66,8 +65,8 @@ const validator = {
             //     return true
             // }
 
-        })
-        .withMessage("Email no valido"),
+        }).withMessage('El email ingresado ya existe'),
+        // .withMessage("Email no valido"),
         body("birthdate")
         .notEmpty()
         .withMessage("Ingresa una fecha de nacimiento"),
