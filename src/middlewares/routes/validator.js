@@ -41,23 +41,23 @@ const validator = {
             } else {
                 return true
             }
-        }).withMessage("El email no puede tener espacios")
-        .bail()
-        .custom(async function(value){
-            let checkUserEmail;
-            try {
-            checkUserEmail = await Users.findAll({where: {email: value}})
+        }).withMessage("El email no puede tener espacios"),
+        // .bail()
+        // .custom(async function(value){
+        //     let checkUserEmail;
+        //     try {
+        //     checkUserEmail = await Users.findAll({where: {email: value}})
             
-            } catch(err) {
-                console.log(err)
-            }
-            if (checkUserEmail == '') {
+        //     } catch(err) {
+        //         console.log(err)
+        //     }
+        //     if (checkUserEmail == '') {
                
-                return true;
-            } else {
-                console.log('hello')
-                return false;
-            }
+        //         return true;
+        //     } else {
+        //         console.log('hello')
+        //         return false;
+        //     }
             
 
             // if (emailExiste) {
@@ -66,14 +66,33 @@ const validator = {
             //     return true
             // }
 
-        }).withMessage('El email ingresado ya existe'),
-        // .withMessage("Email no valido"),
+        // }).withMessage('El email ingresado ya existe'),
+        //  .withMessage("Email no valido"),
         body("birthdate")
         .notEmpty()
-        .withMessage("Ingresa una fecha de nacimiento"),
-        // .custom(function(value) {
-        //     if (Date.now() - value >= 18)
-        // })
+        .withMessage("Ingresa una fecha de nacimiento")
+        .bail()
+        .custom(function(value){
+           function getAge(dateString) {
+            var today = new Date();
+            var birthDate = new Date(dateString);
+            var age = today.getFullYear() - birthDate.getFullYear();
+            var m = today.getMonth() - birthDate.getMonth();
+            if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
+                age--;
+            }
+            return age;
+        }
+       
+       if(getAge(value)<18){
+           return false
+       }else{
+           return true
+       }
+        })
+        .withMessage("Debe ser mayor de 18 años"),
+        
+        
         body("address")
         .notEmpty()
         .withMessage("Ingresá un domicilio")

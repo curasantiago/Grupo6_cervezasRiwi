@@ -37,8 +37,25 @@ const userController={
           try {
                   if (errors.isEmpty()){
 
-                    await Users.create(nuevoUsuario);
+                    try{
+                      let emailUser=await Users.findAll({where:{email:nuevoUsuario.email}})
+                      if(emailUser==""){
+                        await Users.create(nuevoUsuario);
                     res.redirect('./login');
+                      }else{
+                        res.render("users/registerForm", {title: "Registrarse", errors: [
+                          {
+                            msg:"El email ingresado ya existe"
+                          }
+                        ]});
+                        
+
+                      }
+                    }catch(error){
+                      console.log(error)
+                    }
+
+                    
                   
                   }  else {
                     res.render("users/registerForm", {title: "Registrarse", errors: errors.errors});

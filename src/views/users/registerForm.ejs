@@ -1,4 +1,5 @@
 <%- include('../partials/head') %>
+<script src="/js/userCreateValidator.js" defer></script>
     <body>
         <%- include('../partials/header') %>
     
@@ -23,10 +24,7 @@
                        
                         <!--------------FORMULARIO------------->
                         <form action="/users/register" method="POST" id="registerForm" name="registerForm">
-                            <% if (typeof errorMsg != "undefined") { %>
-                                <p style="color: orangered"><%=errorMsg%></p>
-
-                            <% } %> 
+                        
 
                             <% if(typeof errors != "undefined") { %>
                                 <% errors.forEach(error => { %>
@@ -35,24 +33,44 @@
                             <% } %>
 
                             <!-- <p id="registerForm-p"> Registrarse con dirección de email</p> -->
+                            <div>
                             <input type="text" name="first_name" id="first_name" placeholder="Nombre" class="registerForm-input" <% if (typeof datosLlenos != "undefined"){ %>value="<%=datosLlenos.first_name%>"<%}%>>
-
+                        <small></small>    
+                            </div>
+                            <div>
                             <input type="text" name="last_name" id="last_name" placeholder="Apellido" class="registerForm-input" <% if (typeof datosLlenos != "undefined"){ %>value="<%=datosLlenos.last_name%>"<%}%>>
+                            <small></small>
+                            </div>
 
-                            
+                            <div>
                             <input type="email" name="email" id="email" placeholder="Email" class="registerForm-input" <% if (typeof datosLlenos != "undefined"){ %>value="<%=datosLlenos.email%>"<%}%>>
-                            
-
+                            <small></small>
+                            </div>
+                            <div>
                             <label for="birthdate">FECHA DE NACIMIENTO</label>
                             <input type="date" name="birthdate" id="birthdate" class="registerForm-input" <% if (typeof datosLlenos != "undefined"){ %>value="<%=datosLlenos.birthdate%>"<%}%>>
+                            
+                            <small></small>
+                            </div>
 
+                            <div>
                             <input type="text" name="address" id="address" placeholder="Domicilio" class="registerForm-input" <% if (typeof datosLlenos != "undefined"){ %>value="<%=datosLlenos.address%>"<%}%>>
+                            
+                            <small></small>
+                            </div>
 
+                            <div> 
                             <label for="password">CONTRASEÑA</label>
                             <input class="registerForm-input" type="password" name="password" id="password">
-                            
+                            <small></small>
+                            </div>
+
+                            <div> 
                             <label for="repassword">REPETIR CONTRASEÑA</label>
                             <input class="registerForm-input" type="password" name="repassword" id="repassword">
+                            <small></small>
+                            </div>
+
                             <button class="registerForm-button" type="submit">CONFIRMAR</button>
                             </form>
                             
