@@ -13,6 +13,10 @@
         <p>FECHA DE NACIMIENTO: <%=usuario.birthdate%></p>
         <p>DIRECCIÓN: <%=usuario.address%></p>
     </section>
+    
+        <article style="text-align: center;">
+            <a href="/users/carts/<%=usuario.id%>">HISTORIAL DE COMPRAS</a>
+        </article>
     <form action="/users/edit/<%=usuario.id%>" method="GET" id="toEditUser"></form>
     <div class="userDetail-button-container">
         <button type="submit" value="submit" class="userDetail-button" form="toEditUser">EDITAR INFORMACIÓN</button>

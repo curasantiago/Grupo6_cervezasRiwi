@@ -2,6 +2,7 @@
 
 <!-- JS FRONT DE BUSCADOR POR CATEGORIAS -->
 <script src="/js/subcategorysearch.js" defer></script>
+<script src="/js/addToCart.js" defer></script>
 <!-- CONVERSION DE TABLAS DE BASE DE DATOS PARA PODER SER USADAS EN JSFRONT -->
 <script type="text/javascript" defer>
     let categories = '<%-JSON.stringify(categories)%>'
@@ -64,8 +65,15 @@
                 <a href="/products/<%= product.id %>"><img src="/images/products/<%= product.image %>" alt="<%=product.name%>"></a>
                 <a href="/products/<%= product.id %>" class="productSearch__name"><h1><%= product.name %> <%=product.size.value%></h1></a>
                 <p class="productSearch__price">$ <%= product.price %></p>
-                <form action="/products/cart" method="GET">
-                <button type="submit">COMPRAR</button>
+              
+                <form action="/products/cart" method="POST" class="addToCart">
+                    <input type="hidden" value="<%= product.id %>" name="id">
+                    <input type="hidden" value="<%= product.name %>" name="name">
+                    <input type="hidden" value="<%= product.image %>" name="image">
+                    <input type="hidden" value="<%= product.price %>" name="price">
+                    <input type="hidden" value="<%= product.size.value %>" name="size">
+                    <input type="hidden" value="1" name="quantity">
+                    <button type="submit">COMPRAR</button>
                 </form>
             </article>
         <% }) %>

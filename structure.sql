@@ -84,6 +84,7 @@ CREATE TABLE IF NOT EXISTS `riwicervezas`.`carts` (
   `created_at` TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` TIMESTAMP NULL DEFAULT NULL,
   `user_id` INT(11) NULL DEFAULT NULL,
+  `total` INT(11) NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
   INDEX `user_cart_idx` (`user_id` ASC),
   CONSTRAINT `user_cart`

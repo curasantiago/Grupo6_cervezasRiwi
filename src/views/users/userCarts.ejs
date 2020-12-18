@@ -1,0 +1,27 @@
+<%- include('../partials/head') %>
+
+<body>
+<%- include('../partials/header') %>
+
+<!-- Información del usuario -->
+<div class="userDetail-container">
+
+    <p>HISTORIAL DE COMPRAS DE <%=usuario.first_name.toUpperCase() + " " + usuario.last_name.toUpperCase()%></p>
+    
+    <section class="userDetail-article">
+        <% userCarts.forEach(cart => { %>
+            <p style="text-align: left;">Id: <%=cart.id%> - Fecha: <%=cart.createdAt.toLocaleString('es-AR', {year: 'numeric', month: '2-digit', day: '2-digit'})%> - Total: $<%=cart.total%> - <a href="" onClick="window.open('/users/carts/<%=usuario.id%>/<%=cart.id%>','Detalle de Compra','height=500,width=1000,top=10,left=150'); return false;">VER DETALLE</a></p>    
+        <% }); %>
+        
+    </section>
+    
+        <article style="text-align: center;">
+            <a href="/users/detail/<%=usuario.id%>">VOLVER A DETALLE DE USUARIO</a>
+        </article>
+        
+</div>
+
+<%- include('../partials/footer') %>
+
+</body>
+</html>

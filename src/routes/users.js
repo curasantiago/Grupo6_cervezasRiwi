@@ -15,6 +15,9 @@ router.get('/detail/:id', loggeado, userController.detail);
 router.get('/edit/:id', loggeado, userController.edit);
 router.post('/edit/:id', loggeado, userController.processEdit);
 
+router.get('/carts/:id', loggeado, userController.userCarts);
+router.get('/carts/:id/:idCart/', loggeado, userController.purchaseHistory);
+
 router.get('/login', userController.login); 
 router.post('/login', userController.processLogin);
 

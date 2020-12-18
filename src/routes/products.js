@@ -32,6 +32,8 @@ const productsController = require('../controllers/productsController');
 
  
 router.get('/cart', productsController.carrito); 
+router.post('/cart', productsController.carrito); 
+router.post('/finishPurchase', productsController.finishPurchase);
 
 router.get('/create', productsController.crear); 
 router.post('/create', upload.single('image'), validator.productCreate, productsController.processCreate);  // CHEQUEAR MAS TARDE

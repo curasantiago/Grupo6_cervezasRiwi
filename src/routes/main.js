@@ -33,12 +33,12 @@ router.get('/probandoData', async (req, res) => {
     let users = await Users.findAll();
 
     let cards = await Cards.findAll();
-    let carts = await Carts.findAll();
+    let carts = await Carts.findAll({include:{all:true}});
     let purchases = await Purchases.findAll();
-    let Purchase_history = await Purchase_histories.findAll();
+    let Purchase_history = await Purchase_histories.findAll({include:{all:true}});
     let admins = await Admins.findAll();
 
-    res.json(Admins);
+    res.json(carts);
 })
 
 module.exports = router;

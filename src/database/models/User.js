@@ -18,6 +18,14 @@ module.exports = (sequelize, dataTypes) => {
 
     let Users = sequelize.define(alias, cols, config);
 
+    Users.associate = (models) => {
+
+        Users.hasMany(models.Carts, {
+            as: 'cart',
+            foreignKey: 'user_id'
+        })
+    }
+
     return Users;
 
 }

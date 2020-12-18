@@ -6,7 +6,7 @@
 //     return JSON.parse(jsonUsers);
 // }
 
-const {Users, sequelize} = require('../database/models');
+const {Users, Carts, Purchase_histories, sequelize} = require('../database/models');
 const {Op} = require('sequelize');
 const bcrypt = require('bcrypt');
 
@@ -28,18 +28,18 @@ const userController={
         //   res.render("users/registerForm", {title: "Registrarse", datosLlenos: nuevoUsuario, errorMsg: "Contraseñas diferentes"});
         // } else {
       
-        //       delete nuevoUsuario.repassword
-        //       nuevoUsuario.password = bcrypt.hashSync(nuevoUsuario.password, 10);
-                    
-        // let checkUserEmail = await Users.findAll({where: {email: nuevoUsuario.email}})
-        // if (checkUserEmail == "") {
           
-          try {
-                  if (errors.isEmpty()){
-
-                    try{
-                      let emailUser=await Users.findAll({where:{email:nuevoUsuario.email}})
-                      if(emailUser==""){
+          // let checkUserEmail = await Users.findAll({where: {email: nuevoUsuario.email}})
+          // if (checkUserEmail == "") {
+            
+            try {
+              if (errors.isEmpty()){
+                
+                try{
+                  let emailUser=await Users.findAll({where:{email:nuevoUsuario.email}})
+                  if(emailUser==""){
+                        delete nuevoUsuario.repassword
+                        nuevoUsuario.password = bcrypt.hashSync(nuevoUsuario.password, 10);
                         await Users.create(nuevoUsuario);
                     res.redirect('./login');
                       }else{
@@ -84,6 +84,39 @@ const userController={
 
     
     },
+
+    userCarts: async (req, res) =>{
+      
+      try {  
+        let usuario = await Users.findByPk(req.params.id)
+        let userCarts = await Carts.findAll({
+          where: { user_id: req.params.id },
+          include: {all: true}
+        })
+        res.render('users/userCarts', {usuario, userCarts, title: "Historial de compras"})
+      } catch (error) {
+          console.log(error);
+      }
+
+    
+    },
+
+    purchaseHistory: async (req, res) =>{
+      
+      try {  
+        let cart = await Carts.findByPk(req.params.idCart,{
+          include: [{model: Purchase_histories, as: 'purchase_history', include: ['product']}]
+        })
+        // res.send(cart)
+        res.render('users/purchaseHistories', {cart, title: "Detalle carrito"})
+      } catch (error) {
+          console.log(error);
+      }
+
+    
+    },
+
+
 
     edit: async (req, res) => {
       

@@ -4,7 +4,7 @@ module.exports = {
     "username": "root",
     "password": "root",
     "database": "riwicervezas",
-    "port":8889,
+    // "port":8889,
     "host": "127.0.0.1",
     "dialect": "mysql",
     define:{

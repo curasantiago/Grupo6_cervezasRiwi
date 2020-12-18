@@ -13,8 +13,22 @@ module.exports = (sequelize, dataTypes) => {
         tableName: 'purchase_histories',
         timestamps: true
     }
-
+    
     let Purchase_histories = sequelize.define(alias, cols, config);
+    
+    Purchase_histories.associate = (models) => {
+        
+        Purchase_histories.belongsTo(models.Carts, {
+            as: 'cart',
+            foreignKey: 'id_cart'
+        });
+
+        Purchase_histories.belongsTo(models.Products, {
+            as: 'product',
+            foreignKey: 'id_product'
+        })
+    }
+
 
     return Purchase_histories;
 }

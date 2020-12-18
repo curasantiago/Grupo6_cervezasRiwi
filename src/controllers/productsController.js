@@ -1,7 +1,7 @@
 const fs = require("fs");
 const path = require("path");
 
-const {Products, SubCategories, Categories, sequelize, Sizes } = require('../database/models');
+const {Products, SubCategories, Categories, sequelize, Sizes, Carts, Purchase_histories } = require('../database/models');
 const {Op} = require('sequelize');
 
 const { body, validationResult, check } = require('express-validator');
@@ -39,9 +39,102 @@ const productsController={
       },
       
       carrito:(req, res)=>{
-          res.render("products/productCart", {title: "Carrito de compras"});
+        res.render("products/productCart", {title: "Carrito de compras"});
       },
+
+      finishPurchase: async (req, res)=>{
+        if(req.session.usuarioLoggeado) {
+                    
+          let productsToPay = decodeURIComponent(req.body.productsToPay);
+          productsToPay = JSON.parse(productsToPay)
+                    
+          let usuario = req.session.usuarioLoggeado;
+          
+          let totalPrice = 0;
+          productsToPay.forEach(product => {
+            totalPrice = totalPrice + parseInt(product.price * product.quantity)
+          })
+          
+          let cart = {
+            user_id: usuario.id,
+            total: totalPrice
+          }
+          
+            try {
+            const newCart = await Carts.create(cart);
             
+            let purchaseDetail = []
+            productsToPay.forEach(product => {
+                purchaseDetail.push({id_cart: newCart.id, id_product: product.id, quantity: product.quantity, subtotal: parseInt(product.price * product.quantity)})
+              })
+
+            await Purchase_histories.bulkCreate(purchaseDetail);
+            
+            
+            // ENVIA MAIL
+            
+            let emailContent = "";
+            productsToPay.forEach(product => { 
+              emailContent = emailContent + `
+              ` + "PRODUCTO: " + product.name  + " - CANTIDAD: " + product.quantity + " PRECIO: $ " + product.price + "."
+            })
+            emailContent = `
+            `+"Nro de Compra: " + newCart.id + emailContent + `
+            `+"PRECIO TOTAL: $" + totalPrice
+            
+            const nodemailer = require('nodemailer');
+
+            var transport = nodemailer.createTransport({
+              host: "smtp.mail.yahoo.com",
+              port: 465,
+              service: 'yahoo',
+              secure: false,
+              auth: {
+                user: "riwicervezas@yahoo.com",
+                pass: "aonjdhojtpkibndc"
+              },
+              debug: false,
+              logger: true
+            });
+
+            const message = {
+              from: 'riwicervezas@yahoo.com',
+              to: usuario.email,
+              subject: 'Gracias por su compra en Riwi Cervezas',
+              text: 'Gracias por probar el e-commerce de Riwi Cervezas! Le enviamos los detalles de su compra: ' + emailContent
+          };
+          process.env.NODE_TLS_REJECT_UNAUTHORIZED='0'
+          transport.sendMail(message, function(err, info) {
+              if (err) {
+                console.log(err)
+              } else {
+                console.log(info);
+              }
+          });
+
+          // FIN DE ENVIO MAIL
+            
+          
+
+          } catch (errors) {
+            console.log(errors);
+          }
+
+
+          // REDIRIGE A LOS CARRITOS
+
+          res.redirect('../users/carts/'+usuario.id);
+          
+          
+
+        } else {
+
+        res.render("users/login", {title: "Login"});
+
+        }
+        
+      },
+                  
       buscar: async (req, res)=>{
 
         try {

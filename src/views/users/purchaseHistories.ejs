@@ -1,0 +1,15 @@
+<%- include('../partials/head') %>
+<body>
+
+<div class="userDetail-container">
+        <section class="userDetail-article">
+        <h2 style="text-align: center;">Detalle de Compra - Id: <%=cart.id%> - Fecha: <%=cart.createdAt.toLocaleString('es-AR', {year: 'numeric', month: '2-digit', day: '2-digit'})%></h2>
+        <%cart.purchase_history.forEach(purchase => { %>
+            <p style="text-align: left;">PRODUCTO: <%=purchase.product.name%> - PRECIO: $<%=purchase.product.price%> - CANTIDAD: <%=purchase.quantity%> - SUBTOTAL: $<%=purchase.subtotal%></p>
+        <% }); %>
+        <h2 style="text-align: right;">TOTAL COMPRA: $<%=cart.total%></h2>
+    </section>
+</div>
+
+</body>
+</html>

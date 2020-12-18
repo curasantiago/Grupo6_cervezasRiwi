@@ -131,6 +131,7 @@ body {
     flex-wrap: nowrap;
     justify-content: left;
     margin-bottom: 0px;
+    white-space: nowrap;
 }
 
 .product__category * {
@@ -645,9 +646,10 @@ body {
     align-items: center;
 }
 
-.cart__product__amount textarea {
+.cart__product__amount input {
     text-align: center;
     height: min-content;
+    width: 50px;
     margin-top: 1%;
     padding: 0px;
     margin-right: 3%;
