@@ -123,12 +123,14 @@ const validator = {
             }
         })
         .withMessage("Deben coincidir las contraseñas"),
-        
-        
-
-
-        
-        
+        body("image")
+        .custom(function(value, {req}) {
+            const acceptedExtensions = [".jpg", ".jpeg", ".png"];
+            const ext = path.extname(req.file.originalname);
+            const resultado = acceptedExtensions.includes(ext);
+            return resultado
+        })
+        .withMessage("Formato de imagen no válido")    
     ],
     productCreate: 
     [

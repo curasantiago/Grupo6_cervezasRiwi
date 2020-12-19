@@ -39,6 +39,7 @@ function getAge(dateString) {
 let errores={};
 
 function checkInputs(){
+    console.log(image.value)
     if(first_name.value== ""){
         setErrors(first_name,"Ingresa un nombre")
     }
@@ -96,6 +97,15 @@ function checkInputs(){
     }else{
         setSuccess(repassword);
     }
+    const acceptedExtensions = ['.jpg', '.jpeg', '.png'];
+    if (!(/\.(jpg|png|jpeg)$/i).test(image.value)) {
+        setErrors(image,"El formato de imagen debe ser JPG, JPEG o PNG")
+    } else {
+        setSuccess(image);
+    }
+
+    
+    
 
     
  
@@ -106,7 +116,7 @@ function checkInputs(){
 function setErrors(input, mensaje){
     let smallDiv=input.parentElement.querySelector("small")
     smallDiv.innerText=mensaje;
-    console.log(smallDiv);
+    // console.log(smallDiv);
     errores[input.name]=mensaje;
     console.log(errores)
 }

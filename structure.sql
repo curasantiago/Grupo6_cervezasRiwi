@@ -44,6 +44,7 @@ CREATE TABLE IF NOT EXISTS `riwicervezas`.`users` (
   `birthdate` DATE NULL DEFAULT NULL,
   `address` VARCHAR(200) NULL DEFAULT NULL,
   `password` VARCHAR(100) NULL DEFAULT NULL,
+  `image` VARCHAR(500) NULL DEFAULT NULL,
   `deleted_at` TIMESTAMP NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE INDEX `email_UNIQUE` (`email` ASC))

@@ -20,7 +20,12 @@ const userController={
     },
    
     processRegister: async (req, res)=>{
-      let nuevoUsuario = req.body;
+      // console.log(req.body)
+      // console.log(req.file)
+      // console.log(image)
+
+
+      
       let errors = validationResult(req);
 
         // CHEQUEO DE MATCH DE CONTRASEÑAS 
@@ -36,11 +41,21 @@ const userController={
               if (errors.isEmpty()){
                 
                 try{
+                        let image = req.file.filename
+                        
+                        let nuevoUsuario = {...req.body, image: image}
+                        
+                        delete nuevoUsuario.repassword
+
+                        nuevoUsuario.password = bcrypt.hashSync(nuevoUsuario.password, 10);
+
+                        console.log(nuevoUsuario)
+                  
                   let emailUser=await Users.findAll({where:{email:nuevoUsuario.email}})
                   if(emailUser==""){
-                        delete nuevoUsuario.repassword
-                        nuevoUsuario.password = bcrypt.hashSync(nuevoUsuario.password, 10);
+                        
                         await Users.create(nuevoUsuario);
+                        
                     res.redirect('./login');
                       }else{
                         res.render("users/registerForm", {title: "Registrarse", errors: [

@@ -23,7 +23,7 @@
                     <article class="registerForm-article">
                        
                         <!--------------FORMULARIO------------->
-                        <form action="/users/register" method="POST" id="registerForm" name="registerForm">
+                        <form action="/users/register" method="POST" id="registerForm" name="registerForm" enctype="multipart/form-data"> 
                         
 
                             <% if(typeof errors != "undefined") { %>
@@ -68,6 +68,12 @@
                             <div> 
                             <label for="repassword">REPETIR CONTRASEÑA</label>
                             <input class="registerForm-input" type="password" name="repassword" id="repassword">
+                            <small></small>
+                            </div>
+                            
+                            <div>
+                            <label for="file">AVATAR:</label>
+                            <input type="file" name="image" id="image">
                             <small></small>
                             </div>
 

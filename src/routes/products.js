@@ -4,7 +4,7 @@ const multer = require('multer');
 const path = require('path');
 
 
-const { body, validationResult, check } = require('express-validator');
+// const { body, validationResult, check } = require('express-validator');
 const validator = require('../middlewares/routes/validator');
 
 const storage = multer.diskStorage({
