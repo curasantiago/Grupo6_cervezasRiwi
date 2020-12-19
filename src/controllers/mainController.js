@@ -7,6 +7,11 @@ const mainController={
         res.render("ingreso" , {title: "Riwi Cervezas"});
     },
   
+
+    historia:(req, res)=>{
+    res.render("historia" , {title: "Riwi Cervezas"});
+},
+
 }
 
 module.exports = mainController;

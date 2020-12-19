@@ -1788,4 +1788,16 @@ div.wrap2 {
 
 /*----------------- FIN USER EDIT -------------------*/
 
-
+/*----------------- INICIO HISTORIA -------------------*/
+.contenedor_historia {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+    border-top-left-radius: 25px;
+    border-bottom-left-radius: 25px;
+    text-align: center;
+    margin-top: 30px;
+    background: linear-gradient(90deg, rgba(242,242,242,1) 0%, rgba(235,230,230,1) 95%, rgba(247,247,247,1) 100%, rgba(242,242,242,1) 100%);
+}

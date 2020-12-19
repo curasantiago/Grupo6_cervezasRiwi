@@ -9,6 +9,9 @@ const mainController = require('../controllers/mainController');  //pachi
 
 //---------------vista-----------------------//
 router.get('/', mainController.index);
+
+router.get('/historia', mainController.historia);//agrego pachi//
+
 router.get('/pruebaLogin', (req, res) => {
     if(req.session.usuarioLoggeado) {
         res.send("Hay session")
