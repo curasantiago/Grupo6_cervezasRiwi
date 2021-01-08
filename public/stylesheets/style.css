@@ -805,26 +805,85 @@ body {
 body{
     background:gainsboro;
 }
-.contener__logo{
-    
-    background:linear-gradient(90deg, rgba(218,203,94,1) 0%, rgba(166,150,30,1) 100%, rgba(166,150,30,1) 100%, rgba(166,150,30,1) 100%);
-    margin-left:auto;
-    margin-right:auto;
+
+.container-ingreso {
+    min-width: 100%;
+    min-height: 100%;
 }
-.contener__logo img{
+
+video {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+.container-video {
     max-width: 100%;
-    height: auto;
-    margin-bottom: 15px;
+    max-height: 100%;
 }
+
+
 .contenedor__formulario{
-    background:whitesmoke;
-    display:flex;
-    width: 100%;
-    text-align: center;
-    flex-direction:column;
+position: fixed;
+  top: 50;
+  background: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  padding: 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: 5s;
 }
-.contiene__titulo{
-    width: 100%;    
+
+.contenedor__formulario:hover {
+    background-color: black;
+}
+
+.formulario form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.formulario form label, input, button {
+    margin: 0px 10px;
+}
+
+.formulario form label {
+    color: #a6a6a6;
+    letter-spacing: 0.5px;
+
+}
+
+#start {
+    padding: 3px;
+    border: none;
+    width: 150px;
+    text-align: center;
+    background-color: gainsboro;
+}
+
+#button-ingreso {
+    padding: 7px;
+    background: linear-gradient(90deg, rgba(240,225,114,1) 0%, rgba(166,150,30,1) 100%, rgba(166,150,30,1) 100%, rgba(166,150,30,1) 100%);
+    border: none;
+
+}
+
+.contiene__titulo h1 {
+    color: #a6961e;   
+    text-align: center;
+    line-height: 2;
+    letter-spacing: 1.8px;
+}
+.contiene__titulo h2 {
+    color: #a6a6a6;
+    letter-spacing: 1.5px;
 }
 .contiene__form{
     margin-top: 30px;  
