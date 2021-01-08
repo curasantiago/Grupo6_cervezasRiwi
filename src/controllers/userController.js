@@ -8,7 +8,7 @@
 
 const {Users, Carts, Purchase_histories, sequelize} = require('../database/models');
 const {Op} = require('sequelize');
-const bcrypt = require('bcrypt');
+const bcrypt = require('bcryptjs');
 
 const { validationResult } = require('express-validator');
 
