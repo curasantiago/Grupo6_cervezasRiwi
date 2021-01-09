@@ -25,8 +25,8 @@ router.get('/probandoData', async (req, res) => {
         include: ['subcategory', 'size']
     });
     let categories = await Categories.findAll({
-        include: ['categories_subcategory']
-    });
+        include: [{model: SubCategories, as: 'categories_subcategory', include: {all:true}}]
+      });
     let subCategories = await SubCategories.findAll({
         include: ['subcategory_categories']
     });
@@ -41,7 +41,7 @@ router.get('/probandoData', async (req, res) => {
     let Purchase_history = await Purchase_histories.findAll({include:{all:true}});
     let admins = await Admins.findAll();
 
-    res.json(carts);
+    res.json(subCategories);
 })
 
 module.exports = router;
