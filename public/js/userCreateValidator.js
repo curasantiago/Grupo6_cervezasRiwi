@@ -65,9 +65,9 @@ function checkInputs(){
     }
     
     if(birthdate.value=="") {
-        setErrors(birthdate,"No puede estar vacio")
+        setErrors(birthdate,"Ingresa una fecha de nacimiento")
     }
-    else if(getAge(birthdate)< 18){
+    else if(getAge(birthdate.value)< 18){
         setErrors(birthdate, "Debe ser mayor de 18 años")
       
     }else{
@@ -76,13 +76,13 @@ function checkInputs(){
     if(address.value== ""){
         setErrors(address,"Ingresa una direccion")
     }
-    else if(address.length>8 ){
-        setErrors(address,"El nombre no puede tener espacios")
+    else if(address.value.length<10 ){
+        setErrors(address,"La dirección debe tener al menos 10 caracteres")
     }else{
         setSuccess(address);
     }
     if(password.value== ""){
-        setErrors(password,"Ingresa contraseña")
+        setErrors(password,"Ingresá una contraseña")
     }
     else if(password.value!== repassword.value ){
         setErrors(password,"Las contraseñas deben coincidir")
@@ -103,24 +103,22 @@ function checkInputs(){
     } else {
         setSuccess(image);
     }
-
-    
-    
-
-    
  
-    
-   
-    
 }
+
 function setErrors(input, mensaje){
+    let formControl = input.parentElement
+    formControl.className = 'form-control-error'
     let smallDiv=input.parentElement.querySelector("small")
+    
     smallDiv.innerText=mensaje;
     // console.log(smallDiv);
     errores[input.name]=mensaje;
     console.log(errores)
 }
 function setSuccess(input){
+    let formControl = input.parentElement
+    formControl.className = 'form-control-success'
     let smallDiv=input.parentElement.querySelector("small")
     smallDiv.innerText="";
     delete errores[input.name];

@@ -24,27 +24,25 @@ const apiProductsController = {
             include:{all:true}
           });
 
-          // let subcategories = await SubCategories.findAll();
+          let subcategories = await SubCategories.findAll();
           
-          // let arrayDeTotalDeProductos = [];
+          let arrayDeTotalDeProductos = [];
 
-          // subcategories.forEach(subcat => {
-          //   let nombreSubCat = subcat.name
-          //     arrayDeTotalDeProductos.push( { id: subcat.id, nombreSubCategoria: subcat.name, total: 0})
-          // });
-
-          // console.log(arrayDeTotalDeProductos)
+          subcategories.forEach(subcat => {
+            let nombreSubCat = subcat.name
+              arrayDeTotalDeProductos.push( { id: parseInt(subcat.id), nombreSubCategoria: subcat.name, total: 0})
+          });
 
           
-          // products.forEach(product => {
-          //   console.log(product.id_subcategory)
-          //   let idPr = product.id_subcategory
-          //   let subcatDeProducto = arrayDeTotalDeProductos.find( subc => {
-          //     subc.id == parseInt(idPr)
-          //    });
-          //   console.log(subcatDeProducto)
-          // })
+          console.log(arrayDeTotalDeProductos)
           
+          products.forEach(product => {
+            let subcatDeProducto = arrayDeTotalDeProductos.find( subc => subc.id == product.id_subcategory);
+            let indexOfSubcat = arrayDeTotalDeProductos.indexOf(subcatDeProducto)
+            arrayDeTotalDeProductos[indexOfSubcat].total = arrayDeTotalDeProductos[indexOfSubcat].total + 1
+          })
+          
+          console.log(arrayDeTotalDeProductos)
 
           if (products.length > 0) {
               

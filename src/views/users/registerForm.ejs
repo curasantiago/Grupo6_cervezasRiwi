@@ -34,47 +34,47 @@
 
                             <!-- <p id="registerForm-p"> Registrarse con dirección de email</p> -->
                             <div>
+                                <small></small>    
                             <input type="text" name="first_name" id="first_name" placeholder="Nombre" class="registerForm-input" <% if (typeof datosLlenos != "undefined"){ %>value="<%=datosLlenos.first_name%>"<%}%>>
-                        <small></small>    
                             </div>
                             <div>
+                                <small></small>
                             <input type="text" name="last_name" id="last_name" placeholder="Apellido" class="registerForm-input" <% if (typeof datosLlenos != "undefined"){ %>value="<%=datosLlenos.last_name%>"<%}%>>
-                            <small></small>
                             </div>
 
                             <div>
+                                <small></small>
                             <input type="email" name="email" id="email" placeholder="Email" class="registerForm-input" <% if (typeof datosLlenos != "undefined"){ %>value="<%=datosLlenos.email%>"<%}%>>
-                            <small></small>
                             </div>
                             <div>
-                            <label for="birthdate">FECHA DE NACIMIENTO</label>
+                                <small></small>
+                            <label style="display:block" for="birthdate">FECHA DE NACIMIENTO</label>
                             <input type="date" name="birthdate" id="birthdate" class="registerForm-input" <% if (typeof datosLlenos != "undefined"){ %>value="<%=datosLlenos.birthdate%>"<%}%>>
                             
-                            <small></small>
                             </div>
 
                             <div>
+                                <small></small>
                             <input type="text" name="address" id="address" placeholder="Domicilio" class="registerForm-input" <% if (typeof datosLlenos != "undefined"){ %>value="<%=datosLlenos.address%>"<%}%>>
                             
-                            <small></small>
                             </div>
 
                             <div> 
-                            <label for="password">CONTRASEÑA</label>
+                                <small></small>
+                            <label style="display:block" for="password">CONTRASEÑA</label>
                             <input class="registerForm-input" type="password" name="password" id="password">
-                            <small></small>
                             </div>
 
                             <div> 
-                            <label for="repassword">REPETIR CONTRASEÑA</label>
+                                <small></small>
+                            <label style="display:block" for="repassword">REPETIR CONTRASEÑA</label>
                             <input class="registerForm-input" type="password" name="repassword" id="repassword">
-                            <small></small>
                             </div>
                             
                             <div>
-                            <label for="file">AVATAR:</label>
+                                <small></small>
+                            <label style="display:block" for="file">AVATAR:</label>
                             <input type="file" name="image" id="image">
-                            <small></small>
                             </div>
 
                             <button class="registerForm-button" type="submit">CONFIRMAR</button>
