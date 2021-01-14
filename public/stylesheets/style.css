@@ -1176,7 +1176,7 @@ padding: 20px;
 
     
     .registerForm-input {
-        margin: 25px 0px;
+        margin: 15px 0px;
         border-radius: 25px;
         padding: 10px;
         border-top: none;
@@ -1881,6 +1881,21 @@ div.wrap2 {
 }
 
 
+/* --------------INICIO CREATE USER VALIDATION */
+
+.form-control-error input {
+    border-color: red;
+}
+
+.form-control-success input {
+    border-color: green;
+}
+
+.form-control-error small {
+    color: red
+}
+
+/* --------------FIN CREATE USER VALIDATION */
 
 /*-----------------INICIO SLIDER HOME -------------------*/
  
