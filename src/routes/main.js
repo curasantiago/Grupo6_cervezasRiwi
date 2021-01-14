@@ -20,6 +20,7 @@ router.get('/pruebaLogin', (req, res) => {
     }
 })
 router.get('/ingreso', mainController.ingresar);
+router.post('/ingreso', mainController.processIngresar);
 router.get('/probandoData', async (req, res) => {
     let products = await Products.findAll({
         include: ['subcategory', 'size']

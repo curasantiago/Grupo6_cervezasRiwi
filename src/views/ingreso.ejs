@@ -18,15 +18,16 @@
                     <h2>
                         Welcome
                     </h2>
+                        <% if (typeof menorDeEdad != "undefined") { %>
+                        <p class="ingreso-p"> <%= menorDeEdad.message %></p> 
+                        <% } %>
                     </div>
                 </section>
             <div class="contiene__form">
                 <section class="formulario">                  
-                    <form class="" action="/" method="GET">              
+                    <form class="" action="/ingreso" method="POST">              
                                 <label for="start">FECHA DE NACIMIENTO:</label> <!-- para validar fecha -->
-                                    <input type="date" id="start" name="edad_start"
-                                    value="2002-01-01"
-                                    min="2002-01-01" max="2008-01-01">             
+                                    <input type="date" id="start" name="edad_start">             
                             <p class="boton__subir">
                                 <button type="submit" id="button-ingreso">INGRESAR</button>              
                             </p>
