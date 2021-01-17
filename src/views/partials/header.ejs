@@ -6,11 +6,11 @@
     <nav class="nav"> <!---------------BARRA DE NAVEGACIÓN---------------------->
         <a href="/products/">CERVEZAS</a>
         <a href="/historia/">HISTORIA</a>
-        <a href="">AYUDA</a>
+        <a href="/ayuda">AYUDA</a>
         <a href="">CONTACTO</a>
 
         <% if (usuarioSession) { %>
-            <p>¡Bienvenido <%=usuarioSession.first_name%>!</p>
+            <p>Hola <%=usuarioSession.first_name%></p>
         <% } %>
     </nav>
 

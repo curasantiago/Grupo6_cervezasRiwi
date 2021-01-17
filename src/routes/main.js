@@ -11,6 +11,8 @@ const mainController = require('../controllers/mainController');  //pachi
 router.get('/', mainController.index);
 
 router.get('/historia', mainController.historia);//agrego pachi//
+router.get('/ayuda', mainController.ayuda);
+router.get('/terminos', mainController.terminos);
 
 router.get('/pruebaLogin', (req, res) => {
     if(req.session.usuarioLoggeado) {
