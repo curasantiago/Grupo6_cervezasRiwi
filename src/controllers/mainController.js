@@ -29,6 +29,12 @@ const mainController={
     historia:(req, res)=>{
     res.render("historia" , {title: "Riwi Cervezas"});
 },
+    ayuda:(req, res)=>{
+    res.render("help" , {title: "Riwi Cervezas"});
+},
+    terminos:(req, res)=>{
+    res.render("terminos" , {title: "Riwi Cervezas"});
+},
 
 }
 
