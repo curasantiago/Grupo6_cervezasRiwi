@@ -35,6 +35,9 @@ const mainController={
     terminos:(req, res)=>{
     res.render("terminos" , {title: "Riwi Cervezas"});
 },
+    contacto:(req, res) => {
+    res.render('contacto', {title: "Riwi Cervezas"})
+    }
 
 }
 

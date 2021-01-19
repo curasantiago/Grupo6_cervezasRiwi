@@ -9,7 +9,7 @@ const mainController = require('../controllers/mainController');  //pachi
 
 //---------------vista-----------------------//
 router.get('/', mainController.index);
-
+router.get('/contacto', mainController.contacto)
 router.get('/historia', mainController.historia);//agrego pachi//
 router.get('/ayuda', mainController.ayuda);
 router.get('/terminos', mainController.terminos);
