@@ -1,33 +1,47 @@
 // import logo from './logo.svg';
 // import './App.css';
+import TopRow from './components/TopRow'
+// let arrayValores = [];
+// {arrayValores.push({id: "t1", totalProductos: this.state.productCount}, {id: "t2",totalUsuarios: this.state.productCount}, {id: "t3", totalCompras: this.state.productCount})}
+    
+//     {console.log(arrayValores)}
+// let arrayValores = [];
 
-import Card from './components/Card'
+function App () {
 
-function App() {
+  
+
+// rellenarArray () {
+//   arrayValores.push({totalProductos:"hola"}, {totalProductos:"hola"}, {totalProductos:"hola"})
+// }
+
+
+
+// {const otroArray = []}
+
   return (
     <>
+    
+
     <div className="container-fluid">
+      <TopRow />
+
       <section className="row">
-      <Card />
-      <Card />
-      <Card />
-      </section>
-      <section className="row">
-          <div className="jumbotron col-6">
+          <div className="jumbotron col-xs-12 col-md-6">
               <h1 className="display-4">Hello, world!</h1>
               <p className="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
               <hr className="my-4" />
               <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
               <p className="lead">
-                <a className="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+                <a className="btn btn-primary btn-lg" href="//#endregion" role="button">Learn more</a>
               </p>
     </div>
 
 
-    <div className="row row-cols-1 row-cols-md-2 g-4 col-6">
+    <div className="row row-cols-1 row-cols-md-2 g-4 col-xs-12 col-md-6">
   <div className="col">
     <div className="card">
-      <img src="..." className="card-img-top" alt="..." />
+      <img src="" className="card-img-top" alt="" />
       <div className="card-body">
         <h5 className="card-title">Card title</h5>
         <p className="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
@@ -36,7 +50,7 @@ function App() {
   </div>
   <div className="col">
     <div className="card">
-      <img src="..." className="card-img-top" alt="..." />
+      <img src="" className="card-img-top" alt="" />
       <div className="card-body">
         <h5 className="card-title">Card title</h5>
         <p className="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
@@ -45,7 +59,7 @@ function App() {
   </div>
   <div className="col">
     <div className="card">
-      <img src="..." className="card-img-top" alt="..." />
+      <img src="" className="card-img-top" alt="" />
       <div className="card-body">
         <h5 className="card-title">Card title</h5>
         <p className="card-text">This is a longer card with supporting text below as a natural lead-in to additional content.</p>
@@ -54,7 +68,7 @@ function App() {
   </div>
   <div className="col">
     <div className="card">
-      <img src="..." className="card-img-top" alt="..." />
+      <img src="" className="card-img-top" alt="" />
       <div className="card-body">
         <h5 className="card-title">Card title</h5>
         <p className="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
@@ -66,7 +80,7 @@ function App() {
 
       </section>
       
-      <section class="row">
+      <section className="row">
       <table className="table table-hover">
 <thead>
     <tr>
@@ -91,7 +105,7 @@ function App() {
     </tr>
     <tr>
       <th scope="row">3</th>
-      <td colspan="2">Larry the Bird</td>
+      <td colSpan="2">Larry the Bird</td>
       <td>@twitter</td>
     </tr>
   </tbody>
@@ -121,6 +135,7 @@ function App() {
     //   </header>
     // </div>
   );
-}
+  }
+
 
 export default App;
