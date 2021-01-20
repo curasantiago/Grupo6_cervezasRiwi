@@ -12,7 +12,7 @@
         <% if (typeof errorMsg != "undefined") { %>
             <p class="userEdit-title" style="color: orangered"><%=errorMsg%></p>
         <% } %>
-        <form class="userEdit-article" action="/users/edit/<%=usuario.id%>" method="POST" id="processEdit">
+        <form class="userEdit-article" action="/users/edit/<%=usuario.id%>" method="POST" id="processEdit" enctype="multipart/form-data">
             
 
             <label>NOMBRE: </label>
@@ -32,6 +32,8 @@
             <input class="userEdit-input" type="password" id="password" name="password">
             <label>REPETIR CONTRASEÑA NUEVA: </label>
             <input class="userEdit-input" type="password" id="repassword" name="repassword">
+            <label class="userEdit-input" style="display:block" for="file">AVATAR:</label>
+            <input type="file" name="image" id="image" value="<% usuario.image %>">
        
         </form>
     </section>

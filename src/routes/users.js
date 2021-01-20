@@ -36,7 +36,7 @@ router.get('/register', userController.registro);
 
 router.get('/detail/:id', loggeado, userController.detail);
 router.get('/edit/:id', loggeado, userController.edit);
-router.post('/edit/:id', loggeado, userController.processEdit);
+router.post('/edit/:id', loggeado,  upload.single('image'), userController.processEdit);
 
 router.get('/carts/:id', loggeado, userController.userCarts);
 router.get('/carts/:id/:idCart/', loggeado, userController.purchaseHistory);
