@@ -139,6 +139,7 @@ const userController={
       try {  
         let usuario = await Users.findByPk(req.params.id)
         res.render('users/userEdit', {usuario, title: "Editar Información"})
+        
       } catch (error) {
           console.log(error);
       }
@@ -148,6 +149,13 @@ const userController={
 
     processEdit: async (req,res) => {
       let usuarioEditado = req.body;
+      
+
+      if (usuarioEditado.image != '') {
+        usuarioEditado.image = req.file.filename
+      }
+
+      console.log("La imagen es: " + usuarioEditado.image)
       
 
       // SI MODIFICO SU CONTRASEÑA
