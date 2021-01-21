@@ -10,7 +10,7 @@
     
     <section class="userDetail-article">
         <% if (usuario.image != undefined) { %>
-            <img style="width: 25%; align-self: center;" src="/images/users/<%=usuario.image%>">    
+            <img style="width: 25%; align-self: center;" src="/images/users/<%=usuario.image == locals.usuarioImagen ? locals.usuarioImagen : usuario.image %>">    
         <% } else { %>
             <img style="width: 25%; align-self: center;" src="/images/img/user_default.png">
         <% } %>
