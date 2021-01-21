@@ -130,6 +130,20 @@ if (cartItemsDiv != null && sessionStorage.getItem("productsInCart") != null && 
     plusItemsButtons = document.querySelectorAll(".plus-item");
     minusItemsButtons = document.querySelectorAll(".minus-item");
     inputQuantityProducts = document.querySelectorAll(".input-quantity-products");
+
+    // CAPTURO BOTON VACIAR CARRITO
+    const buttonEmptyCart = document.getElementById("empty_cart")
+
+    buttonEmptyCart.addEventListener("click", function(){
+    let confirmEmpty = confirm("¿Vaciar carrito de compras?")
+
+    if(confirmEmpty){
+        sessionStorage.removeItem("productsInCart");    
+        location.reload();
+    }
+
+
+    })
     
 // SI NO HAY PRODUCTOS EN CARRITO PERO ESTOY EN LA VISTA CORRECTA
 } else if (cartItemsDiv != null) {
@@ -246,5 +260,7 @@ finCompraForm.addEventListener("submit", function(e){
     
 })
 }
+
+
 
 });

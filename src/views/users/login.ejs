@@ -1,5 +1,5 @@
 <%- include('../partials/head') %>
-
+<script src="/js/forgotPass.js" defer></script>
 <body>
     <%- include('../partials/header') %>
     
@@ -42,18 +42,21 @@
 
                                     <button class="login-form-button" type="submit">LOGIN</button>
                                     <p>Si olvido su contraseña. <a href="" id="login-form-a">Click Aquí.</a></p>
-                                </form>
+                                 </form>
                             </article>
                         </section>
-                    
-
-                        <section class="login-section-redes">   <!--------REDES SOCIALES PARA AUNTENTICAR----------->
+                       
+                        <form id="forgot-form" action="/users/forgot" method="POST">
+                            <input type="hidden" name="email">
+                        </form>
+                        
+                        <!-- <section class="login-section-redes">
                             <article class="login-article-redes">
                                 <a href=""><i class="fab fa-google fa-lg login-icon"></i></a>
                                 <a href=""><i class="fab fa-facebook-f fa-lg login-icon"></i></a>
                                 <a href=""><i class="fab fa-instagram fa-lg login-icon"></i></a>
                             </article>
-                        </section>
+                        </section> -->
                     </main>
                     </div>
 
