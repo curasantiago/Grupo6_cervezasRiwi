@@ -53,31 +53,6 @@ DEFAULT CHARACTER SET = utf8;
 
 
 -- -----------------------------------------------------
--- Table `riwicervezas`.`cards`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `riwicervezas`.`cards` (
-  `id` INT(11) NOT NULL AUTO_INCREMENT,
-  `created_at` TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP,
-  `updated_at` TIMESTAMP NULL DEFAULT NULL,
-  `owner_card` VARCHAR(100) NULL DEFAULT NULL,
-  `number` INT(11) NULL DEFAULT NULL,
-  `expire_date` DATE NULL DEFAULT NULL,
-  `security_code` VARCHAR(45) NULL DEFAULT NULL,
-  `purchase_address` VARCHAR(200) NULL DEFAULT NULL,
-  `card_type` TINYINT(1) NULL DEFAULT NULL,
-  `id_user` INT(11) NULL DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  INDEX `user_card_idx` (`id_user` ASC),
-  CONSTRAINT `user_card`
-    FOREIGN KEY (`id_user`)
-    REFERENCES `riwicervezas`.`users` (`id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB
-DEFAULT CHARACTER SET = utf8;
-
-
--- -----------------------------------------------------
 -- Table `riwicervezas`.`carts`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `riwicervezas`.`carts` (
@@ -196,40 +171,6 @@ CREATE TABLE IF NOT EXISTS `riwicervezas`.`purchase_histories` (
   CONSTRAINT `history_product`
     FOREIGN KEY (`id_product`)
     REFERENCES `riwicervezas`.`products` (`id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB
-DEFAULT CHARACTER SET = utf8;
-
-
--- -----------------------------------------------------
--- Table `riwicervezas`.`purchases`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `riwicervezas`.`purchases` (
-  `id` INT(11) NOT NULL AUTO_INCREMENT,
-  `created_at` TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP,
-  `updated_at` TIMESTAMP NULL DEFAULT NULL,
-  `id_user` INT(11) NULL DEFAULT NULL,
-  `id_cart` INT(11) NULL DEFAULT NULL,
-  `id_card` INT(11) NULL DEFAULT NULL,
-  `total` INT(11) NULL DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  INDEX `purchase_user_idx` (`id_user` ASC),
-  INDEX `purchase_cart_idx` (`id_cart` ASC),
-  INDEX `purchase_card_idx` (`id_card` ASC),
-  CONSTRAINT `purchase_card`
-    FOREIGN KEY (`id_card`)
-    REFERENCES `riwicervezas`.`cards` (`id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `purchase_cart`
-    FOREIGN KEY (`id_cart`)
-    REFERENCES `riwicervezas`.`carts` (`id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `purchase_user`
-    FOREIGN KEY (`id_user`)
-    REFERENCES `riwicervezas`.`users` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB

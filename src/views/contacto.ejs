@@ -1,16 +1,29 @@
 <%- include('partials/head') %>
 
 <body>
-
+    
 <%- include('partials/header') %>
-       
+   
     <main class="contenedor_historia">        
         <h1 style="text-align: center;">Contacto de los desarrolladores: </h1>
-        <ul style="padding: 30px;">
-            <li>curasantiago@gmail.com</li> 
-            <li>pachi@hotmail.com</li> <!------MODIFICARSE LOS MAILS --------->
-            <li>guille@hotmail.com</li>
-        </ul>
+        
+        
+        <article class="contact_devs">
+        <!-- <article style="display: flex; justify-content: center; flex-wrap: wrap;"> -->
+        <a href="mailto:curasantiago@gmail.com">
+            <img src="/images/img/SC.png" alt="Santiago Cura">
+            <p>curasantiago@gmail.com</p>
+        </a>
+        <a href="mailto:carlosarielmaldonado@gmail.com">
+            <img src="/images/img/CM.png" alt="Carlos Maldonado">
+            <p>carlosarielmaldonado@gmail.com</p>
+        </a>
+        <a href="mailto:guillermojkatz@gmail.com">
+            <img src="/images/img/GK.png" alt="Guillermo Katz">
+            <p>guillermojkatz@gmail.com</p>
+        </a>
+        </article>
+        
     </main>
     
     <%- include('partials/footer') %>

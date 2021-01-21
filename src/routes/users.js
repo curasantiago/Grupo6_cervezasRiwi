@@ -43,6 +43,8 @@ router.get('/carts/:id/:idCart/', loggeado, userController.purchaseHistory);
 
 router.get('/login', userController.login); 
 router.post('/login', userController.processLogin);
+router.post('/forgot', userController.forgotPass);
+
 
 router.get('/pay', userController.pagar);
 

@@ -296,6 +296,69 @@ const userController={
    
     pagar:(req, res)=>{
         res.render("users/payForm", {title: "Incluir medio de pago"});
+    },
+
+    
+    forgotPass: async (req, res) => {
+      let usuarioMail = req.body.email;
+      
+      let usuario = await Users.findAll({
+        where: {email : usuarioMail}
+      });
+
+      if (usuario == "") {
+        let error = "Usuario no encontrado."
+        res.render("users/login", {title: "Login", error})
+      
+      } else {
+        
+        // CAMBIA CONTRASEÑA A 1234
+        
+        await Users.update({
+          password: bcrypt.hashSync("1234", 10)
+        },
+          {
+          where: {email : usuarioMail}
+        });
+
+        // ENVIO MAIL
+        
+        const nodemailer = require('nodemailer');
+
+            var transport = nodemailer.createTransport({
+              host: "smtp.mail.yahoo.com",
+              port: 465,
+              service: 'yahoo',
+              secure: false,
+              auth: {
+                user: "riwicervezas@yahoo.com",
+                pass: "aonjdhojtpkibndc"
+              },
+              debug: false,
+              logger: true
+            });
+
+            const message = {
+              from: 'riwicervezas@yahoo.com',
+              to: usuarioMail,
+              subject: 'Recuperación de contraseña',
+              text: 'Su contraseña nueva es 1234' 
+          };
+          process.env.NODE_TLS_REJECT_UNAUTHORIZED='0'
+          transport.sendMail(message, function(err, info) {
+              if (err) {
+                console.log(err)
+              } else {
+                console.log(info);
+              }
+          });
+        
+        
+        let error = "Email de recuperación enviado."
+        res.render("users/login", {title: "Login", error, usuarioMail})
+      } 
+
+
     }
 
 }

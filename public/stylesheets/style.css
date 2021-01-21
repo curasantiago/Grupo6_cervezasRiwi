@@ -1982,3 +1982,40 @@ div.wrap2 {
    
 
 /*----------------- FIN SLIDER HOME -------------------*/
+
+
+/*------------------- CONTACTO ----------------------*/
+.contact_devs {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-content: space-evenly;
+}
+
+.contact_devs a {
+    width: 40%;
+    display: flex;    
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.contact_devs a img {
+    width: 100%;
+    align-self: center;
+   
+}    
+@media (min-width: 1000px) {
+    .contact_devs {
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+
+    .contact_devs a {
+        margin: 15px;
+        width: 25%;
+    }
+
+}
+/*------------------- FIN CONTACTO ----------------------*/
+
+
