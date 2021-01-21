@@ -20,11 +20,11 @@ const mainController={
         }
         if (getAge(req.body.edad_start) > 18) {
             req.session.over18 = "YES"
-            res.cookie('over18', "YES", {maxAge: 60000});
+            res.cookie('over18', "YES", {maxAge: 120000});
             res.redirect('/')
         } else {
             req.session.over18 = "NO"
-            res.cookie('over18', "NO", {maxAge: 60000});
+            res.cookie('over18', "NO", {maxAge: 120000});
             let menorDeEdad = {message: "Tiene que ser mayor de 18 años"}
             res.render('ingreso', {title: "Riwi Cervezas", menorDeEdad})
         }
