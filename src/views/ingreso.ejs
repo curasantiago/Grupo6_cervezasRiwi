@@ -1,4 +1,14 @@
-<%- include('partials/head') %>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <script src="https://kit.fontawesome.com/5376d63d7e.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
+    <title><%= title %></title>
+</head>
 
 <body>
     <div class="container-ingreso">
@@ -25,9 +35,9 @@
                 </section>
             <div class="contiene__form">
                 <section class="formulario">                  
-                    <form class="" action="/ingreso" method="POST">              
-                                <label for="start">FECHA DE NACIMIENTO:</label> <!-- para validar fecha -->
-                                    <input type="date" id="start" name="edad_start">             
+                    <form class="" action="/processIngresar" method="POST">              
+                                <label for="start">FECHA DE NACIMIENTO:</label>
+                                    <input type="date" id="start" name="edad_start" required>             
                             <p class="boton__subir">
                                 <button type="submit" id="button-ingreso">INGRESAR</button>              
                             </p>
@@ -36,7 +46,6 @@
             </div>                
         </div>
         
-        <%- include('partials/footer') %>
     </div>
 </body>
 </html>
