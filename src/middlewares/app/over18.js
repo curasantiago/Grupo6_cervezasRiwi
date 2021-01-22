@@ -4,7 +4,10 @@ function over18 (req, res, next) {
         req.session.over18 = req.cookies.over18
     }
 
-    if (req.body.edad_start) {
+    if (req.path.indexOf("api") != -1) {
+        next();
+    }
+    else if (req.body.edad_start) {
         next(); 
     } else if (req.session.over18 == "YES") {
         next();

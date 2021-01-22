@@ -35,6 +35,7 @@ var indexRouter = require('./routes/main');
 var usersRouter = require('./routes/users');
 var productsRouter = require('./routes/products');
 var productsApi = require('./routes/api/productsApi');
+var usersApi = require('./routes/api/usersApi');
 
 
 app.use(methodOverride('_method'));
@@ -43,6 +44,7 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/products', productsRouter);
 app.use('/api/products', productsApi);
+app.use('/api/users', usersApi);
 
 
 // catch 404 and forward to error handler

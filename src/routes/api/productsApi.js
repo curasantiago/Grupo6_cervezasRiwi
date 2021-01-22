@@ -13,6 +13,7 @@ router.get('/', apiProductController.listar);
 // router.get('/:id/edit', productsController.editar); 
 // router.put('/:id', upload.single('image'), validator.productEdit, productsController.processEdit);
 
+router.get('/purchases', apiProductController.listarCompras);
 router.get('/:id', apiProductController.detalle);
 
 
