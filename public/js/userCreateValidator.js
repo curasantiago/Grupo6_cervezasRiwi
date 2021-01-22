@@ -13,7 +13,7 @@ registerForm.addEventListener("submit", function(e){
     checkInputs()
     if(Object.keys (errores).length>0){
         e.preventDefault();
-        console.log(errores)
+        // console.log(errores)
     }
 });
 
@@ -114,7 +114,7 @@ function setErrors(input, mensaje){
     smallDiv.innerText=mensaje;
     // console.log(smallDiv);
     errores[input.name]=mensaje;
-    console.log(errores)
+    // console.log(errores)
 }
 function setSuccess(input){
     let formControl = input.parentElement

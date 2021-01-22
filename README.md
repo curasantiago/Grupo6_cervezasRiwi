@@ -45,8 +45,10 @@ PASOS PARA LA INSTALACIÓN DEL PROYECTO:
 
 2. Extraerlo e ingresar a la carpeta Grupo6_cervezasRiwi-master
 
-3. Dentro de la misma, abrir una terminal y ejectutar el comando 'npm install'
+3. Dentro de la carpeta encontrarán el script de creación de la base de datos (structure.sql), así también como datos dummy (data.sql). La base de datos local deberá ser configurada manualmente en la el archivo src/database/config/config.js
 
-4. Una vez finalizada la instalación, ejecutar 'npm start'
+4. En la carpeta descargada abrir una terminal y ejectutar el comando 'npm install'
 
-5. Abrir su navegador de preferencia e ingresar en la url localhost:3000 y disfrutar la experiencia
+5. Una vez finalizada la instalación, ejecutar 'npm start'
+
+6. Abrir su navegador de preferencia e ingresar en la url localhost:5000 y disfrutar la experiencia

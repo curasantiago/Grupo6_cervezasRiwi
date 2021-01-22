@@ -149,11 +149,12 @@ const userController={
 
     processEdit: async (req,res) => {
       let usuarioEditado = req.body;
-      
 
-      if (usuarioEditado.image != '') {
-        usuarioEditado.image = req.file.filename
+      if (req.file == undefined) {
+        req.file = {filename: res.locals.usuarioImagen}
       }
+  
+      usuarioEditado.image = req.file.filename
 
       console.log("La imagen es: " + usuarioEditado.image)
       
@@ -243,7 +244,7 @@ const userController={
     }, 
 
     logout: (req,res)=>{
-      req.session.destroy();
+      req.session.usuarioLoggeado = null;
       res.clearCookie('recordame');
       res.redirect('/users/login');
     },
@@ -259,6 +260,12 @@ const userController={
         let usuario = await Users.findAll({
           where: {email : usuarioMail}
         })
+        console.log(usuario)
+
+        
+          
+        
+        
         
 
         if (usuario == "") {
@@ -270,8 +277,9 @@ const userController={
             req.session.usuarioLoggeado = usuario[0];
             
             if (req.body.recordame != undefined) {
-              res.cookie('recordame', usuario[0], {maxAge: 30000});
+              res.cookie('recordame', usuario[0], {maxAge: 60000});
             }
+            res.locals.usuarioImagen = usuario[0].image
             res.render('users/userDetail', {usuario: usuario[0], title: usuario[0].first_name + " " + usuario[0].last_name})
 
           } else {

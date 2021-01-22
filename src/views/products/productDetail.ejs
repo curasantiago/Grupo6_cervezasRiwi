@@ -1,4 +1,5 @@
 <%- include('../partials/head') %>
+<script src="/js/cancelAlerts.js" defer></script>
 <script src="/js/addToCart.js" defer></script>
 <body>
     
@@ -144,10 +145,10 @@
     <a href="/products/<%= product.id %>/edit"><button type="submit" value="submit" class="edit__form__button" form="editProductForm">EDITAR PRODUCTO</button></a>
     </div>
     
-    <form action="/products/<%=product.id%>?_method=DELETE" method="POST"  id="deleteProduct">
-    <div class="edit__form__button__container" id="delete-button">
-    <button type="submit" value="submit" class="edit__form__delete__button">ELIMINAR PRODUCTO</button>
-    </div>
+    <form class="cancel__alert" action="/products/<%=product.id%>?_method=DELETE" method="POST"  id="deleteProduct">
+        <div class="edit__form__button__container" id="delete-button">
+            <button type="submit" value="submit" class="edit__form__delete__button">ELIMINAR PRODUCTO</button>
+        </div>
     </form>
 
 
