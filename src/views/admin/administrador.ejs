@@ -1,0 +1,56 @@
+
+<%- include('../partials/head') %>
+
+<body>
+    <%- include('../partials/header') %>
+
+
+<div class="login-app-container">
+    <section class="login-section-img"><!--------------------IMAGEN--------------------------->
+        <article class="login-section-article-img">
+            <img src="" alt="beer" id="login-img-beer">
+        </article>
+    </section>
+
+    <main class="login-main">
+
+
+            <section class="login-section-usuario"><!--------USUARIO / CONTRASEÑA / LOGIN----------->
+                <article class="login-section-article-usuario">
+                    <form action="/admin/administrador" method="POST" class="login-form">
+                        <div>
+                            <% if (typeof error != "undefined") {%>
+                                <p class="login-errors"><%= error %></p>
+                            <%}%>
+                        </div>
+                        <label for="username">USERNAME</label>
+                        <input autofocus class="login-input" type="username" name="username" id="username" placeholder="inserta tu username" <%if (typeof usuarioName != "undefined"){%> value="<%=usuarioName%>"
+                        <%}%>>
+                        
+                        <label for="password">CONTRASEÑA</label>
+                        <input class="login-input" type="password" name="password" id="password" >
+
+
+                        <button class="login-form-button" type="submit">LOGIN</button>
+                        
+                    </form>
+                </article>
+            </section>
+
+
+
+ <section class="login-section-redes">   <!--------REDES SOCIALES PARA AUNTENTICAR----------->
+    <article class="login-article-redes">
+        <a href=""><i class="fab fa-google fa-lg login-icon"></i></a>
+        <a href=""><i class="fab fa-facebook-f fa-lg login-icon"></i></a>
+        <a href=""><i class="fab fa-instagram fa-lg login-icon"></i></a>
+    </article>
+</section>
+</main>
+</div>
+
+<%- include('../partials/footer') %> 
+
+</body>
+</html>
+
