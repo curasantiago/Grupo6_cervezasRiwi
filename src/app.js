@@ -36,7 +36,7 @@ var usersRouter = require('./routes/users');
 var productsRouter = require('./routes/products');
 var productsApi = require('./routes/api/productsApi');
 var usersApi = require('./routes/api/usersApi');
-
+var adminRouter = require('./routes/admin');
 
 app.use(methodOverride('_method'));
 

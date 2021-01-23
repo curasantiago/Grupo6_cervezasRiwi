@@ -14,31 +14,40 @@
         <main class="login-main">
     
     
-                <section class="login-section-usuario"><!--------USUARIO / CONTRASEÑA / LOGIN----------->
+                <!-- <section class="login-section-usuario">
                     <article class="login-section-article-usuario">
                        <a href="">dashboard<i class="fab fa-instagram fa-lg login-icon"></i></a>
     
                     </article>
-                </section>
-                <section class="login-section-usuario"><!--------USUARIO / CONTRASEÑA / LOGIN----------->
+                </section> -->
+                <!-- <section class="login-section-usuario">
                     <article class="login-section-article-usuario">
                         <a href="">borrar productos<i class="fab fa-instagram fa-lg login-icon"></i></a>
                      
                     </article>
-                </section>
+                </section> -->
+                <h1 style="text-align: center; padding-bottom: 10px;"> BIENVENIDO ADMINISTRADOR</h1>
+
                 <section class="login-section-usuario"><!--------USUARIO / CONTRASEÑA / LOGIN----------->
-                    <article class="login-section-article-usuario">
-                       <a href="">crear productos<i class="fab fa-facebook-f fa-lg login-icon"></i></a>
+                                        <article class="login-section-article-usuario">
+                        <article><a href="/products/create"><button type="button" id="login-cuenta-button" style="cursor: pointer; font-size: 1em; margin-left: 0px">AGREGAR PRODUCTO</button></a></article>
+
+                        <!-- <a href="">crear productos<i class="fab fa-facebook-f fa-lg login-icon"></i></a> -->
                     
                     </article>
                 </section>
-                <section class="login-section-usuario"><!--------USUARIO / CONTRASEÑA / LOGIN----------->
-                    <article class="login-section-article-usuario">
+                <!-- <section class="login-section-usuario">
+                                        <article class="login-section-article-usuario">
                         <a href="">editar productos<i class="fab fa-facebook-f fa-lg login-icon"></i></a>
                     
                     </article>
-                </section>
+                </section> -->
 
+                <div class="userDetail-button-container">
+                    <form action="/admin/logout" method="POST">
+                        <button style="background: lightgray; cursor: pointer;" type="submit" name="logout" id="logout">LOGOUT</button>
+                    </form>
+                </div>
 
 
  

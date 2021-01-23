@@ -140,10 +140,12 @@
             <p>Información del producto: <%= product.info %></p>
         </section>
 
-    
+        <% if (adminSession) { %>
     <div class="edit__form__button__container " id="edit-detail">
     <a href="/products/<%= product.id %>/edit"><button type="submit" value="submit" class="edit__form__button" form="editProductForm">EDITAR PRODUCTO</button></a>
     </div>
+
+        
     
     <form class="cancel__alert" action="/products/<%=product.id%>?_method=DELETE" method="POST"  id="deleteProduct">
         <div class="edit__form__button__container" id="delete-button">
@@ -151,6 +153,7 @@
         </div>
     </form>
 
+    <% } %>
 
     <!-- Se cierra div de second column -->
     </div>
