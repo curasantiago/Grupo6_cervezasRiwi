@@ -4,14 +4,14 @@ function Card ({totalValue, totalName}) {
     return (
         
         
-    <div className="card mb-3 col-xs-12 col-xl-4" >
-        <div className="row g-0">
+    <div className="card mb-3 col-4 border border-5 riwi-bg "  >
+        <div className="row ">
             <img src="" alt="" />
-        <div className="col-md-8">
-            <div className="card-body">
-              <h5 className="card-title">Card title</h5>
-              <p className="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-              <p className="card-text"><small className="text-muted">Total {totalName}: {totalValue}</small></p>
+        <div className="col-md-8 w-100">
+            <div className="card-body d-flex justify-content-center w-100">
+              <h5 className="card-title ">Total {totalName}: {totalValue}</h5>
+              {/* <p className="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p> */}
+              {/* <p className="card-text"><small className="text-muted">Total {totalName}: {totalValue}</small></p> */}
             </div>
           </div>
         </div>
@@ -19,6 +19,8 @@ function Card ({totalValue, totalName}) {
 
 
     )
+
+    // Card.defaultProps
 };
 
 export default Card;
