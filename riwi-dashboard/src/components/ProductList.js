@@ -39,7 +39,7 @@ class ProductList extends Component {
                     </tr>
                 </thead>
                 <tbody>
-                    {this.state.products.map ( product => {return <Product key={product.id} id={product.id} name={product.name} info={product.info} subcategory={product.subcategory.name} size={product.size.value} />})}
+                    {this.state.products.map ( product => {return <Product key={product.id} id={product.id} name={product.name} info={product.info} subcategory={product.subcategory.name} size={product.size.value} price={product.price} />})}
                 </tbody>
                 </table>
                     </section>

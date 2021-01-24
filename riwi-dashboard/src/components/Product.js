@@ -4,7 +4,7 @@ function Product ({id, name, info, price, subcategory, size}) {
                     <th scope="row">{id}</th>
                     <td>{name}</td>
                     <td>{info}</td>
-                    <td>{price}</td>
+                    <td>${price}</td>
                     <td>{subcategory}</td>
                     <td>{size}</td>
                     </tr>

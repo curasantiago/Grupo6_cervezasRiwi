@@ -3,10 +3,34 @@
         <!-- <a href="">LEGALES</a> -->
         <a href="/terminos" id="footer-terminos">Términos y condiciones</a>
         <p>Prohibido la venta a menores de 18 años.</p>
+        
+
         <!-- <div class="footer-redes">
             <a href=""><i class="fab fa-twitter fa-lg login-icon footer-icon"></i></a>
             <a href=""><i class="fab fa-facebook-f fa-lg login-icon footer-icon"></i></a>
             <a href=""><i class="fab fa-instagram fa-lg login-icon footer-icon"></i></a>
         </div>    -->
     </footer>
+    <!-- FUNCION QUE CHEQUEA SI HAY SCROLL Y SI ESTÁ AL FINAL DE LA PÁGINA, Y MUESTRA EL FOOTER EN CONSECUENCIA -->
+    <script>
+        window.onscroll = function(e) {
+              if ((window.innerHeight + window.pageYOffset) >= document.body.offsetHeight) {
+                document.querySelector(".footer-container").style.display = "block"
+              } else {
+                document.querySelector(".footer-container").style.display = "none"
+              }
+        };
+
+        window.onload = function(e) {
+            window.innerWidth > document.documentElement.clientWidth ? document.querySelector(".footer-container").style.display = "none" : ""
+        }
+
+        window.onresize = function(e) {
+            if (window.innerWidth > document.documentElement.clientWidth) {
+                document.querySelector(".footer-container").style.display = "none"
+            } else {
+                document.querySelector(".footer-container").style.display = "block"
+            }
+        }
+    </script>
 </div>

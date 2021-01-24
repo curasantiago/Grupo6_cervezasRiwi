@@ -9,10 +9,10 @@
  
 }
 
-body {
+/* body {
     position: relative;
     min-height: 100vh; 
-}
+} */
 
 
 
@@ -1268,10 +1268,13 @@ padding: 20px;
 
         /*------------FOOTER------------*/
 .footer-container {
-    position: absolute;
+    /* position: absolute; */
     bottom: -60px;
     width: 100%;
     margin-top: 20px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
 }
 
 
@@ -1300,7 +1303,7 @@ padding: 20px;
 }
 
 .footer p {
-    display: none;
+    display: flex;
 }
 
 @media (min-width: 768px) {
@@ -1310,9 +1313,9 @@ padding: 20px;
         display: flex;
     }
 
-    .footer p {
+    /* .footer p {
         display: flex;
-    }
+    } */
 }
 
 
