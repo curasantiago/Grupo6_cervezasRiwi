@@ -1,5 +1,9 @@
 -- SCRIPT DE DATOS PARA RIWICERVEZAS DATABASE
 
+-- TABLA ADMIN
+
+INSERT INTO admins (username, password) VALUES ('admin1', '123');
+
 -- TABLA CATEGORIES
 
 INSERT INTO categories (name) VALUES ('ARTESANAL');
@@ -31,7 +35,6 @@ INSERT INTO sizes (value) VALUES ('473ml');
 INSERT INTO sizes (value) VALUES ('710ml');
 INSERT INTO sizes (value) VALUES ('730ml');
 INSERT INTO sizes (value) VALUES ('350ml');
-
 
 -- TABLA PRODUCTS
 INSERT INTO products (name, info, price, image, id_size, id_subcategory) VALUES ('Ipa Mythos','Cerveza de color amarillo, seca, amarga e intensamente lúpulada. Con un perfil de fermentación limpio que le da gran tomabilidad permitiendo que destaquen los aromas y sabores cítricos y resinosos aportados por los lúpulos Cítra y Simcome.',230,'images-1604795265863.jpg',1,1);

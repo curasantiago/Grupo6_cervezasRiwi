@@ -16,7 +16,7 @@
         <% } %>
         
         <p>EMAIL: <%=usuario.email%></p>
-        <p>FECHA DE NACIMIENTO: <%=usuario.birthdate%></p>
+        <p>FECHA DE NAC: <%=usuario.birthdate%></p>
         <p>DIRECCIÓN: <%=usuario.address%></p>
     </section>
     
@@ -27,9 +27,9 @@
     <div class="userDetail-button-container">
         <button type="submit" value="submit" class="userDetail-button" style="cursor: pointer;" form="toEditUser">EDITAR INFORMACIÓN</button>
     </div>
-    <div class="userDetail-button-container">
+    <!-- <div class="userDetail-button-container">
         <a href="/products/create"><button type="button" id="login-cuenta-button" style="cursor: pointer; font-size: 1em; ">AGREGAR PRODUCTO</button></a>
-    </div>
+    </div> -->
 
     <div class="userDetail-button-container">
         <form action="/users/logout" method="POST">

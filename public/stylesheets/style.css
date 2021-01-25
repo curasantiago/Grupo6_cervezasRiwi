@@ -2022,3 +2022,113 @@ div.wrap2 {
 /*------------------- FIN CONTACTO ----------------------*/
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* DROPMENU EN NAVBAR  */
+.dropmenu-display {
+    display: none;
+}
+
+.dropmenu {
+border-radius: 8px;
+text-align: right;
+background:linear-gradient(90deg, rgba(242,242,242,1) 0%, rgba(235,230,230,1) 95%, rgba(247,247,247,1) 100%, rgba(242,242,242,1) 100%);; 
+width: 130px; 
+padding: 8px 8px; 
+padding-right: 10px;
+position: absolute; 
+right: 0px; 
+top: 68px;
+font-size: 1.4em;
+}
+
+.dropmenu * {
+    padding-top: 4px;
+    padding-bottom: 4px;
+    
+}
+.dropmenu>a {
+    text-decoration: none;
+}
+
+.dropmenu>a:hover {
+    text-decoration: underline; 
+}

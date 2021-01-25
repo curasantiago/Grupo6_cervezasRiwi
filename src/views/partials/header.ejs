@@ -25,6 +25,36 @@
         <form action="/products" id="search-form" method="POST">
             <input id="search-input" autofocus type="text" name="query" id="query" placeholder="BUSCAR CERVEZA">
         </form>
-        <a href=""><i class="fas fa-bars header-icons" id="menu"></i></a>
+        <i id="menu" class="fas fa-bars header-icons" ></i>
     </div>
+
+    <!-- <div style="position: relative"> -->
+        <div id="dropmenu" class="dropmenu-display dropmenu">
+            <a href="/products/"><p>CERVEZAS</p></a>
+            <a href="/historia/"><p>HISTORIA</p></a>
+            <a href="/ayuda"><p>AYUDA</p></a>
+            <a href="/contacto"><p>CONTACTO</p></a>
+        </div>
+    <!-- </div> -->
+
+    <script defer>
+        let dropMenu = document.getElementById("dropmenu");
+        
+        document.getElementById("menu").addEventListener("click", function(e){
+            e.preventDefault(e)
+            dropMenu.classList.toggle("dropmenu-display");
+        });
+        
+        window.addEventListener("resize", function() {
+            if (!dropMenu.classList.contains("dropmenu-display")) {
+            dropMenu.classList.toggle("dropmenu-display")
+            }
+        });
+
+        dropMenu.addEventListener("mouseleave", function(){
+            dropMenu.classList.toggle("dropmenu-display")
+        })
+
+    </script>
+
 </header>    
