@@ -6,6 +6,20 @@ Retrospectiva Sprint 5
 Starfish Retrospective
 
 1) Start doing:
+
+2) More of:
+
+3) Keep doing:
+
+4) Less of:
+
+5) Stop doing:
+
+---------------------------------------------------------------------------------------------------------
+Retrospectiva Sprint 5
+Starfish Retrospective
+
+1) Start doing:
 - Realizar más tareas opcionales
 
 2) More of:

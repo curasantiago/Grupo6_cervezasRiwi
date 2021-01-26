@@ -66,7 +66,7 @@
             <% products.forEach(product => { %>
             <article class="productSearch__single__product">
                 <a href="/products/<%= product.id %>"><img src="/images/products/<%= product.image %>" alt="<%=product.name%>"></a>
-                <a href="/products/<%= product.id %>" class="productSearch__name"><h1><%= product.name %> <%=product.size.value%></h1></a>
+                <a href="/products/<%= product.id %>" class="productSearch__name"><h2><%= product.name %> <%=product.size.value%></h2></a>
                 <p class="productSearch__price">$ <%= product.price %></p>
               
                 <form action="/products/cart" method="POST" class="addToCart">
