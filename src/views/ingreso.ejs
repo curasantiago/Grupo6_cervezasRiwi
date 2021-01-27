@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="/stylesheets/style.css">
     <script src="https://kit.fontawesome.com/5376d63d7e.js" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     <title><%= title %></title>
 </head>
 
@@ -35,9 +36,9 @@
                 </section>
             <div class="contiene__form">
                 <section class="formulario">                  
-                    <form class="" action="/processIngresar" method="POST">              
+                    <form class="process-ingreso" action="/processIngresar" method="POST" novalidate>              
                                 <label for="start">FECHA DE NACIMIENTO:</label>
-                                    <input type="date" id="start" name="edad_start" required>             
+                                    <input type="date" id="start" name="edad_start">             
                             <p class="boton__subir">
                                 <button type="submit" id="button-ingreso">INGRESAR</button>              
                             </p>
@@ -47,6 +48,20 @@
         </div>
         
     </div>
+    <script defer>
+        document.querySelector(".process-ingreso").addEventListener("submit", function(e) {
+            if(!document.getElementById("start").value) {
+                e.preventDefault();
+                Swal.fire({
+                    icon: 'error',
+                    title: 'POR FAVOR INGRESE SU FECHA DE NACIMIENTO',
+                    confirmButtonColor: "rgba(166,150,30,1)",
+                    iconColor: "#DACB5E"
+                })
+                // alert("Ingrese su fecha de nacimiento para ingresar.")
+            }
+        })
+    </script>
 </body>
 </html>
 

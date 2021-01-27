@@ -9,6 +9,10 @@
  
 }
 
+body {
+    margin-bottom: 50px;
+}
+
 /* body {
     position: relative;
     min-height: 100vh; 
@@ -1064,10 +1068,13 @@ position: fixed;
 
 .accion__comprar{
     background: linear-gradient(90deg, rgba(218,203,94,1) 0%, rgba(166,150,30,1) 100%, rgba(166,150,30,1) 100%, rgba(166,150,30,1) 100%);    
-    font-size: 20px; 
+    font-size: 20px;
+    font-weight: bold; 
+    text-shadow: -1.5px 0 black, 0 1.5px black, 1.5px 0 black, 0 -1.5px black;
     text-align: center;
     margin:15px;
-    background-image: url(/images/img/barriles-de-cerveza.png);
+    background-image: url(/images/img/comprar.jpg);
+    background-position: top;
     box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.74);
    
     
@@ -1077,8 +1084,11 @@ position: fixed;
     background: linear-gradient(90deg, rgba(218,203,94,1) 0%, rgba(166,150,30,1) 100%, rgba(166,150,30,1) 100%, rgba(166,150,30,1) 100%);
     text-align: center;
     font-size: 20px; 
+    font-weight: bold; 
+    text-shadow: -1.5px 0 black, 0 1.5px black, 1.5px 0 black, 0 -1.5px black;
     margin:15px;   
-    background-image: url(/images/img/cerveza_barra.jpeg);
+    background-image: url(/images/img/artesanales.jpg);
+    background-position: center;
     box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.74);
    
 }
@@ -1086,8 +1096,11 @@ position: fixed;
     background: linear-gradient(90deg, rgba(218,203,94,1) 0%, rgba(166,150,30,1) 100%, rgba(166,150,30,1) 100%, rgba(166,150,30,1) 100%);  
     text-align: center;
     font-size: 20px; 
+    font-weight: bold; 
+    text-shadow: -1.5px 0 black, 0 1.5px black, 1.5px 0 black, 0 -1.5px black;
     margin:15px;
-    background-image: url(/images/img/cerveza_barra.jpeg);
+    background-image: url(/images/img/industriales.jpg);
+    background-position: center;
     box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.74);
     
 }
@@ -1095,10 +1108,13 @@ position: fixed;
     background: linear-gradient(90deg, rgba(218,203,94,1) 0%, rgba(166,150,30,1) 100%, rgba(166,150,30,1) 100%, rgba(166,150,30,1) 100%);
     text-align: center;
     font-size: 20px; 
+    font-weight: bold; 
+    text-shadow: -1.5px 0 black, 0 1.5px black, 1.5px 0 black, 0 -1.5px black;
     margin:15px;
-    background-image: url(/images/img/barriles-de-cerveza.png);
-    border-top-right-radius: 40px;
-    border-top-left-radius: 40px;
+    background-image: url(/images/img/elegi.jpg);
+    background-position: center;
+    border-radius: 40px;
+    /* border-top-left-radius: 40px; */
     box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.74);
 }
 @media(min-width:769px){
@@ -1779,8 +1795,8 @@ div.wrap2 {
 }
 
 .productSearch__single__product button {
-    font-size: 1em;
-    padding: 2%;
+    /* font-size: 1em; */
+    padding: 3%  2% 2% 2%;
     border-radius: 15px;
     border: none;
     background: linear-gradient(90deg, rgba(240,225,114,1) 0%, rgba(166,150,30,1) 100%, rgba(166,150,30,1) 100%, rgba(166,150,30,1) 100%);
@@ -1962,8 +1978,9 @@ div.wrap2 {
     border-radius: 25px;
     text-align: center;
     background: linear-gradient(90deg, rgba(242,242,242,1) 0%, rgba(235,230,230,1) 95%, rgba(247,247,247,1) 100%, rgba(242,242,242,1) 100%);
-    margin: 3%;
-    padding: 3%;
+    margin: 2%;
+    padding: 3% 5% 1% 5%;
+    
 }
 
 .contenedor_historia * {
@@ -2087,113 +2104,76 @@ div.wrap2 {
     flex-wrap: wrap;
     flex-direction: column;
     align-content: space-evenly;
+    padding-bottom: 5px;
 }
 
-.contact_devs a {
+.contact_devs div {
     width: 40%;
     display: flex;    
     flex-wrap: wrap;
     justify-content: center;
+    padding-bottom: 5px;
+    white-space: nowrap;
 }
 
-.contact_devs a img {
+.contact_devs div img {
     width: 100%;
     align-self: center;
    
-}    
+}
+
+.contact_devs div p {
+    width: 100%;
+    text-align: center;  
+}
+
+.contact_devs div a {
+    width: 100%;
+    text-align: center;  
+    padding-bottom: 0px;
+}
+
+.contact_devs div a img {
+    width: 25%;
+    text-align: center;  
+}
+
 @media (min-width: 1000px) {
     .contact_devs {
         flex-direction: row;
         justify-content: space-evenly;
     }
 
-    .contact_devs a {
+    .contact_devs div {
         margin: 15px;
         width: 25%;
+    }
+
+    .contact_devs div a img {
+        width: 15%;
+         
     }
 
 }
 /*------------------- FIN CONTACTO ----------------------*/
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+/* SWEET ALERT BUTTON */
+.swal2-modal .swal2-styled:focus {
+	-webkit-box-shadow: 2px 2px 2px 1px black;
+	box-shadow: 2px 2px 2px 1px black;
+}
+
+.swal2-input:focus {
+    border: solid 2px black !important;
+    -webkit-box-shadow: 0px 0px 1px 1px black !important;
+	box-shadow: 0px 0px 1px 1px black !important
+}
+
+.swal2-modal .swal2-styled {
+	-webkit-box-shadow: 2px 2px 2px 1px black;
+	box-shadow: 2px 2px 2px 1px black;
+}
 
 
 /* DROPMENU EN NAVBAR  */

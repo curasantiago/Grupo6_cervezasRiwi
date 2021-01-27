@@ -10,13 +10,39 @@ window.addEventListener("load", function(){
 
     forgotPass.addEventListener("click", function(e){
         e.preventDefault()
-        let email = prompt("Ingrese su email para recuperar su contraseña");
-        if (isEmail(email)) {
-            forgotForm.email.value = email;
-            forgotForm.submit();
-        } else {
-            alert("Ingrese un email válido")
-        }
+        Swal.fire({
+            icon: 'question',
+            title: 'Ingrese su email para recuperar su contraseña',
+            input: "text", 
+            confirmButtonColor: "rgba(166,150,30,1)",
+            iconColor: "#DACB5E",
+            inputValidator: (email) => {
+                if (isEmail(email)) {
+                    forgotForm.email.value = email;
+                    forgotForm.submit();
+                } else {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'INGRESE UN EMAIL VÁLIDO',
+                        confirmButtonColor: "rgba(166,150,30,1)",
+                        iconColor: "#DACB5E"
+                    })
+                }
+            }
+        })
+        // prompt("Ingrese su email para recuperar su contraseña");
+        // if (isEmail(email)) {
+        //     forgotForm.email.value = email;
+        //     forgotForm.submit();
+        // } else {
+        //     Swal.fire({
+        //         icon: 'error',
+        //         title: 'INGRESE UN EMAIL VÁLIDO',
+        //         confirmButtonColor: "rgba(166,150,30,1)",
+        //         iconColor: "#DACB5E"
+        //     })
+            // alert("Ingrese un email válido")
+        // }
         
     })
 

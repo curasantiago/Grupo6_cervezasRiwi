@@ -14,7 +14,12 @@ for (let form of addToCartForms) {
     
     if (productQuantity > 99 || productQuantity < 0 || Number.isNaN(productQuantity) || productQuantity == "") {
         e.preventDefault()
-        alert("Ingrese un número entre 1 y 99")
+        Swal.fire({
+            icon: 'error',
+            title: 'INGRESE UN NÚMERO ENTRE 1 y 99',
+            confirmButtonColor: "rgba(166,150,30,1)",
+            iconColor: "#DACB5E"
+        });
     } else {
         // CAPTURO EL PRODUCTO AGREGADO EN UN OBJETO
 
@@ -135,12 +140,28 @@ if (cartItemsDiv != null && sessionStorage.getItem("productsInCart") != null && 
     const buttonEmptyCart = document.getElementById("empty_cart")
 
     buttonEmptyCart.addEventListener("click", function(){
-    let confirmEmpty = confirm("¿Vaciar carrito de compras?")
+        Swal.fire({
+            icon: 'warning',
+            title: '¿VACIAR CARRITO DE COMPRAS?', 
+            confirmButtonColor: "rgba(166,150,30,1)",
+            iconColor: "#DACB5E",
+            confirmButtonText: 'VACIAR',
+            showCancelButton: 'true',
+            cancelButtonText: 'CANCELAR',
+            cancelButtonColor: 'rgb(240, 114, 114)'
+            }).then((resultado) => {
+                if (resultado.isConfirmed) {
+                    sessionStorage.removeItem("productsInCart");
+                    location.reload();
+                }
+        });
+    
+        // let confirmEmpty = confirm("¿Vaciar carrito de compras?")
 
-    if(confirmEmpty){
-        sessionStorage.removeItem("productsInCart");    
-        location.reload();
-    }
+    // if(confirmEmpty){
+    //     sessionStorage.removeItem("productsInCart");    
+    //     location.reload();
+    // }
 
 
     })
@@ -216,7 +237,13 @@ if (typeof inputQuantityProducts != "undefined") {
             
             // VALIDACION QUE LO INGRESADO SEA UN NUMERO Y QUE SEA ENTRE 0 y 99
             if(nuevaCantidad < 0 || nuevaCantidad > 99 || Number.isNaN(nuevaCantidad)) {
-                alert("Ingrese un número entre 0 y 99");
+                // alert("Ingrese un número entre 0 y 99");
+                Swal.fire({
+                    icon: 'error',
+                    title: 'INGRESE UN NÚMERO ENTRE 0 y 99',
+                    confirmButtonColor: "rgba(166,150,30,1)",
+                    iconColor: "#DACB5E"
+                });
                 this.value = oldValueTemp;
             // SI ESCRIBIO 0 Y ES EL UNICO ITEM EN EL CARRITO
             } else if (nuevaCantidad == 0 && productsInCart.length == 1) {
@@ -244,19 +271,43 @@ const productsToPay = document.getElementById("products-to-pay")
 
 if (finCompraForm != null) {
 finCompraForm.addEventListener("submit", function(e){
-    let confirmaCompra = confirm("¿Confirma la compra por un total de "+document.getElementById("total-cart").innerHTML + "? Se le enviará un email a su cuenta")
+    e.preventDefault()
+    Swal.fire({
+        icon: 'question',
+        title: `¿CONFIRMA LA COMPRA POR UN TOTAL DE `+document.getElementById("total-cart").innerHTML + `?`,
+        text: "SE LE ENVIARÁ UN EMAIL A SU CUENTA", 
+        confirmButtonColor: "rgba(166,150,30,1)",
+        iconColor: "#DACB5E",
+        confirmButtonText: 'COMPRAR',
+        showCancelButton: 'true',
+        cancelButtonText: 'CANCELAR',
+        cancelButtonColor: 'rgb(240, 114, 114)'
+        }).then((resultado) => {
+            if (resultado.isConfirmed) {
+                // MANDO EN UN INPUT HIDDEN UN JSON CON TODOS LOS PRODUCTOS DEL CARRITO QUE ESTAN EN SESSION STORAGE
+                let allProductsJSON = encodeURIComponent(sessionStorage.getItem("productsInCart"))
+                productsToPay.value = `${allProductsJSON}`
+                // BORRA EL CARRITO
+                sessionStorage.removeItem("productsInCart")
+                this.submit()
+            } else {
+                e.preventDefault()
+            }
+    });
     
-    if (confirmaCompra) {
+    // let confirmaCompra = confirm("¿Confirma la compra por un total de "+document.getElementById("total-cart").innerHTML + "? Se le enviará un email a su cuenta")
+    
+    // if (confirmaCompra) {
 
         // MANDO EN UN INPUT HIDDEN UN JSON CON TODOS LOS PRODUCTOS DEL CARRITO QUE ESTAN EN SESSION STORAGE
-        let allProductsJSON = encodeURIComponent(sessionStorage.getItem("productsInCart"))
-        productsToPay.value = `${allProductsJSON}`
+        // let allProductsJSON = encodeURIComponent(sessionStorage.getItem("productsInCart"))
+        // productsToPay.value = `${allProductsJSON}`
 
         // BORRA EL CARRITO
-        sessionStorage.removeItem("productsInCart")
-    } else {
-        e.preventDefault()
-    }
+    //     sessionStorage.removeItem("productsInCart")
+    // } else {
+        // e.preventDefault()
+    // }
     
 })
 }
