@@ -1113,7 +1113,7 @@ position: fixed;
     margin:15px;
     background-image: url(/images/img/elegi.jpg);
     background-position: center;
-    border-radius: 40px;
+    /* border-radius: 40px; */
     /* border-top-left-radius: 40px; */
     box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.74);
 }
