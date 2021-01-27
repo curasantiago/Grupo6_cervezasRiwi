@@ -2,14 +2,23 @@ RETROSPECTIVAS GRUPO 6
 Jamboard: https://jamboard.google.com/d/1kqTkwzlSrIPL8H1haLnDO3necgWa0L0pzbJv6_lmehE/edit?usp=sharing
 
 ---------------------------------------------------------------------------------------------------------
-Retrospectiva Sprint 5
+Retrospectiva Sprint 6
 Starfish Retrospective
 
 1) Start doing:
+- Implementar bootstrap en dashboard
+- Dividirnos las tareas opcionales que quedan
+- Compartir tips laburo
 
 2) More of:
+- Juntarnos a trabajar en grupo más veces
+- Testear trabajos de compañeros
 
 3) Keep doing:
+- División de tareas
+- Feedback de compañeros de trabajos realizados
+- Sostener la buena onda. Decir lo que nos inquieta y opinar
+- Pedir ayuda a compañeros
 
 4) Less of:
 
